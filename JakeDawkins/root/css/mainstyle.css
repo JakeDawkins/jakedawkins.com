@@ -37,7 +37,7 @@ hr {
 	color: rgb(255,51,0);
 	font-size: 32px;
 	top: 10px;
-} 
+}
 
 #nav {
 	list-style:none;
@@ -45,10 +45,10 @@ hr {
 }
 
 	#nav li {
-		display: inline;	
+		display: inline;
 		margin-left: 30px;
 	}
-	
+
 	#slash {
 		color: rgb(255,51,0);
 	}
@@ -56,24 +56,24 @@ hr {
 	#nav li a {
 		color: black;
 		text-decoration: none;
-		font-size: 16px; 
+		font-size: 16px;
 		display: inline-block;
-		text-align:center; 
+		text-align:center;
 	}
-	
+
 	#nav li a:hover {
 		background-color: rgb(255,51,0);
-		color: white;		
+		color: white;
 	}
-	
+
 	#nav li a:active {
-		color: rgb(255,51,0);	
+		color: rgb(255,51,0);
 	}
 
 /* -------------------- content styles -------------------- */
 #content {
 	margin-top: 20px;
-	min-height: 500px;	
+	min-height: 350px;	
 	line-height: 1.875em;
 }
 
