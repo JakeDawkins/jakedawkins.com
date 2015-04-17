@@ -9,23 +9,23 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Jake Dawkins</a>
+                <a class="navbar-brand" href="http://jakedawkins.com">Jake Dawkins</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="<?php echo Path::base().'index.php'?>">Home</a>
                     </li>
                     <li>
-                    	<a href="about.html">About Me</a>
+                    	<a href="<?php echo Path::base().'about.php'?>">About Me</a>
             		</li>
             		<li>
-            			<a href="work.html">My Work</a>
+            			<a href="<?php echo Path::base().'work.php'?>">My Work</a>
         			</li>
         			<li>
-        				<a href="contact.html">Contact</a>
+        				<a href="<?php echo Path::base().'contacts.php'?>">Contact</a>
         			</li>
                 </ul>
             </div>
