@@ -25,7 +25,7 @@
             			<a href="<?php echo Path::base().'work.php'?>">My Work</a>
         			</li>
         			<li>
-        				<a href="<?php echo Path::base().'contacts.php'?>">Contact</a>
+        				<a href="<?php echo Path::base().'contact.php'?>">Contact</a>
         			</li>
                 </ul>
             </div>
