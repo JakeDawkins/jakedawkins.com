@@ -28,6 +28,14 @@
                                 </span>
                             </a>
                         </li>
+                        <li>
+                            <a href="https://plus.google.com/111551140860554190220/posts">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
                     </ul>
                     <p class="copyright text-muted">Copyright &copy; Jake Dawkins 2015</p>
                 </div>
