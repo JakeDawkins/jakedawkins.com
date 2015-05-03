@@ -43,8 +43,23 @@ a img:focus {
   margin: 0 10px;
 }
 
+.snippet-title {
+  margin-bottom:0px;
+}
 
+/* To fix Bootstrap's wrapping */
+.snippet pre { 
+  overflow: auto;
+  word-wrap: normal;
+  white-space: pre;
+}
 
+p.snippet-subtitle {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+/*------------------------ Stock ------------------------*/
 blockquote {
   color: #808080;
   font-style: italic;
