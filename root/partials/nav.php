@@ -19,7 +19,7 @@
                     	<a href="http://jakedawkins.com/index.php">About Me</a>
             		</li>
             		<li>
-            			<a href="http://jakedawkins.com/work.php">My Work</a>
+            			<a href="http://jakedawkins.com/work.php">Projects</a>
         			</li>
         			<li>
         				<!-- <a href="http://jakedawkins.com/contact.php">Contact</a>-->
