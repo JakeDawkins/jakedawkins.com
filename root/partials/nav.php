@@ -16,16 +16,14 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="<?php echo Path::base().'index.php'?>">Home</a>
-                    </li>
-                    <li>
-                    	<a href="<?php echo Path::base().'about.php'?>">About Me</a>
+                    	<a href="http://jakedawkins.com/index.php">About Me</a>
             		</li>
             		<li>
-            			<a href="<?php echo Path::base().'work.php'?>">My Work</a>
+            			<a href="http://jakedawkins.com/work.php">My Work</a>
         			</li>
         			<li>
-        				<a href="<?php echo Path::base().'contact.php'?>">Contact</a>
+        				<!-- <a href="http://jakedawkins.com/contact.php">Contact</a>-->
+                        <a href="#">Contact</a>
         			</li>
                 </ul>
             </div>

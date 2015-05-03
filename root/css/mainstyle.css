@@ -36,6 +36,15 @@ a img:hover,
 a img:focus {
   cursor: zoom-in;
 }
+
+/*------------------------ Jake ------------------------*/
+.inlineImg {
+  float: left; 
+  margin: 0 10px;
+}
+
+
+
 blockquote {
   color: #808080;
   font-style: italic;
