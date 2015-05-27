@@ -59,6 +59,10 @@ p.snippet-subtitle {
   margin-bottom: 10px;
 }
 
+.full {
+  width: 100%;
+}
+
 /*------------------------ Stock ------------------------*/
 blockquote {
   color: #808080;

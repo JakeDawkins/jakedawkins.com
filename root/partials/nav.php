@@ -21,9 +21,12 @@
             		<li>
             			<a href="http://jakedawkins.com/work.php">Projects</a>
         			</li>
+                    <li>
+                        <a href="http://jakedawkins.com/snippets.php">Snippets</a>
+                    </li>
         			<li>
-        				<!-- <a href="http://jakedawkins.com/contact.php">Contact</a>-->
-                        <a href="#">Contact</a>
+        				<a href="http://jakedawkins.com/contact.php">Contact</a>
+                        <!-- <a href="#">Contact</a> -->
         			</li>
                 </ul>
             </div>
