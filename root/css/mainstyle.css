@@ -63,6 +63,16 @@ p.snippet-subtitle {
   width: 100%;
 }
 
+.background-orange {
+  background-color: #F66733;
+  color: white;
+}
+
+.progress-purple {
+  background-color: #522D80;
+}
+
+
 /*------------------------ Stock ------------------------*/
 blockquote {
   color: #808080;
