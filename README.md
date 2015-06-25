@@ -1,4 +1,4 @@
-myweb
-=====
+# JakeDawkins.com
 
-source code from my webpage
+Source code from my website.
+Built with Twitter Bootstrap.
