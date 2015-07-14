@@ -5,10 +5,10 @@
     <meta name="author" content="Jake Dawkins">
 
     <!-- Bootstrap Core CSS -->
-    <link href="<?php echo Path::css().'bootstrap.min.css' ?>" rel="stylesheet">
+    <link href="<?php echo '/css/bootstrap.min.css' /*Path::css().'bootstrap.min.css'*/ ?>" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<?php echo Path::css().'mainstyle.css' ?>" rel="stylesheet">
+    <link href="<?php echo '/css/mainstyle.css' /*Path::css().'mainstyle.css'*/ ?>" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">

@@ -63,6 +63,10 @@ p.snippet-subtitle {
   width: 100%;
 }
 
+.red {
+  color: #FF5722;
+}
+
 .background-orange {
   background-color: #F66733;
   color: white;

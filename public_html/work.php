@@ -35,6 +35,21 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- Checkout -->
+                <div class="post-preview">
+                    <a href="#">
+                        <h2 class="post-title">
+                            <span class="red">Coming Soon:</span> Checkout
+                        </h2>
+                        <h3 class="post-subtitle">
+                            A webapp used to schedule different kinds of gear among team members.
+                        </h3>
+                    </a>
+                    <p class="post-meta">Posted by Jake on July 8, 2015</p>
+                </div>
+                <hr>
+
+                <!-- Home Control -->
                 <div class="post-preview">
                     <a href="projects/sdhome.php">
                         <h2 class="post-title">
