@@ -38,16 +38,16 @@
                 <img class="img-responsive img-rounded inlineImg" src="/img/selfportrait.png"/>
                 
                 <p><strong>I'm Jake</strong> (or Jackson for the more formal types). I'm a 
-                junior in Computer Science at <a href="http://clemson.edu">Clemson University</a>,
-                and Clemson is where I set up shop (for now). I also work as the Digital Media
+                senior in Computer Science with a minor in Psychology at <a href="http://clemson.edu">Clemson University</a>,
+                and Clemson, SC is where I set up shop (for now). I also work as the Digital Media
                 Content Coordinator for <a href="http://newspring.cc">NewSpring Church</a> in
                 in Anderson, SC.
                 </p>
                 
                 <p>I have a passion for technology, and a knack for making things work.
                 I love making things for people to use. Real people. Take a look around
-                and feel free to sift through my work and thoughts. For the truly ambitious,
-                reach out to me!
+                and feel free to sift through my work and photos. For the truly ambitious,
+                <a href="contact.php">reach out to me</a>.
                 </p>
             </div>
 

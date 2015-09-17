@@ -17,12 +17,12 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/wood-bg.jpg')">
+    <header class="intro-header" style="background-image: url('img/work-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <h1>Projects</h1>
+                        <h1>Programming Projects</h1>
                         <hr class="small">
                         <span class="subheading">Things I spend my time on...</span>
                     </div>
@@ -37,9 +37,9 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <!-- Checkout -->
                 <div class="post-preview">
-                    <a href="#">
+                    <a href="projects/checkout.php">
                         <h2 class="post-title">
-                            <span class="red">Coming Soon:</span> Checkout
+                            Checkout
                         </h2>
                         <h3 class="post-subtitle">
                             A webapp used to schedule different kinds of gear among team members.
@@ -56,7 +56,7 @@
                             Solar Decathlon Smart Home Control
                         </h2>
                         <h3 class="post-subtitle">
-                            An iOS app to control a smart home!
+                            An iOS 7 app to interface with a MySQL database to control a smart home.
                         </h3>
                     </a>
                     <p class="post-meta">Posted by Jake on April 16, 2015</p>
@@ -70,7 +70,7 @@
                             Video Toolkit
                         </h2>
                         <h3 class="post-subtitle">
-                            An iOS app that'll make video professionals rejoice!
+                            An iOS 7 app to do simple bitrate and timecode math for video professionals.
                         </h3>
                     </a>
                     <p class="post-meta">Posted by Jake on April 23, 2015</p>

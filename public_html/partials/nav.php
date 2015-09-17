@@ -19,10 +19,11 @@
                     	<a href="http://jakedawkins.com/index.php">About Me</a>
             		</li>
             		<li>
-            			<a href="http://jakedawkins.com/work.php">Projects</a>
+            			<a href="http://jakedawkins.com/work.php">Programming</a>
         			</li>
                     <li>
-                        <a href="http://jakedawkins.com/snippets.php">Snippets</a>
+                        <!-- <a href="http://jakedawkins.com/snippets.php">Snippets</a> -->
+                        <a href="http://jakedawkins.com/photos.php">Photos</a>
                     </li>
         			<li>
         				<a href="http://jakedawkins.com/contact.php">Contact</a>
