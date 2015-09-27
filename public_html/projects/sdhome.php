@@ -39,7 +39,7 @@
                     <p>The Solar Decathlon is a competition hosted by the U.S. Department of Energy. 
                     The goal of this competition is to build a sustainable home in 9 days. 
                     The competitors for this project are universities across the nation. 
-                    For 2015, Clemaon University is in this competition. The home Clemson is building will 
+                    For 2015, Clemson University is in this competition. The home Clemson is building will 
                     be built with multiple sensors and controllers to make the home controllable anywhere, 
                     in multiple ways.</p>
 
