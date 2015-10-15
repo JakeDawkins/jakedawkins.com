@@ -5,7 +5,7 @@
 
 <head>
 
-    <title>Jake Dawkins - VTK</title>
+    <title>Jake Dawkins - Checkout</title>
     <?php include Path::partials().'bs_head.php' ?>
 
 </head>
@@ -24,7 +24,7 @@
                     <div class="post-heading">
                         <h1>Checkout</h1>
                         <h2 class="subheading"></h2>
-                        <span class="meta">Posted by Jake on July 8, 2015</span>
+                        <span class="meta">Updated by Jake on October 15, 2015</span>
                     </div>
                 </div>
             </div>
@@ -43,24 +43,26 @@
                     </p>
                     <h3>Current Status</h3>
                     <p>
-                    I'm currently polishing out user experience elements of the base functionality, as well as
-                    preparing to add more functionality to make the system more useful beyond basic checkouts. I haven't
-                    started working with the specifics of the design. I'm more focused on functionality and UX currently.
+                    I'm currently finishing up functionality, and preparing to polish the design. I've done a bit of the 
+                    design work such as choosing colors, and tweaking some page elements. I'm looking into OAuth for calendar
+                    integration, and a calendar view for desktop users for viewing checkouts in a more pleasant manner.
                     <br /><br />
                     Keep up with progress here or at <a href="http://github.com/jakedawkins/checkout">GitHub</a>.
                     </p>
 
                     <h3>Current Photos</h3>
                     <br />
-                    <a href="checkout_files/CO-checkout.jpg"><img src="checkout_files/CO-checkout.jpg" class="img-rounded" alt="" width="75%" /></a>
+                    <a href="checkout_files/co-1.jpg"><img src="checkout_files/co-1.jpg" class="img-rounded" alt="" width="75%" /></a>
                     <br /><br />
-                    <a href="checkout_files/CO-checkouts.jpg"><img src="checkout_files/CO-checkouts.jpg" class="img-rounded" alt="" width="75%" /></a>
+                    <a href="checkout_files/co-2.jpg"><img src="checkout_files/co-2.jpg" class="img-rounded" alt="" width="75%" /></a>
                     <br /><br />
-                    <a href="checkout_files/CO-dropdown.jpg"><img src="checkout_files/CO-dropdown.jpg" class="img-rounded" alt="" width="50%" /></a>
+                    <a href="checkout_files/co-3.jpg"><img src="checkout_files/co-3.jpg" class="img-rounded" alt="" width="75%" /></a>
                     <br /><br />
-                    <a href="checkout_files/CO-editgeartypes.jpg"><img src="checkout_files/CO-editgeartypes.jpg" class="img-rounded" alt="" width="75%" /></a>
+                    <a href="checkout_files/co-4.jpg"><img src="checkout_files/co-4.jpg" class="img-rounded" alt="" width="50%" /></a>
                     <br /><br />
-                    <a href="checkout_files/CO-inventory.jpg"><img src="checkout_files/CO-inventory.jpg" class="img-rounded" alt="" width="75%" /></a>
+                    <a href="checkout_files/co-5.jpg"><img src="checkout_files/co-5.jpg" class="img-rounded" alt="" width="50%" /></a>
+                    <br /><br />
+                    <a href="checkout_files/co-6.png"><img src="checkout_files/co-6.png" class="img-rounded" alt="" width="50%" /></a>
                     <br /><br />
 
                 </div> 
