@@ -24,7 +24,7 @@
                     <div class="post-heading">
                         <h1>Checkout</h1>
                         <h2 class="subheading"></h2>
-                        <span class="meta">Updated by Jake on October 15, 2015</span>
+                        <span class="meta">Updated by Jake on November 12, 2015</span>
                     </div>
                 </div>
             </div>
@@ -43,9 +43,9 @@
                     </p>
                     <h3>Current Status</h3>
                     <p>
-                    I'm currently finishing up functionality, and preparing to polish the design. I've done a bit of the 
-                    design work such as choosing colors, and tweaking some page elements. I'm looking into OAuth for calendar
-                    integration, and a calendar view for desktop users for viewing checkouts in a more pleasant manner.
+                    I'm currently preparing for the first release and user testing. I just recently finished functionality, and
+                    added a calendar view to the checkouts page (although I still allow users to use a table view instead). I didn't
+                    Use OAuth for this, just a JQuery plugin.
                     <br /><br />
                     Keep up with progress here or at <a href="http://github.com/jakedawkins/checkout">GitHub</a>.
                     </p>
