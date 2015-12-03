@@ -24,7 +24,7 @@
                     <div class="post-heading">
                         <h1>Checkout</h1>
                         <h2 class="subheading"></h2>
-                        <span class="meta">Updated by Jake on November 12, 2015</span>
+                        <span class="meta">Updated by Jake on December 3, 2015</span>
                     </div>
                 </div>
             </div>
@@ -52,17 +52,17 @@
 
                     <h3>Current Photos</h3>
                     <br />
-                    <a href="checkout_files/co-1.jpg"><img src="checkout_files/co-1.jpg" class="img-rounded" alt="" width="75%" /></a>
-                    <br /><br />
                     <a href="checkout_files/co-2.jpg"><img src="checkout_files/co-2.jpg" class="img-rounded" alt="" width="75%" /></a>
                     <br /><br />
                     <a href="checkout_files/co-3.jpg"><img src="checkout_files/co-3.jpg" class="img-rounded" alt="" width="75%" /></a>
+                    <br /><br />
+                    <a href="checkout_files/co-1.jpg"><img src="checkout_files/co-1.jpg" class="img-rounded" alt="" width="75%" /></a>
                     <br /><br />
                     <a href="checkout_files/co-4.jpg"><img src="checkout_files/co-4.jpg" class="img-rounded" alt="" width="50%" /></a>
                     <br /><br />
                     <a href="checkout_files/co-5.jpg"><img src="checkout_files/co-5.jpg" class="img-rounded" alt="" width="50%" /></a>
                     <br /><br />
-                    <a href="checkout_files/co-6.png"><img src="checkout_files/co-6.png" class="img-rounded" alt="" width="50%" /></a>
+                    <a href="checkout_files/co-6.png"><img src="checkout_files/co-6.jpg" class="img-rounded" alt="" width="50%" /></a>
                     <br /><br />
 
                 </div> 
