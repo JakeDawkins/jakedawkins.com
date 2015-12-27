@@ -35,6 +35,22 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- Applescript  -->
+                <!--
+                <div class="post-preview">
+                    <a href="projects/applescript.php">
+                        <h2 class="post-title">
+                            Scaling &amp; Padding Images with AppleScript
+                        </h2>
+                        <h3 class="post-subtitle">
+                            A handy little code snippet to batch resize images and add
+                            padding if needed.
+                        </h3>
+                    </a>
+                    <p class="post-meta">Posted by Jake on December 27, 2015</p>
+                </div>
+                <hr> -->
+
                 <!-- Checkout -->
                 <div class="post-preview">
                     <a href="projects/checkout.php">
