@@ -40,6 +40,10 @@ a img:focus {
 }
 
 /*------------------------ Jake ------------------------*/
+.color-orange {
+  color:#EA6A20;
+}
+
 .inlineImg {
   float: left; 
   margin: 0 10px;

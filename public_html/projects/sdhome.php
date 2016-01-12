@@ -67,8 +67,15 @@
                             <a href="http://github.com/jakedawkins/HomeControl">Github Repository</a>
                         </li>
                     </ul>
+                    <br />
                 </div> 
-            </div> <!-- end row --> 
+            </div> <!-- end row -->
+            <div class="row">
+                <a href="sdhome_files/img/sd_home-1.jpg"><img class="img-responsive col-lg-2 col-lg-offset-2 col-md-2 col-md-offset-1" src="sdhome_files/img/sd_home-1.jpg"  />
+                <a href="sdhome_files/img/sd_home-2.jpg"><img class="img-responsive col-lg-2 col-md-2" src="sdhome_files/img/sd_home-2.jpg" /></a>
+                <a href="sdhome_files/img/sd_home-3.jpg"><img class="img-responsive col-lg-2 col-md-2" src="sdhome_files/img/sd_home-3.jpg" /></a>
+                <a href="sdhome_files/img/sd_home-4.jpg"><img class="img-responsive col-lg-2 col-md-2" src="sdhome_files/img/sd_home-4.jpg" /></a>
+            </div> 
         </div>
     </article>
 

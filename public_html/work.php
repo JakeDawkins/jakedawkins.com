@@ -72,7 +72,7 @@
 	                        Solar Decathlon Smart Home Control
                         </h2>
                         <h3 class="post-subtitle">
-                            <span style="color:#EA6A20" class="glyphicon glyphicon-book" data-toggle="tooltip" title="Completed For School" data-placement="left"></span>
+                            <span class="glyphicon glyphicon-book color-orange" data-toggle="tooltip" title="Completed For School" data-placement="left"></span>
                             &nbsp;&nbsp;
                             An iOS 7 app to interface with a MySQL database to control a smart home.
                         </h3>
@@ -88,7 +88,7 @@
                             Video Toolkit
                         </h2>
                         <h3 class="post-subtitle">
-	                        <span style="color:#EA6A20" class="glyphicon glyphicon-book" data-toggle="tooltip" title="Completed For School" data-placement="left"></span>
+	                        <span class="glyphicon glyphicon-book color-orange" data-toggle="tooltip" title="Completed For School" data-placement="left"></span>
                             &nbsp;&nbsp;
                             An iOS 7 app to do simple bitrate and timecode math for video professionals.
                         </h3>
