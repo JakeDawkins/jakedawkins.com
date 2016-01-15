@@ -37,13 +37,12 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <p>
-                        It has been researched and proven multiple times over by experts
-                        that multitasking dramatically reduces the efficiency of an individual
-                        to perform tasks. 
+                        research has shown that multitasking dramatically reduces the 
+                        efficiency of an individual in performing tasks. 
                         <br />
                         <small>
                             <a href="http://fyiliving.com/mental-health/adhd/why-multi-tasking-is-nothing-to-brag-about/">Source</a>
-                        </small>.
+                        </small>
                     </p>
                     <p>
                         OneThing aims to keep the user focused on one thing at a time.
@@ -51,7 +50,7 @@
                     <ol>
                         <li>
                             The user types in the name of a task and selects a time they would 
-                            like to work on it. The default options for time are 5, 10, and 15 
+                            like to work on it. The default options for time are 5 and 10 
                             minutes, with an option for a custom time duration.
                         </li>
                         <li>
@@ -65,9 +64,6 @@
                         <li>
                             At the end of the timer, the user can choose to move on to the next
                             task, or take a break between tasks.
-                        </li>
-                        <li>
-
                         </li>
                     </ol>
 
