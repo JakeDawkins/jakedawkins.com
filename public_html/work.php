@@ -50,6 +50,22 @@
                     <p class="post-meta">Posted by Jake on December 27, 2015</p>
                 </div>
                 <hr> -->
+				
+				<!-- Home Control -->
+                <div class="post-preview">
+                    <a href="projects/onething.php">
+                        <h2 class="post-title">
+	                        OneThing (jacksod.a1)
+                        </h2>
+                        <h3 class="post-subtitle">
+                            <span class="glyphicon glyphicon-book color-orange" data-toggle="tooltip" title="Completed For School" data-placement="left"></span>
+                            &nbsp;&nbsp;
+                            An Android app to keep the user focused on one thing at a time.
+                        </h3>
+                    </a>
+                    <p class="post-meta">Posted by Jake on Jauary 14, 2016</p>
+                </div>
+                <hr>
 
                 <!-- Checkout -->
                 <div class="post-preview">

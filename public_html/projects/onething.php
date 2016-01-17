@@ -37,7 +37,8 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <p>
-                        research has shown that multitasking dramatically reduces the 
+                        <strong>Purpose:</strong><br />
+                        Research has shown that multitasking dramatically reduces the 
                         efficiency of an individual in performing tasks. 
                         <br />
                         <small>
@@ -67,23 +68,46 @@
                         </li>
                     </ol>
 
-                    <br />
+                    <p>
+                        To download the source code for this project: 
+                        <a href="onething_files/jacksod.a1.zip">click here</a>
+                    </p>
                 </div> 
             </div> <!-- end row -->
             <div class="row">
-                <a href="onething_files/img/#">
-                    <img class="img-responsive col-lg-2 col-lg-offset-2 col-md-2 col-md-offset-1" src="onething_files/img/#"  />
+                <a href="onething_files/img/onething-1.jpg">
+                    <img class="img-responsive col-lg-2 col-lg-offset-2 col-md-2 col-md-offset-1" src="onething_files/img/onething-1.jpg"  />
                 </a>
-                <a href="onething_files/img/#">
-                    <img class="img-responsive col-lg-2 col-md-2" src="onething_files/img/#" />
+                <a href="onething_files/img/onething-2.jpg">
+                    <img class="img-responsive col-lg-2 col-md-2" src="onething_files/img/onething-2.jpg" />
                 </a>
-                <a href="onething_files/img/#">
-                    <img class="img-responsive col-lg-2 col-md-2" src="onething_files/img/#" />
+                <a href="onething_files/img/onething-3.jpg">
+                    <img class="img-responsive col-lg-2 col-md-2" src="onething_files/img/onething-3.jpg" />
                 </a>
-                <a href="onething_files/img/#">
-                    <img class="img-responsive col-lg-2 col-md-2" src="onething_files/img/#" />
+                <a href="onething_files/img/onething-4.jpg">
+                    <img class="img-responsive col-lg-2 col-md-2" src="onething_files/img/onething-4.jpg" />
                 </a>
-            </div> 
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <br /><br />
+                    <strong>Acknowledgments:</strong><br />
+                    <ul>
+                        <li> 
+                            <a href='https://stackoverflow.com/questions/6267733/android-resizing-imageview-in-xml'>Resizing Images</a>
+                        </li>
+                        <li>
+                            <a href="https://developer.android.com/training/appbar/up-action.html">Enabling Up Button Navigation</a>
+                        </li>
+                        <li>
+                            <a href="https://developer.android.com/training/basics/firstapp/starting-activity.html">Starting Another Activity</a>
+                        </li>
+                        <li>
+                            <a href='http://codestars.usefedora.com/courses/the-complete-android-developer-course'>Rob Percival: CodeStars</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </article>
 
