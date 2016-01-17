@@ -105,6 +105,9 @@
                         <li>
                             <a href='http://codestars.usefedora.com/courses/the-complete-android-developer-course'>Rob Percival: CodeStars</a>
                         </li>
+                        <li>
+                            <a href="https://stackoverflow.com/questions/8697499/hide-keyboard-when-user-taps-anywhere-else-on-the-screen-in-android">Keyboard Hiding</a>
+                        </li>
                     </ul>
                 </div>
             </div>
