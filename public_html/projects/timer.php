@@ -1,5 +1,10 @@
 <?php require_once '../Path.php'; ?>
 
+<!-- 
+STOPWATCH BASED OFF:
+https://gist.github.com/electricg/4372563
+--> 
+
 <!doctype html>
 <html lang="en">
 <head>
