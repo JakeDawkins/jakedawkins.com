@@ -50,8 +50,22 @@
                     <p class="post-meta">Posted by Jake on December 27, 2015</p>
                 </div>
                 <hr> -->
+
+                <!-- Timer -->
+                <div class="post-preview">
+                    <a href="projects/timer.php">
+                        <h2 class="post-title">
+                            Little Timer
+                        </h2>
+                        <h3 class="post-subtitle">
+                            A small JS webapp that marks elapsed time, rather than lap time.
+                        </h3>
+                    </a>
+                    <p class="post-meta">Posted by Jake on Jauary 18, 2016</p>
+                </div>
+                <hr>
 				
-				<!-- Home Control -->
+				<!-- One Thing -->
                 <div class="post-preview">
                     <a href="projects/onething.php">
                         <h2 class="post-title">

@@ -1,0 +1,79 @@
+$primary : #673AB7;
+$primary-light: #EDE7F6;
+$light: #D1C4E9;
+$secondary: #512DA8;
+$secondary-dark: #000000;
+
+body {
+	background-color: $primary-light;
+}
+
+p {
+	font-size: 1.5em;
+}
+
+.timer-container {
+	background-color: $primary;
+	color: white;
+}
+
+.timer-col {
+	margin: 100px 0 100px 0; 
+	text-align: center;
+
+	//the timer itself
+	h1 {
+		margin-top: 0px;
+		font-size: 5em;
+	}
+
+	input {
+		background-color: $secondary;
+		color: white;
+		border-width: 0;
+		border-radius: 2px;
+		margin-top: 15px;
+		&:hover {
+			background-color: $light;
+			color: $primary;
+		}
+		&:active {
+			background-color: $secondary;
+		}
+		&:visited {
+			background-color: $secondary;
+		}
+		&:focus {
+			background-color: $secondary;	
+			&:hover { 
+				//user has just clicked button, hover over
+				background-color: $light;
+			}
+		}
+	}
+}
+
+.mark-container {
+	margin-top: 25px;
+}
+
+.mark-title {
+	margin: 0 25px;
+}
+
+#timeList{
+	text-align: center;
+
+	p {
+		padding: 25px 0;
+		&:hover {
+			background-color: $primary;
+			color: white;
+		}
+	}
+}
+
+.control {
+	width: 100px;
+	height: 100px;
+}
