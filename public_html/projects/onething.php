@@ -36,6 +36,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                	<a class="btn btn-primary" href="onething_files/jacksod.a1.zip">
+                		<span class="glyphicon glyphicon-circle-arrow-down"></span>
+                		Download Source Code
+            		</a>
                     <p>
                         <strong>Purpose:</strong><br />
                         Research has shown that multitasking dramatically reduces the 
@@ -67,11 +71,7 @@
                             task, or take a break between tasks.
                         </li>
                     </ol>
-
-                    <p>
-                        To download the source code for this project: 
-                        <a href="onething_files/jacksod.a1.zip">click here</a>
-                    </p>
+                    <br />
                 </div> 
             </div> <!-- end row -->
             <div class="row">
