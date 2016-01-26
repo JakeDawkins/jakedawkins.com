@@ -40,9 +40,9 @@
                         <strong>Purpose:</strong><br />
                         Research has shown that multitasking dramatically reduces the 
                         efficiency of an individual in performing tasks. 
-                        <br />
+                        
                         <small>
-                            <a href="http://fyiliving.com/mental-health/adhd/why-multi-tasking-is-nothing-to-brag-about/">Source</a>
+                            <a href="http://fyiliving.com/mental-health/adhd/why-multi-tasking-is-nothing-to-brag-about/">Reference</a>
                         </small>
                     </p>
                     <p>
