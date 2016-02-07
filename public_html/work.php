@@ -51,6 +51,22 @@
                 </div>
                 <hr> -->
 
+                <!-- Notes -->
+                <div class="post-preview">
+                    <a href="projects/notes.php">
+                        <h2 class="post-title">
+                            Notes (jacksod.a2)
+                        </h2>
+                        <h3 class="post-subtitle">
+                            <span class="glyphicon glyphicon-book color-orange" data-toggle="tooltip" title="Completed For School" data-placement="left"></span>
+                            &nbsp;&nbsp;
+                            An Android app to store short-form notes.
+                        </h3>
+                    </a>
+                    <p class="post-meta">Posted by Jake on February 7, 2016</p>
+                </div>
+                <hr>
+
                 <!-- Timer -->
                 <div class="post-preview">
                     <a href="projects/timer.php">
