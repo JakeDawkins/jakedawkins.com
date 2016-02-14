@@ -87,7 +87,7 @@
                 <div class="post-preview">
                     <a href="projects/timer.php">
                         <h2 class="post-title">
-                            Little Timer
+                            JS Elapsed-Time Timer
                         </h2>
                         <h3 class="post-subtitle">
                             A small JS webapp that marks elapsed time, rather than lap time.
