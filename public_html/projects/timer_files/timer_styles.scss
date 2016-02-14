@@ -3,6 +3,8 @@ $primary-light: #EDE7F6;
 $light: #D1C4E9;
 $secondary: #512DA8;
 $secondary-dark: #000000;
+$red: #F44336;
+$red-light: #FFCDD2;
 
 body {
 	background-color: $primary-light;
@@ -18,7 +20,7 @@ p {
 }
 
 .timer-col {
-	margin: 100px 0 100px 0; 
+	margin: 75px 0 75px 0; 
 	text-align: center;
 
 	//the timer itself
@@ -50,6 +52,24 @@ p {
 				background-color: $light;
 			}
 		}
+	}
+}
+
+#clearBtn {
+	background-color: $red;
+
+	&:hover {
+		background-color: $red-light;
+		color: $red;
+	}
+	&:active {
+		background-color: $red-light;	
+	}
+	&:visited {
+		background-color: $red-light;
+	}
+	&:focus {
+		background-color: $red-light;
 	}
 }
 

@@ -34,6 +34,7 @@ https://gist.github.com/electricg/4372563
 				<input class="control btn btn-primary" type="button" value="Stop" onclick="stop();">
 				<input class="control btn btn-primary" type="button" value="Reset" onclick="reset();">
 				<input class="control btn btn-primary" type="button" value="Mark Time" onclick="markTime();">
+				<input id="clearBtn" class="control btn btn-primary" type="button" value="Clear Marks" onclick="clearMarks();">
 			</div>
 		</div>
 	</div><div class="mark-container container">
@@ -141,6 +142,11 @@ https://gist.github.com/electricg/4372563
 		stop();
 		timer.reset();
 		update();
+	}
+
+	function clearMarks(){
+		$("#timeList").html("");
+		markCounter = 1;
 	}
 
 	//used to mark the current time. appends to the #timeList div
