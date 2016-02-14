@@ -63,13 +63,16 @@ p {
 		color: $red;
 	}
 	&:active {
-		background-color: $red-light;	
+		background-color: $red;	
 	}
 	&:visited {
-		background-color: $red-light;
+		background-color: $red;
 	}
 	&:focus {
-		background-color: $red-light;
+		background-color: $red;
+		&:hover {
+			background-color: $red-light;
+		}
 	}
 }
 
