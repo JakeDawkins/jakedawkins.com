@@ -8,7 +8,7 @@ class Path {
 	}
 
 	static public function base() {
-		return '/home4/jakedawkins/public_html/';
+		return dirname(__FILE__) . '/';
 	}
 
 	static public function css() {
