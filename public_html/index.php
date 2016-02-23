@@ -47,7 +47,7 @@
                 <p>I have a passion for technology, and a knack for making things work.
                 I love making things for people to use. Real people. Take a look around
                 and feel free to sift through my work and photos. For the truly ambitious,
-                <a href="contact.php">reach out to me</a>.
+                <a href="contact.php">reach out to me</a>!
                 </p>
             </div>
 
