@@ -51,19 +51,19 @@
                 </div>
                 <hr> -->
 
-                <!-- Notes DB -->
+                <!-- Notes -->
                 <div class="post-preview">
-                    <a href="projects/notes_files/notes_schema.pdf">
+                    <a href="projects/notes-a3.php">
                         <h2 class="post-title">
-                            Notes DB (jacksod.a3)
+                            Notes (jacksod.a3)
                         </h2>
                         <h3 class="post-subtitle">
                             <span class="glyphicon glyphicon-book color-orange" data-toggle="tooltip" title="Completed For School" data-placement="left"></span>
                             &nbsp;&nbsp;
-                            A foundational notes database schema
+                            An extension to the notes app. Allows for searching of notes and image saving.
                         </h3>
                     </a>
-                    <p class="post-meta">Posted by Jake on February 7, 2016</p>
+                    <p class="post-meta">Posted by Jake on February 27, 2016</p>
                 </div>
                 <hr>
 
