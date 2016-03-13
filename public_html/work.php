@@ -53,7 +53,7 @@
 
                 <!-- Notes -->
                 <div class="post-preview">
-                    <a href="projects/notes-a3.php">
+                    <a href="projects/notes-a4.php">
                         <h2 class="post-title">
                             ThrowNote v1 (jacksod.a4)
                         </h2>
