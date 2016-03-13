@@ -55,6 +55,22 @@
                 <div class="post-preview">
                     <a href="projects/notes-a3.php">
                         <h2 class="post-title">
+                            ThrowNote v1 (jacksod.a4)
+                        </h2>
+                        <h3 class="post-subtitle">
+                            <span class="glyphicon glyphicon-book color-orange" data-toggle="tooltip" title="Completed For School" data-placement="left"></span>
+                            &nbsp;&nbsp;
+                            An extension to the notes app. Allows for Logins and note syncing.
+                        </h3>
+                    </a>
+                    <p class="post-meta">Posted by Jake on March 12, 2016</p>
+                </div>
+                <hr>
+
+                <!-- Notes -->
+                <div class="post-preview">
+                    <a href="projects/notes-a3.php">
+                        <h2 class="post-title">
                             Notes (jacksod.a3)
                         </h2>
                         <h3 class="post-subtitle">
