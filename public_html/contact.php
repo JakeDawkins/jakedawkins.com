@@ -40,7 +40,7 @@
             <div class="snippet col-lg-7 col-md-7">
                 <p>
                     <ul>
-                        <li>Email Me At <a href="mailto:hello@jakedawkins.com">Hello@JakeDawkins.com.</a></li>
+                        <li>Email Me At <a href="mailto:dawkinsjh@gmail.com">DawkinsJH@gmail.com.</a></li>
                         <li>Look me up on <a href="http://facebook.com/dawkinsjh">Facebook</a>, 
                             <a href="http://instagram.com/jakedawkins">Instagram</a>, 
                             <a href="http://twitter.com/jakedawkins">or Twitter.</a> 
