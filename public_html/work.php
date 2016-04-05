@@ -51,6 +51,22 @@
                 </div>
                 <hr> -->
 
+                <!-- P3 -->
+                <div class="post-preview">
+                    <a href="projects/thrownote-p3.php">
+                        <h2 class="post-title">
+                            ThrowNote Updates (P3)
+                        </h2>
+                        <h3 class="post-subtitle">
+                            <span class="glyphicon glyphicon-book color-orange" data-toggle="tooltip" title="Completed For School" data-placement="left"></span>
+                            &nbsp;&nbsp;
+                            P3 Submission for CPSC 4820
+                        </h3>
+                    </a>
+                    <p class="post-meta">Posted by Jake on April 4, 2016</p>
+                </div>
+                <hr>
+
                 <!-- P2 -->
                 <div class="post-preview">
                     <a href="projects/thrownote_files/11.P2.pdf">
