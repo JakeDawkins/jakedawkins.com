@@ -24,7 +24,7 @@
                     <div class="post-heading">
                         <h1>ThrowNote (P4)</h1>
                         <h2 class="subheading"></h2>
-                        <span class="meta">Posted by Jake on April 4, 2016</span>
+                        <span class="meta">Posted by Jake on April 11, 2016</span>
                     </div>
                 </div>
             </div>
