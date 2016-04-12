@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>ThrowNote (P3)</h1>
+                        <h1>ThrowNote (P4)</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">Posted by Jake on April 4, 2016</span>
                     </div>
