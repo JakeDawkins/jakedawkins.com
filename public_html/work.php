@@ -53,7 +53,7 @@
 
                 <!-- P5 -->
                 <div class="post-preview">
-                    <a href="projects/thrownote-p4.php">
+                    <a href="projects/thrownote-p5.php">
                         <h2 class="post-title">
                             ThrowNote Updates (P5)
                         </h2>
