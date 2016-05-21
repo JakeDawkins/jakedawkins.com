@@ -34,16 +34,15 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                
+
                 <img class="img-responsive img-rounded inlineImg" src="/img/selfportrait.png"/>
-                
-                <p><strong>I'm Jake</strong> (or Jackson for the more formal types). I'm a 
-                senior in Computer Science with a minor in Psychology at <a href="http://clemson.edu">Clemson University</a>,
-                and Clemson, SC is where I set up shop (for now). I also work as the Digital Media
-                Content Coordinator for <a href="http://newspring.cc">NewSpring Church</a> in
-                in Anderson, SC.
+
+                <p><strong>I'm Jake</strong>.
+                I'm a Junior Web Developer at <a href="http://newspring.cc">NewSpring Church</a> in
+                in Anderson, SC. I have a degree from <a href="http://clemson.edu">Clemson University</a>
+                in Computer Science with a minor in Psychology.
                 </p>
-                
+
                 <p>I have a passion for technology, and a knack for making things work.
                 I love making things for people to use. Real people. Take a look around
                 and feel free to sift through my work and photos. For the truly ambitious,
