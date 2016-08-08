@@ -7,7 +7,7 @@ var Header = React.createClass({
     render: function() {
         return (
             <Grid>
-                <Row>
+                <Row className="brand">
                     <Col md={8} mdOffset={2}>
                         <p>
                             <img class="brand-img" src="http://jakedawkins.com/img/new/brand-64b.png" width="64px"/>

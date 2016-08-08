@@ -1,0 +1,41 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 60px; /* same as footer height - for sticky footer */
+    background-color: $light;
+
+}
+
+.brand {
+    margin-top: 30px;
+}
+
+.nav-list > li {
+    margin-right: 15px; padding: 0;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+}
+
+
+/* HTML entities
+-------------------------------------------------- */
+
+hr {
+    border-top: 1px solid $gray;
+}
+
+p,ul,hr {
+    margin-bottom: 30px;
+}
