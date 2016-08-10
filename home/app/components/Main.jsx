@@ -12,11 +12,7 @@ var Main = React.createClass({
                 <Header />
                 <Nav />
                 <Grid>
-                    <Row>
-                        <Col md={8} mdOffset={2}>
-                            {this.props.children}
-                        </Col>
-                    </Row>
+                    {this.props.children}
                 </Grid>
                 <Footer />
             </div>
