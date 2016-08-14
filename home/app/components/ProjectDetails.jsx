@@ -1,42 +1,44 @@
 var React = require('react');
 let {Grid, Row, Col} = require('react-bootstrap');
-
-let projects = [
-    {
-        id: 1,
-        title: "Test Project",
-        description: "This is a description of the project. There are many things that can be done here discussing the project but sometimes you need to link to the project for",
-        tags: "#tag1 #tag2 #tag3",
-        date: "8/9/2016"
-    },{
-        id: 2,
-        title: "Test2",
-        description: "This is a description of the project. There are many things that can be done here discussing the project but sometimes you need to link to the project for",
-        tags: "#tag1",
-        date: "8/8/2016"
-    },{
-        id: 3,
-        title: "Tester 3",
-        description: "This is a description of the project. There are many things that can be done here discussing the project but sometimes you need to link to the project for",
-        tags: "#tag1 #tag2",
-        date: "8/7/2016"
-    }
-];
+let data = require('data');
+let projects = data.projects;
 
 var ProjectDetails = React.createClass({
 
     render: function() {
         let id = this.props.params.id;
-        let project = projects[id-1];
+        let project = projects[id];
+
+        var renderImages = () => {
+            let index = 0;
+            return project.images.map((image) => {
+                 return (
+                    <a key={index++} href={image}><img className="img-responsive col-lg-4 col-md-4 col-xs-6" style={{paddingLeft: 0}} src={image} /></a>
+                 )
+            });
+        };
+
+        var renderAddlSection = () => {
+            if(project.addlSectionTitle){
+                return (<div>
+                    <h3>{project.addlSectionTitle}</h3>
+                    <div dangerouslySetInnerHTML={{__html: project.addlSectionContent}} />
+                </div>)
+            }
+        };
+
         return (
             <Row>
                 <Col md={8} mdOffset={2}>
                     <h1>{project.title}</h1>
                     <p>
-                        {project.date}<br /><br />
-                        {project.tags}<br /><br />
-                        {project.description}
+                        {project.date}<br />
+                        {project.tags}
                     </p>
+                    <div dangerouslySetInnerHTML={{__html: project.htmlDescription}}></div>
+                    <h3>{project.imageSectionTitle}</h3>
+                    {renderImages()}
+                    {renderAddlSection()}
                 </Col>
             </Row>
         );
