@@ -19,7 +19,7 @@ var Programming = React.createClass({
         return (
             <div>
                 <Row>
-                    <Col md={8} mdOffset={2} className="text-center">
+                    <Col md={8} mdOffset={2} sm={12} xs={12} className="text-center">
                         <h1>Programming Projects</h1>
                         <hr style={{width: '25%'}} />
                     </Col>

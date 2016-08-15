@@ -22,7 +22,7 @@ var About = React.createClass({
         }
         return (
             <div>
-                <Col md={8} mdOffset={2}>
+                <Col md={8} mdOffset={2} sm={12} xs={12}>
                     <Col md={4} className="text-center">
                         <img className="img-rounded" src={aboutData.image}/>
                     </Col>

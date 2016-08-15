@@ -23,7 +23,7 @@ var Project = React.createClass({
 
         return (
             <Row>
-                <Col md={8} mdOffset={2}>
+                <Col md={8} mdOffset={2} sm={12} xs={12}>
                     {renderTitle()}
                     <p>
                         {description}<br /><br />

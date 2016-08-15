@@ -29,7 +29,7 @@ var ProjectDetails = React.createClass({
 
         return (
             <Row>
-                <Col md={8} mdOffset={2}>
+                <Col md={8} mdOffset={2} sm={12} xs={12}>
                     <h1>{project.title}</h1>
                     <p>
                         {project.date}<br />
