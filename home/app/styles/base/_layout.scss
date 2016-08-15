@@ -1,0 +1,47 @@
+.brand {
+    margin-top: 30px;
+}
+
+.nav-list > li {
+    margin-right: 15px; padding: 0;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px; /* same as footer height - for sticky footer */
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+}
+
+
+/* HTML entities
+-------------------------------------------------- */
+
+hr {
+    border-top: 1px solid $gray;
+}
+
+p,ul,hr {
+    margin-bottom: $base-spacing-unit/2;
+}
+
+img {
+    margin-bottom: $base-spacing-unit/4;
+}
+
+/* Margin/Padding
+-------------------------------------------------- */
+.hard { padding: 0; }
+.flush { margin: 0; }

@@ -1,0 +1,21 @@
+.btn {
+    border-radius: 0;
+}
+
+.btn-primary {
+    color: $white;
+    background-color: $primary;
+    &:hover {
+        color: $white;
+        background-color: $primary-dark;
+    }
+}
+
+.btn-secondary {
+    color: $white;
+    background-color: $secondary;
+    &:hover {
+        color: $white;
+        background-color: $secondary-dark;
+    }
+}

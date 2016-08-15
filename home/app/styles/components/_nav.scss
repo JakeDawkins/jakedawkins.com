@@ -1,0 +1,20 @@
+.nav-list {
+    li {
+        a {
+            text-decoration: none;
+
+            padding: 5px 6px 6px 6px;
+            font-weight: 700;
+            border-radius: 3px;
+
+            &:hover {
+                background-color: $primary-dark;
+                color: white;
+            }
+        }
+        .active {
+            background-color: $primary-dark;
+            color: white;
+        }
+    }
+}
