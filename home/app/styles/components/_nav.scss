@@ -2,18 +2,18 @@
     li {
         a {
             text-decoration: none;
-            color: $primary-red;
+
             padding: 5px 6px 6px 6px;
             font-weight: 700;
             border-radius: 3px;
 
             &:hover {
-                background-color: $primary-red;
+                background-color: $primary-dark;
                 color: white;
             }
         }
         .active {
-            background-color: $primary-red;
+            background-color: $primary-dark;
             color: white;
         }
     }

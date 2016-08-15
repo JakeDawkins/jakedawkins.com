@@ -17,12 +17,6 @@ var Nav = React.createClass({
                             <li>
                                 <Link to="/programming" activeClassName="active"  activeStyle={{fontWeight: 'bold'}}>Programming</Link>
                             </li>
-                            <li>
-                                <Link to="/photos" activeClassName="active"  activeStyle={{fontWeight: 'bold'}}>Photos</Link>
-                            </li>
-                            <li>
-                                <Link to="/contact" activeClassName="active"  activeStyle={{fontWeight: 'bold'}}>Contact</Link>
-                            </li>
                         </ul>
                         <hr />
                     </Col>
@@ -33,3 +27,12 @@ var Nav = React.createClass({
 });
 
 module.exports = Nav;
+
+/*
+<li>
+    <Link to="/photos" activeClassName="active"  activeStyle={{fontWeight: 'bold'}}>Photos</Link>
+</li>
+<li>
+    <Link to="/contact" activeClassName="active"  activeStyle={{fontWeight: 'bold'}}>Contact</Link>
+</li>
+*/

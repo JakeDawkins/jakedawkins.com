@@ -33,12 +33,15 @@ var ProjectDetails = React.createClass({
                     <h1>{project.title}</h1>
                     <p>
                         {project.date}<br />
-                        {project.tags}
+                        <em>{project.tags}</em>
                     </p>
+                    <p><a className="btn btn-primary" href={project.repoLink}>View on Github</a></p>
                     <div dangerouslySetInnerHTML={{__html: project.htmlDescription}}></div>
+                    <hr />
+                    {renderAddlSection()}
+                    <hr />
                     <h3>{project.imageSectionTitle}</h3>
                     {renderImages()}
-                    {renderAddlSection()}
                 </Col>
             </Row>
         );
