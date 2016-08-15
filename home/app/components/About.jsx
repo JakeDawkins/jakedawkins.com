@@ -24,7 +24,7 @@ var About = React.createClass({
             <div>
                 <Col md={8} mdOffset={2} sm={12} xs={12}>
                     <Col md={4} sm={12} xs={12} className="text-center">
-                        <img className="img-rounded img-responsive" src={aboutData.image}/>
+                        <img className="img-rounded img-responsive margin-center" src={aboutData.image}/>
                     </Col>
                     <Col md={8} sm={12} xs={12} dangerouslySetInnerHTML={{__html: aboutData.markup}}>
                     </Col>
