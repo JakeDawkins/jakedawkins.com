@@ -23,13 +23,13 @@ var About = React.createClass({
         return (
             <div>
                 <Col md={8} mdOffset={2} sm={12} xs={12}>
-                    <Col md={4} className="text-center">
-                        <img className="img-rounded" src={aboutData.image}/>
+                    <Col md={4} sm={12} xs={12} className="text-center">
+                        <img className="img-rounded img-responsive" src={aboutData.image}/>
                     </Col>
-                    <Col md={8} dangerouslySetInnerHTML={{__html: aboutData.markup}}>
+                    <Col md={8} sm={12} xs={12} dangerouslySetInnerHTML={{__html: aboutData.markup}}>
                     </Col>
                 </Col>
-                <Col md={8} mdOffset={2}>
+                <Col md={8} mdOffset={2} sm={12} xs={12}>
                     <ul className="list-inline text-center">
                         {renderSocial()}
                     </ul>

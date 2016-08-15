@@ -45,3 +45,17 @@ img {
 -------------------------------------------------- */
 .hard { padding: 0; }
 .flush { margin: 0; }
+
+/* Borders
+-------------------------------------------------- */
+.hr-border--bottom {
+    border-bottom: 2px solid $gray;
+}
+
+.hr-border--top {
+    border-top: 2px solid $gray;
+}
+
+.rect {
+    border-radius: 0;
+}

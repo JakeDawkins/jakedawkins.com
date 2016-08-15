@@ -23,9 +23,17 @@
 }
 
 .color-primary {
-    color: $primary-red;
+    color: $primary;
 }
 
 .background-primary {
-    background-color: $primary-red;
+    background-color: $primary;
+}
+
+.color-secondary {
+    color: $secondary;
+}
+
+.background-secondary {
+    background-color: $secondary;
 }
