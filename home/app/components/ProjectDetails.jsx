@@ -35,7 +35,7 @@ var ProjectDetails = React.createClass({
                         {project.date}<br />
                         <em>{project.tags}</em>
                     </p>
-                    <p><a className="btn btn-primary" href={project.repoLink}>View on Github</a></p>
+                    <p><a className="btn btn-primary" href={project.repoLink}>{project.repoTitle}</a></p>
                     <div dangerouslySetInnerHTML={{__html: project.htmlDescription}}></div>
                     <hr />
                     {renderAddlSection()}

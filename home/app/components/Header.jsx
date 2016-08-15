@@ -1,6 +1,8 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 let {Grid, Row, Col} = require('react-bootstrap');
+let data = require('data');
+let brand = data.brand;
 
 var Header = React.createClass({
 
@@ -10,7 +12,7 @@ var Header = React.createClass({
                 <Row className="brand">
                     <Col md={8} mdOffset={2}>
                         <p>
-                            <img class="brand-img" src="http://jakedawkins.com/img/new/brand-64b.png" width="64px"/>
+                            <img class="brand-img" src={brand.image} width="64px"/>
                         </p>
                     </Col>
                 </Row>

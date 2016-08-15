@@ -34,7 +34,11 @@ hr {
 }
 
 p,ul,hr {
-    margin-bottom: 30px;
+    margin-bottom: $base-spacing-unit/2;
+}
+
+img {
+    margin-bottom: $base-spacing-unit/4;
 }
 
 /* Margin/Padding
