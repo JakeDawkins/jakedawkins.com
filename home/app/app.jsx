@@ -1,8 +1,8 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+let React = require('react');
+let ReactDOM = require('react-dom');
 //Object destructuring.
-//same as var Route = require('react-router').Route etc...
-var {Route, Router, IndexRoute, hashHistory} = require('react-router');
+//same as let Route = require('react-router').Route etc...
+let {Route, Router, IndexRoute, hashHistory} = require('react-router');
 let Main = require('Main');
 
 let Alert = require('react-bootstrap').Alert;

@@ -1,10 +1,10 @@
-var React = require('react');
+let React = require('react');
 let {Grid, Row, Col} = require('react-bootstrap');
 let Header = require('Header');
 let Nav = require('Nav');
 let Footer = require('Footer');
 
-var Main = React.createClass({
+let Main = React.createClass({
 
     render: function() {
         return (

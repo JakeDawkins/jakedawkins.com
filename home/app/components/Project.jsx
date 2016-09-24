@@ -1,8 +1,8 @@
-var React = require('react');
+let React = require('react');
 let {Grid, Row, Col} = require('react-bootstrap');
 let {Link} = require('react-router');
 
-var Project = React.createClass({
+let Project = React.createClass({
 
     render: function() {
         let {id, title, description, tags, date, directLink} = this.props;

@@ -1,9 +1,9 @@
-var React = require('react');
-var PropTypes = React.PropTypes;
+let React = require('react');
+let PropTypes = React.PropTypes;
 let {Grid, Row, Col} = require('react-bootstrap');
-var {Link, IndexLink} = require('react-router');
+let {Link, IndexLink} = require('react-router');
 
-var Nav = React.createClass({
+let Nav = React.createClass({
 
     render: function() {
         return (

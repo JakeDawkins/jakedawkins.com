@@ -1,10 +1,10 @@
-var React = require('react');
+let React = require('react');
 let {Grid, Row, Col} = require('react-bootstrap');
 let Project = require('Project');
 let data = require('data');
 let projects = data.projects;
 
-var Programming = React.createClass({
+let Programming = React.createClass({
     render: function() {
         let renderProjects = () => {
             return projects.map((project) => {

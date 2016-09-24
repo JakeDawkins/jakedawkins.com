@@ -1,8 +1,8 @@
-var React = require('react');
-var PropTypes = React.PropTypes;
+let React = require('react');
+let PropTypes = React.PropTypes;
 let {Grid, Row, Col} = require('react-bootstrap');
 
-var Footer = React.createClass({
+let Footer = React.createClass({
 
     render: function() {
         return (

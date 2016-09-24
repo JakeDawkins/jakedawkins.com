@@ -1,6 +1,6 @@
-var React = require('react');
+let React = require('react');
 
-var Contact = React.createClass({
+let Contact = React.createClass({
 
     render: function() {
         return (

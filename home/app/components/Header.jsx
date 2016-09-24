@@ -1,10 +1,10 @@
-var React = require('react');
-var PropTypes = React.PropTypes;
+let React = require('react');
+let PropTypes = React.PropTypes;
 let {Grid, Row, Col} = require('react-bootstrap');
 let data = require('data');
 let brand = data.brand;
 
-var Header = React.createClass({
+let Header = React.createClass({
 
     render: function() {
         return (

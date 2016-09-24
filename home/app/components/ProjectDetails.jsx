@@ -1,15 +1,15 @@
-var React = require('react');
+let React = require('react');
 let {Grid, Row, Col} = require('react-bootstrap');
 let data = require('data');
 let projects = data.projects;
 
-var ProjectDetails = React.createClass({
+let ProjectDetails = React.createClass({
 
     render: function() {
         let id = this.props.params.id;
         let project = projects[id];
 
-        var renderImages = () => {
+        let renderImages = () => {
             let index = 0;
             return project.images.map((image) => {
                  return (
@@ -18,7 +18,7 @@ var ProjectDetails = React.createClass({
             });
         };
 
-        var renderAddlSection = () => {
+        let renderAddlSection = () => {
             if(project.addlSectionTitle){
                 return (<div>
                     <h3>{project.addlSectionTitle}</h3>

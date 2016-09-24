@@ -1,9 +1,9 @@
-var React = require('react');
+let React = require('react');
 let {Grid, Row, Col} = require('react-bootstrap');
 let data = require('data');
 let aboutData = data.about;
 
-var About = React.createClass({
+let About = React.createClass({
 
     render: function() {
         let renderSocial = () => {

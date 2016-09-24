@@ -1,6 +1,6 @@
-var React = require('react');
+let React = require('react');
 
-var Photos = React.createClass({
+let Photos = React.createClass({
 
     render: function() {
         return (
