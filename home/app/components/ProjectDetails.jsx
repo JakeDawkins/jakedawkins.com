@@ -3,50 +3,75 @@ let {Grid, Row, Col} = require('react-bootstrap');
 let data = require('data');
 let projects = data.projects;
 
-let ProjectDetails = React.createClass({
+class ProjectDetails extends React.Component {
 
-    render: function() {
-        let id = this.props.params.id;
-        let project = projects[id];
+  renderImages() {
+    let id = this.props.params.id;
+    let project = projects[id];
+    let index = 0;
 
-        let renderImages = () => {
-            let index = 0;
-            return project.images.map((image) => {
-                 return (
-                    <a key={index++} href={image}><img className="img-responsive col-lg-4 col-md-4 col-xs-6" style={{paddingLeft: 0}} src={image} /></a>
-                 )
-            });
-        };
+    return project.images.map((image) => {
+      return (
+        <a
+          key={index++} 
+          href={image}
+        >
+          <img 
+            className="img-responsive col-lg-4 col-md-4 col-xs-6" 
+            style={{paddingLeft: 0}} 
+            src={image} 
+          />
+        </a>
+      )
+    });
+  };
 
-        let renderAddlSection = () => {
-            if(project.addlSectionTitle){
-                return (<div>
-                    <h3>{project.addlSectionTitle}</h3>
-                    <div dangerouslySetInnerHTML={{__html: project.addlSectionContent}} />
-                </div>)
-            }
-        };
-
-        return (
-            <Row>
-                <Col md={12} sm={12} xs={12}>
-                    <h1>{project.title}</h1>
-                    <p>
-                        {project.date}<br />
-                        <em>{project.tags}</em>
-                    </p>
-                    <p><a className="btn btn-primary" href={project.repoLink}>{project.repoTitle}</a></p>
-                    <div dangerouslySetInnerHTML={{__html: project.htmlDescription}}></div>
-                    <hr />
-                    {renderAddlSection()}
-                    <hr />
-                    <h3>{project.imageSectionTitle}</h3>
-                    {renderImages()}
-                </Col>
-            </Row>
-        );
+  renderAddlSection() {
+    let id = this.props.params.id;
+    let project = projects[id];
+    if(project.addlSectionTitle){
+      return (
+        <div>
+          <h3>{project.addlSectionTitle}</h3>
+          <div dangerouslySetInnerHTML={{__html: project.addlSectionContent}} />
+        </div>
+      );
     }
+  };
 
-});
+  render() {
+    let id = this.props.params.id;
+    let project = projects[id];
+
+    return (
+      <Row>
+        <Col md={12} sm={12} xs={12}>
+          <h1>
+            {project.title}
+          </h1>
+          <p>
+            {project.date}
+            <br />
+            <em>
+              {project.tags}
+            </em>
+          </p>
+          <p>
+            <a className="btn btn-primary" href={project.repoLink}>{project.repoTitle}</a>
+          </p>
+          <div dangerouslySetInnerHTML={{__html: project.htmlDescription}} />
+          <hr />
+          {this.renderAddlSection()}
+          <hr />
+          <h3>
+            {project.imageSectionTitle}
+          </h3>
+          {this.renderImages()}
+        </Col>
+      </Row>
+    );
+  }
+
+}
 
 module.exports = ProjectDetails;

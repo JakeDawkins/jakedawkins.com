@@ -4,21 +4,15 @@ let Header = require('Header');
 let Nav = require('Nav');
 let Footer = require('Footer');
 
-let Main = React.createClass({
-
-    render: function() {
-        return (
-            <div>
-                <Header />
-                <Nav />
-                <Grid>
-                    {this.props.children}
-                </Grid>
-                <Footer />
-            </div>
-        );
-    }
-
-});
+const Main = (props) => (
+  <div>
+    <Header />
+    <Nav />
+    <Grid>
+      {props.children}
+    </Grid>
+    <Footer />
+  </div>
+);
 
 module.exports = Main;
