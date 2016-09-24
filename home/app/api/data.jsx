@@ -4,7 +4,7 @@ module.exports = {
     },
     about: {
         image: "http://content.jakedawkins.com/layout/selfportrait.png",
-        markup: "<p><strong>I'm Jake</strong>. I'm a Junior Web Developer at <a href='http://newspring.cc'>NewSpring Church</a> in Anderson, SC. I have a degree from <a href='http://clemson.edu'>Clemson University</a> in Computer Science with a minor in Psychology.</p><p>I have a passion for technology, and a knack for making things work. I love making things for people to use. Real people. Take a look around and feel free to sift through my work and photos. For the truly ambitious, reach out to me using the social media buttons below! </p>",
+        markup: "<p><strong>I'm Jake</strong>. I'm a Web Developer at <a href='http://newspring.cc'>NewSpring Church</a> in Anderson, SC. I have a degree from <a href='http://clemson.edu'>Clemson University</a> in Computer Science with a minor in Psychology.</p><p>I have a passion for technology, and a knack for making things work. I love making things for people to use. Real people. Take a look around and feel free to sift through my work and photos. For the truly ambitious, reach out to me using the social media buttons below! </p>",
         social: [
             {
                 title: "Twitter",
