@@ -9,7 +9,7 @@ var Nav = React.createClass({
         return (
             <Grid>
                 <Row>
-                    <Col md={8} mdOffset={2} sm={12} xs={12}>
+                    <Col md={12} sm={12} xs={12}>
                         <ul className="list-inline nav-list">
                             <li>
                                 <IndexLink to="/" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>About Me</IndexLink>

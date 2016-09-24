@@ -8,7 +8,7 @@ var Footer = React.createClass({
         return (
             <footer>
                 <Grid>
-                    <Col md={8} mdOffset={2} sm={12} xs={12} className="hard">
+                    <Col md={12} sm={12} xs={12} className="hard">
                         <p className="text-muted text-center">&copy;2016 Jake Dawkins</p>
                     </Col>
                 </Grid>
