@@ -4,32 +4,30 @@ let Project = require('Project');
 let data = require('data');
 let projects = data.projects;
 
-let Programming = React.createClass({
-    render: function() {
-        let renderProjects = () => {
-            return projects.map((project) => {
-                 return (
-                     //key -> all repeated components need unique
-                     //{...todo} spread operator, send all children as props
-                     <Project key={project.id} {...project}/>
-                 )
-            });
-        };
+class Programming extends React.Component {
 
-        return (
-            <div>
-                <Row>
-                    <Col md={12} sm={12} xs={12} className="text-center">
-                        <h1>Programming Projects</h1>
-                        <hr style={{width: '25%'}} />
-                    </Col>
+  renderProjects() {
+    return projects.map((project) => {
+      return (
+        <Project key={project.id} {...project}/>
+      )
+    });
+  };
 
-                </Row>
-                {renderProjects()}
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <Row>
+          <Col md={12} sm={12} xs={12} className="text-center">
+            <h1>Programming Projects</h1>
+            <hr style={{width: '25%'}} />
+          </Col>
+        </Row>
+        {this.renderProjects()}
+      </div>
+    );
+  }
 
-});
+}
 
 module.exports = Programming;
