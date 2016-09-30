@@ -4,19 +4,9 @@ import './styles/main.scss';
 // need to imoport main js files
 
 //components
-import SVGIcons from "./components/SVGIcons";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import TestContent from "./components/TestContent";
+import Posts from "./pages/Posts";
 
 ReactDOM.render(
-  <div style={{height:"100%"}}>
-    <SVGIcons />
-    <Header header="Jake Dawkins" subheader="Web Developer"/>
-
-    <TestContent />
-
-    <Footer />
-  </div>,
+  <Posts />,
   document.getElementById('root')
 );
