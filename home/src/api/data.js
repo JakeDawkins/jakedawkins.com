@@ -1,4 +1,4 @@
-{
+const data = {
 	"site": {
 		"title": "Jake Dawkins",
 		"description": "Personal site of Jake Dawkins. Web developer at NewSpring Church. B.S. in computer science from Clemson University.",
@@ -14,3 +14,5 @@
 		"github_username": "jakedawkins"
 	}
 }
+
+export default data; 
