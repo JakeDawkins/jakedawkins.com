@@ -1,9 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
+// need to imoport main js files
 
 ReactDOM.render(
-  <App />,
+  <div>
+    hello world
+
+    {/* header */}
+
+    {/* content */}
+
+    {/* footer */}
+  </div>,
   document.getElementById('root')
 );
