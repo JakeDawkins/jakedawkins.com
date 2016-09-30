@@ -11,8 +11,8 @@ const PostListItem = (props) =>
     <a className="datetime" href={props.linkUrl}>
       <meta itemProp="datePublished" content={props.publishedDateTime} />
       <time datetime={props.publishedDateTime}>
-        <span className="day">{props.publishedDay}</span>
-        <span className="month-year">{props.publishedMonth} {props.publishedYear}</span>
+        <span className="day"> {props.publishedDay} </span>
+        <span className="month-year"> {props.publishedMonth} {props.publishedYear} </span>
       </time>
     </a>
     <div className="content">
