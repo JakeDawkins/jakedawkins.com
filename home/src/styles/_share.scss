@@ -1,0 +1,34 @@
+.share {
+  *zoom: 1;
+  width: auto;
+  max-width: 800px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+  border-top: 1px solid $color--concrete;
+  padding-top: 1.25rem;
+  &:before {
+    content: '';
+    display: table;
+  }
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  svg {
+    margin: .938rem;
+    width: 35px;
+    height: 35px;
+  }
+  a {
+    text-decoration: none;
+    &:hover svg {
+      fill: $color--blue;
+    }
+  }
+}

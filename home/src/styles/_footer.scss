@@ -1,0 +1,27 @@
+//@extend-elements
+//original selectors
+//footer p, footer a
+%extend_1 {
+  text-decoration: none;
+  font-family: $font--header;
+  font-weight: 300;
+  font-style: normal;
+  color: $color--white;
+  text-align: center;
+  margin: 0;
+}
+
+footer {
+  background: $color--blue;
+  padding: 1.563rem 0;
+  margin-top: 100px;
+  p {
+    @extend %extend_1;
+  }
+  a {
+    @extend %extend_1;
+    &:hover {
+      color: $color--red;
+    }
+  }
+}

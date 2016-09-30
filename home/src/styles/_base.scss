@@ -1,0 +1,101 @@
+* {
+	//Instead of the line below you could use @include box-sizing($bs)
+	box-sizing: border-box;
+}
+:before {
+	//Instead of the line below you could use @include box-sizing($bs)
+	box-sizing: border-box;
+}
+:after {
+	//Instead of the line below you could use @include box-sizing($bs)
+	box-sizing: border-box;
+}
+html {
+	height: 100%;
+	font-family: $font--body;
+}
+body {
+	height: 100%;
+	margin: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+article {
+	display: block;
+}
+aside {
+	display: block;
+}
+details {
+	display: block;
+}
+figcaption {
+	display: block;
+}
+figure {
+	display: block;
+	margin: 1em 40px;
+}
+footer {
+	display: block;
+}
+header {
+	display: block;
+}
+hgroup {
+	display: block;
+}
+main {
+	display: block;
+}
+nav {
+	display: block;
+}
+section {
+	display: block;
+}
+summary {
+	display: block;
+}
+audio {
+	display: inline-block;
+	vertical-align: baseline;
+	&:not([controls]) {
+		display: none;
+		height: 0;
+	}
+}
+canvas {
+	display: inline-block;
+	vertical-align: baseline;
+}
+progress {
+	display: inline-block;
+	vertical-align: baseline;
+}
+video {
+	display: inline-block;
+	vertical-align: baseline;
+}
+[hidden] {
+	display: none;
+}
+template {
+	display: none;
+}
+img {
+	border: 0;
+}
+hr {
+	//Instead of the line below you could use @include box-sizing($bs)
+	box-sizing: content-box;
+	height: 0;
+}
+.img-rounded {
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 50%;
+}
+svg:not(:root) {
+	overflow: hidden;
+}
