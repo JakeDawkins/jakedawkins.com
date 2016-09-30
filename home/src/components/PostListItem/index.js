@@ -1,4 +1,5 @@
 import React, { PropTypes } from "react";
+import "./postListItem.scss";
 
 const renderTags = (tags) => {
   return tags.map(tag => {
