@@ -1,5 +1,5 @@
 import React from "react";
-import PostListItem from "../PostListItem";
+import PostList from "../PostList";
 
 const sampleProps = {
   publishedDateTime: "2016-09-26 00:00:00 +0000",
@@ -13,13 +13,13 @@ const sampleProps = {
   tags: ["machine learning", "artificial intelligence", "statistics"],
 }
 
+const samplePosts = [
+  sampleProps,
+  sampleProps,
+  sampleProps,
+]
+
 const TestContent = () =>
-  <section className="content">
-    <main id="scroll" className="home" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
-      <PostListItem {...sampleProps} />
-      <PostListItem {...sampleProps} />
-      <PostListItem {...sampleProps} />
-    </main>
-  </section>
+  <PostList posts={samplePosts} />
 
 export default TestContent;

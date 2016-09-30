@@ -45,9 +45,3 @@ PostListItem.propTypes = {
 }
 
 export default PostListItem;
-
-/*
-<a href="/categories/#machine learning">machine learning</a>
-<a href="/categories/#artificial intelligence">artificial intelligence</a>
-<a href="/categories/#statistics">statistics</a>
-*/
