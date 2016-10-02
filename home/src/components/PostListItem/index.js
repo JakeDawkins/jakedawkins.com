@@ -1,9 +1,11 @@
 import React, { PropTypes } from "react";
 import "./postListItem.scss";
 
+let index = 0;
+
 const renderTags = (tags) => {
   return tags.map(tag => {
-    return <a href={`/categories/#${tag}`}>{tag}</a>
+    return <a key={index++} href={`/categories/#${tag}`}>{tag}</a>
   });
 }
 
@@ -11,7 +13,7 @@ const PostListItem = (props) =>
   <article role="article" className="post-item" itemScope="itemscope" itemType="http://schema.org/BlogPosting" itemProp="blogPost">
     <a className="datetime" href={props.linkUrl}>
       <meta itemProp="datePublished" content={props.publishedDateTime} />
-      <time datetime={props.publishedDateTime}>
+      <time dateTime={props.publishedDateTime}>
         <span className="day"> {props.publishedDay} </span>
         <span className="month-year"> {props.publishedMonth} {props.publishedYear} </span>
       </time>

@@ -1,5 +1,4 @@
 import React from "react";
-import MenuWithSearch from "../MenuWithSearch";
 import "./header.scss";
 
 const Header = (props) => (
@@ -28,8 +27,9 @@ const Header = (props) => (
       </div>
     </div>
     <a role="button" className="down" data-scroll href="#scroll"><svg className="icon icon-angle-down"><use xlinkHref="#icon-angle-down"></use></svg></a>
-    <MenuWithSearch />
   </header>
 );
 
 export default Header;
+
+// <MenuWithSearch /> before closing header
