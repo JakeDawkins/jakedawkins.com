@@ -1,7 +1,7 @@
 import React from "react";
 
 import SVGIcons from "../../components/SVGIcons";
-import Header from "../../components/Header";
+// import Header from "../../components/Header";
 import PostHeader from "../../components/PostHeader";
 import Footer from "../../components/Footer";
 import PostList from "../../components/PostList";
@@ -28,7 +28,7 @@ const Posts = (props) =>
   <div style={{height:"100%"}}>
     <SVGIcons />
 
-    <PostHeader dateTime={Date.now()} title={sampleProps.title} description={sampleProps.description} />  
+    <PostHeader dateTime={Date.now()} title={sampleProps.title} description={sampleProps.description} />
 
     <PostList posts={samplePosts} />
 
@@ -38,3 +38,4 @@ const Posts = (props) =>
 export default Posts;
 
 // <Header header="Jake Dawkins" subheader="Web Developer"/>
+// <PostHeader dateTime={Date.now()} title={sampleProps.title} description={sampleProps.description} />

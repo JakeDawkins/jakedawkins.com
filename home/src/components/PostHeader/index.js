@@ -3,8 +3,13 @@ import "../Header/header.scss";
 
 //given unix timestamp
 const renderDate = (dateTime) => {
-  let date = new Date(dateTime*1000); //to ms
-  let dateString = date.toDateString();
+  let date = new Date(dateTime);
+
+  let month = date.getMonth()+1;
+  let day = date.getDate();
+  let year = date.getFullYear();
+  let dateString = `${month} - ${day} - ${year}`;
+
   return <time itemProp="datePublished" dateTime={dateTime} className="date">{dateString}</time>
 }
 
