@@ -51,7 +51,8 @@
   },
   "dependencies": {
     "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "react-dom": "^15.3.2",
+    "react-markdown": "^2.4.2"
   },
   "scripts": {
     "start": "node scripts/start.js",
@@ -85,5 +86,13 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "module": {
+    "loaders": [
+      {
+        "test": "(/json$/)",
+        "loader": "json"
+      }
+    ]
   }
 }

@@ -13,6 +13,7 @@ const sampleProps = {
   readMoreText: "Read more about Machine Learning Theory - Part 2: Generalization Bounds", //title ex: "read more..."
   tags: ["machine learning", "artificial intelligence", "statistics"],
 }
+const about = "## Header\n\nThis is the content\n\ninclude some stuff here\n\nand here\n[]()";
 
 const Posts = (props) =>
   <div style={{height:"100%"}}>
@@ -20,7 +21,7 @@ const Posts = (props) =>
 
     <PostHeader title={sampleProps.title} description={sampleProps.description} />
 
-    <Post />
+    <Post markdown={about} />
 
     <Footer />
   </div>
