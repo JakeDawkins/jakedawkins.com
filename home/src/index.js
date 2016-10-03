@@ -4,9 +4,10 @@ import './styles/main.scss';
 // need to imoport main js files
 
 //components
-import Posts from "./pages/Posts";
+// import Posts from "./pages/Posts";
+import About from "./pages/About";
 
 ReactDOM.render(
-  <Posts />,
+  <About />,
   document.getElementById('root')
 );

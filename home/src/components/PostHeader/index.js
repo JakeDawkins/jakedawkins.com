@@ -3,6 +3,7 @@ import "../Header/header.scss";
 
 //given unix timestamp
 const renderDate = (dateTime) => {
+  if (!dateTime) return;
   let date = new Date(dateTime);
 
   let month = date.getMonth()+1;
