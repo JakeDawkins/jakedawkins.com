@@ -14,14 +14,3 @@ Post.propTypes = {
 }
 
 export default Post;
-
-/*
-<h2>Header</h2>
-<p>This is the content</p>
-<p>
-include share.html<br />
-include author.html<br />
-include comments.html<br />
-include footer.html<br />
-</p>
-*/
