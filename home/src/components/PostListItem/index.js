@@ -5,7 +5,8 @@ let index = 0;
 
 const renderTags = (tags) => {
   return tags.map(tag => {
-    return <a key={index++} href={`/categories/#${tag}`}>{tag}</a>
+    // return <a key={index++} href={`/categories/#${tag}`}>{tag}</a>
+    return <span key={index++}>{tag}</span>
   });
 }
 
@@ -23,7 +24,7 @@ const PostListItem = (props) =>
         <h2 className="post-title" itemProp="name">{props.title}</h2>
       </a>
       <p className="description">
-        {props.description}
+        {props.description + " "}
         <a href={props.linkUrl} className="link">
           {props.readMoreText || "Read More..."}
         </a>

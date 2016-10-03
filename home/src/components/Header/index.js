@@ -25,6 +25,11 @@ const Header = (props) => (
           </svg>
         </a>
       </div>
+      <div>
+        <a href="/about" style={{textDecoration: "none"}}>
+          <h2>About Me&nbsp;&nbsp;&gt;</h2>
+        </a>
+      </div>
     </div>
     <a role="button" className="down" data-scroll href="#scroll"><svg className="icon icon-angle-down"><use xlinkHref="#icon-angle-down"></use></svg></a>
   </header>
