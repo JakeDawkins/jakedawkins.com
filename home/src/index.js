@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/main.scss';
-// need to imoport main js files
+import { hashHistory } from 'react-router';
 
 //components
-import Posts from "./pages/Posts";
-// import About from "./pages/About";
+import Routes from "./Routes";
 
 ReactDOM.render(
-  <Posts />,
+  <Routes history={hashHistory}/>,
   document.getElementById('root')
 );

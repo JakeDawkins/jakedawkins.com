@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./menuWithSearch.scss"
+import { Link } from "react-router";
 
 // XXX leaving as class because I want ot load the links dynamic
 // XXX Can I move all aside styles here?
@@ -52,9 +53,12 @@ class MenuWithSearch extends Component {
         <nav id="navigation">
           <h2>MENU</h2>
           <ul>
-            <li><a href="#">Link Title</a></li>
-            <li><a href="#">Link Title</a></li>
-            <li><a href="#">Link Title</a></li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
           </ul>
         </nav>
         </aside>
