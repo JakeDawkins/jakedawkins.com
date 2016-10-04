@@ -1,5 +1,6 @@
 import React, { PropTypes } from "react";
 import "./postListItem.scss";
+import { Link } from "react-router";
 
 let index = 0;
 
@@ -12,13 +13,13 @@ const renderTags = (tags) => {
 
 const PostListItem = (props) =>
   <article role="article" className="post-item" itemScope="itemscope" itemType="http://schema.org/BlogPosting" itemProp="blogPost">
-    <a className="datetime" href={props.linkUrl}>
+    <Link className="datetime" to={{ pathname: '/posts', query: { id: 0 } }}>
       <meta itemProp="datePublished" content={props.publishedDateTime} />
       <time dateTime={props.publishedDateTime}>
         <span className="day"> {props.publishedDay} </span>
         <span className="month-year"> {props.publishedMonth} {props.publishedYear} </span>
       </time>
-    </a>
+    </Link>
     <div className="content">
       <a href={props.linkUrl}>
         <h2 className="post-title" itemProp="name">{props.title}</h2>

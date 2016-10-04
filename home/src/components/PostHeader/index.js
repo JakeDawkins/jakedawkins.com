@@ -6,7 +6,8 @@ import MenuWithSearch from "../MenuWithSearch";
 //given unix timestamp
 const renderDate = (dateTime) => {
   if (!dateTime) return;
-  let date = new Date(dateTime);
+  let date = new Date(Number(dateTime)*1000);
+  if(date === "Invalid Date") return;
 
   let month = date.getMonth()+1;
   let day = date.getDate();

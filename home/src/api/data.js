@@ -31,6 +31,7 @@ const data = {
 			description: "A complete ground-up rebuild of my personal site. Built using React. Based on theme by Willian Justen.",
 			readMoreText: "View on GitHub...", //title ex: "read more..."
 			tags: ["web","react"],
+			content: "A complete ground-up rebuild of my personal site. Built using React. Based on theme by Willian Justen.",
 		},
 		{
 			publishedDateTime: "1457776800",

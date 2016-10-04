@@ -11,6 +11,7 @@ const Routes = (props) => (
     <Route path="/" >
       <IndexRoute component={Posts} />
       <Route path="about" component={About} />
+      <Route path="posts" component={Posts} />
     </Route>
   </Router>
 );

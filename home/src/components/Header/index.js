@@ -1,5 +1,6 @@
 import React from "react";
 import "./header.scss";
+import { Link } from "react-router";
 
 import MenuWithSearch from "../MenuWithSearch";
 
@@ -28,9 +29,10 @@ const Header = (props) => (
         </a>
       </div>
       <div>
-        <a href="/about" style={{textDecoration: "none"}}>
-          <h2>About Me&nbsp;&nbsp;&gt;</h2>
-        </a>
+        <Link to="/about?id=1" style={{textDecoration: "none"}}>
+          <br /><br />
+          <h2>About Me</h2>
+        </Link>
       </div>
     </div>
     <a role="button" className="down" data-scroll href="#scroll"><svg className="icon icon-angle-down"><use xlinkHref="#icon-angle-down"></use></svg></a>
