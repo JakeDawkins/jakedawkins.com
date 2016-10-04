@@ -1,6 +1,8 @@
 import React from "react";
 import "./header.scss";
 
+import MenuWithSearch from "../MenuWithSearch";
+
 const Header = (props) => (
   <header className="header-site" role="banner">
     <div className="content">
@@ -32,6 +34,7 @@ const Header = (props) => (
       </div>
     </div>
     <a role="button" className="down" data-scroll href="#scroll"><svg className="icon icon-angle-down"><use xlinkHref="#icon-angle-down"></use></svg></a>
+    <MenuWithSearch />
   </header>
 );
 

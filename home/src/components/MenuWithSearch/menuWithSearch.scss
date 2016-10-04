@@ -1,0 +1,30 @@
+@import "../../styles/variables";
+
+aside {
+  &.slide {
+    left: 0;
+  }
+  nav {
+    ul {
+      padding: 0;
+    }
+    li {
+      margin: 0;
+      list-style-type: none;
+      a {
+        width: 100%;
+        display: block;
+        padding: 1.25rem;
+        text-decoration: none;
+        font-family: $font--header;
+        font-weight: $weight--normal;
+        font-style: normal;
+        color: $color--aside-link;
+        border-top: 1px solid $color--aside-link-border;
+        &:hover {
+          color: $color--aside-link-hover;
+        }
+      }
+    }
+  }
+}
