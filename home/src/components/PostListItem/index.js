@@ -13,7 +13,7 @@ const renderTags = (tags) => {
 
 const PostListItem = (props) =>
   <article role="article" className="post-item" itemScope="itemscope" itemType="http://schema.org/BlogPosting" itemProp="blogPost">
-    <Link className="datetime" to={{ pathname: '/posts', query: { id: 0 } }}>
+    <Link className="datetime" to={{ pathname: '/posts', query: { id: props.postId } }}>
       <meta itemProp="datePublished" content={props.publishedDateTime} />
       <time dateTime={props.publishedDateTime}>
         <span className="day"> {props.publishedDay} </span>
@@ -21,14 +21,14 @@ const PostListItem = (props) =>
       </time>
     </Link>
     <div className="content">
-      <a href={props.linkUrl}>
+      <Link to={{ pathname: '/posts', query: { id: props.postId } }}>
         <h2 className="post-title" itemProp="name">{props.title}</h2>
-      </a>
+      </Link>
       <p className="description">
         {props.description + " "}
-        <a href={props.linkUrl} className="link">
+        <Link className="link" to={{ pathname: '/posts', query: { id: props.postId } }}>
           {props.readMoreText || "Read More..."}
-        </a>
+        </Link>
       </p>
       <div className="tags">
         {renderTags(props.tags)}

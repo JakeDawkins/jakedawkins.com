@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 
 import SVGIcons from "../../components/SVGIcons";
 import Header from "../../components/Header";
@@ -7,15 +7,26 @@ import PostList from "../../components/PostList";
 
 import data from "../../api/data.js";
 
-const PostCollection = (props) =>
-  <div style={{height:"100%"}}>
-    <SVGIcons />
+class PostCollection extends Component {
 
-    <Header header="Jake Dawkins" subheader="Web Developer"/>
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
 
-    <PostList posts={data.posts} />
+  render(){
+    return (
+      <div style={{height:"100%"}}>
+        <SVGIcons />
 
-    <Footer />
-  </div>
+        <Header header="Jake Dawkins" subheader="Web Developer"/>
+
+        <PostList posts={data.posts} />
+
+        <Footer />
+      </div>
+    )
+  }
+
+}
 
 export default PostCollection;

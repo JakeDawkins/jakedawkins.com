@@ -1,25 +1,32 @@
-import React from "react";
+import React, { Component } from "react";
+
 import SVGIcons from "../../components/SVGIcons";
 import Footer from "../../components/Footer";
 
 import Post from "../../components/Post";
 import PostHeader from "../../components/PostHeader";
 
-const SinglePost = (props) => {
-  const { content, title, description, publishedDateTime } = props.post;
-  console.log(publishedDateTime);
-  console.log(props.post);
-  return (
-    <div style={{height:"100%"}}>
-      <SVGIcons />
+class SinglePost extends Component {
 
-      <PostHeader title={title} description={description} dateTime={publishedDateTime}/>
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
 
-      <Post markdown={content} />
+  render(){
+    const { content, title, description, publishedDateTime } = this.props.post;
+    return (
+      <div style={{height:"100%"}}>
+        <SVGIcons />
 
-      <Footer />
-    </div>
-  );
+        <PostHeader title={title} description={description} dateTime={publishedDateTime}/>
+
+        <Post markdown={content} />
+
+        <Footer />
+      </div>
+    );
+  }
+
 }
 
 export default SinglePost;
