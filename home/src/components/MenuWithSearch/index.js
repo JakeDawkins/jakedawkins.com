@@ -54,7 +54,7 @@ class MenuWithSearch extends Component {
           <h2>MENU</h2>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/posts">Posts</Link>
             </li>
             <li>
               <Link to="/about">About</Link>
