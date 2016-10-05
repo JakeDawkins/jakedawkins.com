@@ -11,6 +11,7 @@ I stumbled upon [Willian Justen's Jekyll theme](https://github.com/willianjusten
 
 ### Future Work
 - Finish cleaning up unnecessary/unorganized SCSS files
+- Test components/pages
 - Connect to a CMS (content management system)
 - Hook up search
 - Finish building out additional components
