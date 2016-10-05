@@ -21,7 +21,7 @@ const data = {
 		"about": {
 			"title": "About Me",
 			"description": "I make things with a keyboard (and sometimes a mouse)",
-			"content": "<img alt='Self Portrait' src='http://content.jakedawkins.com/layout/selfportrait.png' style='max-width: 50%;' />\n\n**I'm Jake**. I'm a Web Developer at [NewSpring Church](https://newspring.cc) in Anderson, SC. I have a degree from [Clemson University](https://clemson.edu) in Computer Science with a minor in Psychology.\n\nI have a passion for technology, and a knack for making things work. I love making things for people to use. Real people. Take a look around and feel free to sift through my work and photos. For the truly ambitious, reach out to me!\n\n----\n\n### Current Interests\n\n- Code Tesing\n- Machine Learning & Recommender Systems\n- API Design\n- Documentation Practices"
+			"content": "<img alt='Self Portrait' src='http://content.jakedawkins.com/layout/selfportrait.png' style='max-width: 50%;' />\n\n**I'm Jake**. I'm a Web Developer at [NewSpring Church](https://newspring.cc) in Anderson, SC. I have a degree from [Clemson University](https://clemson.edu) in Computer Science with a minor in Psychology.\n\nI have a passion for technology, and a knack for making things work. I love making things for people to use. Real people. Take a look around and feel free to sift through my work and photos. For the truly ambitious, reach out to me!\n\n----\n\n### Current Interests\n\n- Code Tesing\n- Machine Learning & Recommender Systems\n- API Design\n- Documentation Practices\n\n----\n\n[Read Some of My Posts](/posts)"
 		}
 	},
 	"posts": [
