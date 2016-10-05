@@ -36,7 +36,7 @@ const data = {
 			description: "A complete ground-up rebuild of my personal site. Built using React. Based on theme by Willian Justen.",
 			readMoreText: "View on GitHub...", //title ex: "read more..."
 			tags: ["web","react"],
-			content: "### About This Site\n\nI have been looking to do a redesign of this site for a while now. A couple months ago\n\nI built this site in React, but the design was not quite up to par.\n\nI stumbled upon [Willian Justen's Jekyll theme](https://github.com/willianjusten/will-jekyll-template), I fell in love with it. It was a better experience than what my site was offering so I decided to port it over to React and SCSS from Jekyll and Stylus. \n\n----\n\n### Future Work\n\n- Finish cleaning up unnecessary/unorganized SCSS files\n- Connect to a CMS (content management system)\n- Hook up search\n- Finish building out additional components\n- Document setup, components, and SCSS\n- Publish as an easy-setup repository for others\n",
+			content: "### About This Site\n\nI have been looking to do a redesign of this site for a while now. A couple months ago, I built this site in React, but the design was not quite up to par.\n\nI stumbled upon [Willian Justen's Jekyll theme](https://github.com/willianjusten/will-jekyll-template), I fell in love with it. It was a better experience than what my site was offering so I decided to port it over to React and SCSS from Jekyll and Stylus. \n\n----\n\n### Future Work\n\n- Finish cleaning up unnecessary/unorganized SCSS files\n- Connect to a CMS (content management system)\n- Hook up search\n- Finish building out additional components\n- Document setup, components, and SCSS\n- Publish as an easy-setup repository for others\n",
 		},
 		{
 			postId: 1,
