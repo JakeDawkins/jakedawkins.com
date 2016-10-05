@@ -1,0 +1,25 @@
+.comments {
+  *zoom: 1;
+  width: auto;
+  max-width: 50rem;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  padding: 0 1.25rem;
+  &:before {
+    content: '';
+    display: table;
+  }
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  h3 {
+    margin: 0 0 1.875rem;
+    font-size: 1.875rem;
+  }
+}

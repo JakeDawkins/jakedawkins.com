@@ -1,0 +1,48 @@
+/*================================
+COLORS
+================================*/
+
+$color--black: black;
+$color--black--overlay: rgba(0,0,0,0.6);
+$color--white: white;
+$color--light: #b3b3b3;
+$concrete: #f2f2f2;
+$color--concrete: #f2f2f2;
+$color--dark-gray: #333;
+$color--gray: gray;
+$color--silver:  silver;
+
+$color--blue: #0562dc;
+$color--blue--dark: #03316e;
+$color--blue--light: #3085f4;
+
+$color--red: #900;
+$color--highlight: #ff0;
+
+$color--aside: #3f3f3f;
+$color--aside-link: #b3b3b3;
+$color--aside-link-border: #797979;
+$color--aside-link-hover: #191919;
+
+/*================================
+FONTS
+================================*/
+
+$font--body: sans-serif;
+$font--header: 'Open Sans',sans-serif;
+$font--monospace: monospace,monospace;
+
+$weight--header: 800;
+$weight--bold: 700;
+$weight--normal: 300;
+
+$font-size--h1: 2em;
+$font-size--h2: 1.5em;
+$font-size--h3: 1.17em;
+$font-size--h4: 1em;
+$font-size--h5: 0.83em;
+$font-size--h6: 0.67em;
+
+$font-size--normal: 1em;
+$font-size--small: 80%;
+$font-size--script: 75%;
