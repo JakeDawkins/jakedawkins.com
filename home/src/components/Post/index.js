@@ -3,6 +3,8 @@ import ReactMarkdown from "react-markdown";
 import { Link } from "react-router";
 import "../../styles/_post.scss";
 
+import Author from "../Author";
+
 const Post = (props) =>
   <section className="post" itemScope itemType="http://schema.org/BlogPosting">
       <article role="article" id="scroll" className="post-content" itemProp="articleBody">
@@ -18,11 +20,14 @@ const Post = (props) =>
           </p>
         }
       </article>
+
+      { props.disableAuthor ? null : <Author /> }
   </section>
 
 Post.propTypes = {
   markdown: PropTypes.string.isRequired,
   disableBackLink: PropTypes.bool,
+  disableAuthor: PropTypes.bool,
 }
 
 export default Post;

@@ -16,7 +16,7 @@ const About = (props) =>
 
     <PostHeader title={aboutData.title} description={aboutData.description} />
 
-    <Post markdown={aboutData.content} disableBackLink={true} />
+    <Post markdown={aboutData.content} disableBackLink={true} disableAuthor={true} />
 
     <Footer />
   </div>
