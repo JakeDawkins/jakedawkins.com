@@ -22,7 +22,7 @@ class SinglePost extends Component {
 
         <Post markdown={content} />
 
-        <Footer />
+        <Footer collapseMargins={true} />
       </div>
     );
   }

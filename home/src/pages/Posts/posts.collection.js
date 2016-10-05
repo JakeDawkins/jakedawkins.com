@@ -18,7 +18,12 @@ class PostCollection extends Component {
       <div style={{height:"100%"}}>
         <SVGIcons />
 
-        <Header header="Jake Dawkins" subheader="Web Developer"/>
+        <Header
+          header="Jake Dawkins"
+          subheader="Web Developer"
+          email={`mailto:${data.user.email}`}
+          twitter={`https://twitter.com/${data.user.twitter_username}`}
+          github={`https://github.com/${data.user.github_username}`} />
 
         <PostList posts={data.posts} />
 

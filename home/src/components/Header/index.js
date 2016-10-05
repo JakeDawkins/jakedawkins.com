@@ -12,17 +12,17 @@ const Header = (props) => (
         <span className="site-description">{props.subheader}</span>
       </h1>
       <div className="icons-home">
-        <a aria-label="Send email" href="#">
+        <a aria-label="Send email" href={props.email}>
           <svg className="icon icon-email">
             <use xlinkHref="#icon-email"></use>
           </svg>
         </a>
-        <a aria-label="My Twitter" target="_blank" href="#">
+        <a aria-label="My Twitter" target="_blank" href={props.twitter}>
           <svg className="icon icon-twitter">
             <use xlinkHref="#icon-twitter"></use>
           </svg>
         </a>
-        <a aria-label="My Github" target="_blank" href="#">
+        <a aria-label="My Github" target="_blank" href={props.github}>
           <svg className="icon icon-github-alt">
             <use xlinkHref="#icon-github-alt"></use>
           </svg>
