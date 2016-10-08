@@ -17,7 +17,7 @@ const PostList = (props) =>
   </section>
 
 PostList.propTypes = {
-  posts: PropTypes.array,
+  posts: PropTypes.array.isRequired,
 }
 
 export default PostList;
