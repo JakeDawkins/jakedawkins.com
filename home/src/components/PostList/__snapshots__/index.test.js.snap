@@ -74,14 +74,7 @@ exports[`PostList should render props correctly 1`] = `
           </a>
         </p>
         <div
-          className="tags">
-          <span>
-            web
-          </span>
-          <span>
-            react
-          </span>
-        </div>
+          className="tags" />
       </div>
     </article>
     <article
@@ -137,11 +130,7 @@ exports[`PostList should render props correctly 1`] = `
           </a>
         </p>
         <div
-          className="tags">
-          <span>
-            web
-          </span>
-        </div>
+          className="tags" />
       </div>
     </article>
   </main>
