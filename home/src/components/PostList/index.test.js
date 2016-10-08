@@ -39,9 +39,9 @@ describe("PostList", () => {
   });
 
   it("should render props correctly", () => {
-    const postList = renderer.create(
-      <PostList posts={[]} />
-    );
+    // const postList = renderer.create(
+    //   <PostList posts={[]} />
+    // );
 
     const postListWithProps = renderer.create(
       <PostList
@@ -50,7 +50,7 @@ describe("PostList", () => {
     );
 
     expect(postListWithProps).toMatchSnapshot();
-    expect(postListWithProps).not.toBe(postList);
+    // expect(postListWithProps).not.toBe(postList);
   });
 
 });

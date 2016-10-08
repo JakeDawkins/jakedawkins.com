@@ -13,9 +13,9 @@ describe("PersonHeader", () => {
   });
 
   it("should render props correctly", () => {
-    const personHeader = renderer.create(
-      <PersonHeader />
-    );
+    // const personHeader = renderer.create(
+    //   <PersonHeader />
+    // );
 
     const personHeaderWithProps = renderer.create(
       <PersonHeader
@@ -28,7 +28,7 @@ describe("PersonHeader", () => {
     );
 
     expect(personHeaderWithProps).toMatchSnapshot();
-    expect(personHeaderWithProps).not.toBe(personHeader);
+    // expect(personHeaderWithProps).not.toBe(personHeader);
   });
 
 });

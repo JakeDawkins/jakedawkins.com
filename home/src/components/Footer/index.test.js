@@ -13,9 +13,9 @@ describe("Footer", () => {
   });
 
   it("should render props correctly", () => {
-    const footerNoCollapse = renderer.create(
-      <Footer />
-    );
+    // const footerNoCollapse = renderer.create(
+    //   <Footer />
+    // );
 
     const footerWithCollapse = renderer.create(
       <Footer
@@ -24,7 +24,7 @@ describe("Footer", () => {
     );
 
     expect(footerWithCollapse).toMatchSnapshot();
-    expect(footerWithCollapse).not.toBe(footerNoCollapse);
+    // expect(footerWithCollapse).not.toBe(footerNoCollapse);
   });
 
 });

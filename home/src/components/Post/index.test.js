@@ -15,11 +15,11 @@ describe("Post", () => {
   });
 
   it("should render props correctly", () => {
-    const post = renderer.create(
-      <Post
-        markdown="hello\n\nworld"
-      />
-    );
+    // const post = renderer.create(
+    //   <Post
+    //     markdown="hello\n\nworld"
+    //   />
+    // );
 
     const postWithProps = renderer.create(
       <Post
@@ -31,7 +31,7 @@ describe("Post", () => {
     );
 
     expect(postWithProps).toMatchSnapshot();
-    expect(postWithProps).not.toBe(post);
+    // expect(postWithProps).not.toBe(post);
   });
 
 });
