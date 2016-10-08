@@ -4,6 +4,7 @@ import { Link } from "react-router";
 import "../../styles/_post.scss";
 
 import Author from "../Author";
+import data from "../../api/data.js"; //data for author
 
 const Post = (props) =>
   <section className="post" itemScope itemType="http://schema.org/BlogPosting">
@@ -21,7 +22,16 @@ const Post = (props) =>
         }
       </article>
 
-      { props.disableAuthor ? null : <Author /> }
+      {
+        props.disableAuthor
+          ? null
+          : <Author
+            userDisplayName={data.user.name}
+            userImageUrl={data.user.image}
+            userDescription={data.user.user_description}
+            userEmail={data.user.email}
+            />
+      }
   </section>
 
 //backLinkUrl not used yet
