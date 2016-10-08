@@ -1,0 +1,39 @@
+exports[`Author should render props correctly 1`] = `
+<section
+  className="author"
+  itemProp="author">
+  <div
+    className="details"
+    itemScope={true}
+    itemType="http://schema.org/Person">
+    <img
+      alt="Test Name"
+      className="img-rounded"
+      itemProp="image"
+      src="123456" />
+    <p
+      className="def">
+      Author
+    </p>
+    <h3
+      className="name">
+      <a
+        itemProp="name"
+        onClick={[Function bound handleClick]}
+        style={Object {}}>
+        Test Name
+      </a>
+    </h3>
+    <p
+      className="desc">
+      this is a description
+    </p>
+    <a
+      className="email"
+      href="mailto:1234@1234.com"
+      itemProp="email">
+      1234@1234.com
+    </a>
+  </div>
+</section>
+`;
