@@ -5,6 +5,7 @@ import { Link } from "react-router";
 let index = 0;
 
 const renderTags = (tags) => {
+  if (!tags.isArray) return;
   return tags.map(tag => {
     // return <a key={index++} href={`/categories/#${tag}`}>{tag}</a>
     return <span key={index++}>{tag}</span>
@@ -31,7 +32,7 @@ const PostListItem = (props) =>
         </Link>
       </p>
       <div className="tags">
-        {renderTags(props.tags)}
+        {props.tags ? renderTags(props.tags) : null}
       </div>
     </div>
   </article>

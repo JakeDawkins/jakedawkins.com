@@ -20,7 +20,7 @@ class Author extends Component {
                   <Link itemProp="name" to="/about">{this.props.userDisplayName}</Link>
               </h3>
               <p className="desc">{this.props.userDescription}</p>
-              <a itemProp="email" className="email" href="mailto:{this.props.userEmail}">{this.props.userEmail}</a>
+              <a itemProp="email" className="email" href={`mailto:${this.props.userEmail}`}>{this.props.userEmail}</a>
           </div>
       </section>
     );
