@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
 import SVGIcons from "../../components/SVGIcons";
-import Header from "../../components/Header";
+import PersonHeader from "../../components/PersonHeader";
 import Footer from "../../components/Footer";
 import PostList from "../../components/PostList";
 
-import data from "../../api/data.js";
+import data from "../../api/data.js"; //for person header
 
 class PostCollection extends Component {
 
@@ -18,12 +18,13 @@ class PostCollection extends Component {
       <div style={{height:"100%"}}>
         <SVGIcons />
 
-        <Header
-          header="Jake Dawkins"
-          subheader="Web Developer"
-          email={`mailto:${data.user.email}`}
-          twitter={`https://twitter.com/${data.user.twitter_username}`}
-          github={`https://github.com/${data.user.github_username}`} />
+        <PersonHeader
+          userDisplayName={data.user.name}
+          userDescription={data.user.user_description}
+          userEmail={data.user.email}
+          userTwitter={data.user.twitter_username}
+          userGithub={data.user.github_username}
+        />
 
         <PostList posts={data.posts} />
 

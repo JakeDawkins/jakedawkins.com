@@ -4,13 +4,14 @@ import { Link } from "react-router";
 import "../../styles/_post.scss";
 
 import Author from "../Author";
+import data from "../../api/data.js"; //data for author
 
 const Post = (props) =>
   <section className="post" itemScope itemType="http://schema.org/BlogPosting">
       <article role="article" id="scroll" className="post-content" itemProp="articleBody">
         { props.disableBackLink ? null :
           <p>
-            <Link to="/posts">&lt;&nbsp;&nbsp;Back to Posts</Link>
+            <Link to={props.backLinkUrl ? props.backLinkUrl : "/posts"}>&lt;&nbsp;&nbsp;Back to Posts</Link>
           </p>
         }
         <ReactMarkdown source={props.markdown} />
@@ -21,7 +22,16 @@ const Post = (props) =>
         }
       </article>
 
-      { props.disableAuthor ? null : <Author /> }
+      {
+        props.disableAuthor
+          ? null
+          : <Author
+            userDisplayName={data.user.name}
+            userImageUrl={data.user.image}
+            userDescription={data.user.user_description}
+            userEmail={data.user.email}
+            />
+      }
   </section>
 
 //backLinkUrl not used yet

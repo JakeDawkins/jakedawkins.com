@@ -1,5 +1,5 @@
 import React, { PropTypes } from "react";
-import "../Header/header.scss";
+import "../PersonHeader/header.scss";
 
 import MenuWithSearch from "../MenuWithSearch";
 

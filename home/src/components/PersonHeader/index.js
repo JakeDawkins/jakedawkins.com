@@ -4,26 +4,25 @@ import { Link } from "react-router";
 
 import MenuWithSearch from "../MenuWithSearch";
 
-// XXX Rename Person header
-const Header = (props) => (
+const PersonHeader = (props) => (
   <header className="header-site" role="banner">
     <div className="content">
       <h1>
-        <span className="site-title">{props.header}</span>
-        <span className="site-description">{props.subheader}</span>
+        <span className="site-title">{props.userDisplayName}</span>
+        <span className="site-description">{props.userDescription}</span>
       </h1>
       <div className="icons-home">
-        <a aria-label="Send email" href={props.email}>
+        <a aria-label="Send email" href={`mailto:${props.userEmail}`}>
           <svg className="icon icon-email">
             <use xlinkHref="#icon-email"></use>
           </svg>
         </a>
-        <a aria-label="My Twitter" target="_blank" href={props.twitter}>
+        <a aria-label="My Twitter" target="_blank" href={`https://twitter.com/${props.userTwitter}`}>
           <svg className="icon icon-twitter">
             <use xlinkHref="#icon-twitter"></use>
           </svg>
         </a>
-        <a aria-label="My Github" target="_blank" href={props.github}>
+        <a aria-label="My Github" target="_blank" href={`https://github.com/${props.userGithub}`} >
           <svg className="icon icon-github-alt">
             <use xlinkHref="#icon-github-alt"></use>
           </svg>
@@ -41,7 +40,7 @@ const Header = (props) => (
   </header>
 );
 
-Header.propTypes = {
+PersonHeader.propTypes = {
   userDisplayName: PropTypes.string,
   userDescription: PropTypes.string,
   userEmail: PropTypes.string,
@@ -49,6 +48,4 @@ Header.propTypes = {
   userGithub: PropTypes.string,
 };
 
-export default Header;
-
-// <MenuWithSearch /> before closing header
+export default PersonHeader;

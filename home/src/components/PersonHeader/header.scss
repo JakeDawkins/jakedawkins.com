@@ -36,7 +36,7 @@
     display: block;
   }
   .site-description {
-    font-size: 1.25rem;
+    font-size: $font-size--h4;
     display: block;
     margin: 1.875rem 0;
   }
@@ -96,7 +96,7 @@
       font-size: 6.25rem;
     }
     .site-description {
-      font-size: 2.5rem;
+      font-size: $font-size--h4;
     }
   }
   .header-post {
