@@ -1,11 +1,16 @@
-import React, { Component } from "react";
+import React, { Component, PropTypes } from "react";
 import "./menuWithSearch.scss"
 import { Link } from "react-router";
 
-// XXX leaving as class because I want ot load the links dynamic
 // XXX Can I move all aside styles here?
 
 class MenuWithSearch extends Component {
+
+  // Links unused currently
+  static propTypes = {
+    slide: PropTypes.bool,
+    links: PropTypes.array,
+  }
 
   constructor(props) {
     super(props);
