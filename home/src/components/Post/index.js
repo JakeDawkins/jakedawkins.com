@@ -11,7 +11,7 @@ const Post = (props) =>
       <article role="article" id="scroll" className="post-content" itemProp="articleBody">
         { props.disableBackLink ? null :
           <p>
-            <Link to="/posts">&lt;&nbsp;&nbsp;Back to Posts</Link>
+            <Link to={props.backLinkUrl ? props.backLinkUrl : "/posts"}>&lt;&nbsp;&nbsp;Back to Posts</Link>
           </p>
         }
         <ReactMarkdown source={props.markdown} />
