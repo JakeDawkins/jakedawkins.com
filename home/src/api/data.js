@@ -10,7 +10,7 @@ const data = {
 	"user": {
 		"name": "Jake Dawkins",
 		"username": "jakedawkins",
-		"user_description": "Web Developer | Software Engineer",
+		"user_description": "Developer | Engineer",
 		"user_title": "Web Developer | Software Engineer",
 		"email": "dawkinsjh@gmail.com",
 		"twitter_username": "jakedawkins",
