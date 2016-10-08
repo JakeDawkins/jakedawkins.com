@@ -1,4 +1,4 @@
-import React from "react";
+import React, { PropTypes } from "react";
 import PostListItem from "../PostListItem";
 
 let index = 0;
@@ -15,5 +15,9 @@ const PostList = (props) =>
       {renderPostListItems(props.posts)}
     </main>
   </section>
+
+PostList.propTypes = {
+  posts: PropTypes.array,
+}
 
 export default PostList;

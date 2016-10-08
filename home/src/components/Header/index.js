@@ -1,9 +1,10 @@
-import React from "react";
+import React, { PropTypes } from "react";
 import "./header.scss";
 import { Link } from "react-router";
 
 import MenuWithSearch from "../MenuWithSearch";
 
+// XXX Rename Person header
 const Header = (props) => (
   <header className="header-site" role="banner">
     <div className="content">
@@ -39,6 +40,14 @@ const Header = (props) => (
     <MenuWithSearch />
   </header>
 );
+
+Header.propTypes = {
+  userDisplayName: PropTypes.string,
+  userDescription: PropTypes.string,
+  userEmail: PropTypes.string,
+  userTwitter: PropTypes.string,
+  userGithub: PropTypes.string,
+};
 
 export default Header;
 

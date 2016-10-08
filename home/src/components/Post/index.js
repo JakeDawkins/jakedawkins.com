@@ -24,8 +24,10 @@ const Post = (props) =>
       { props.disableAuthor ? null : <Author /> }
   </section>
 
+//backLinkUrl not used yet
 Post.propTypes = {
   markdown: PropTypes.string.isRequired,
+  backLinkUrl: PropTypes.string,
   disableBackLink: PropTypes.bool,
   disableAuthor: PropTypes.bool,
 }

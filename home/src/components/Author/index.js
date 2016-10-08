@@ -1,9 +1,18 @@
-import React, { Component } from "react";
+import React, { Component, PropTypes } from "react";
 import { Link } from "react-router";
 
+// XXX remove
 import data from "../../api/data.js";
 
 class Author extends Component {
+
+  static propTypes = {
+    userDisplayName: PropTypes.string,
+    userImageUrl: PropTypes.string,
+    userDescription: PropTypes.string,
+    userEmail: PropTypes.string,
+  }
+
   render() {
     return(
       <section className="author" itemProp="author">
@@ -22,5 +31,3 @@ class Author extends Component {
 }
 
 export default Author;
-
-// <a itemProp="name" href="https://twitter.com/{data.user.twitter_username}">{data.user.name}</a>
