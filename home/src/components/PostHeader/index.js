@@ -1,4 +1,4 @@
-import React from "react";
+import React, { PropTypes } from "react";
 import "../Header/header.scss";
 
 import MenuWithSearch from "../MenuWithSearch";
@@ -28,5 +28,11 @@ const PostHeader = (props) => (
     <MenuWithSearch />
   </header>
 );
+
+PostHeader.propTypes = {
+  dateTime: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+}
 
 export default PostHeader;

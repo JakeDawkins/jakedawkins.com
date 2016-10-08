@@ -6,7 +6,7 @@ import { Link } from "react-router";
 
 class MenuWithSearch extends Component {
 
-  // Links unused currently
+  // links unused currently
   static propTypes = {
     slide: PropTypes.bool,
     links: PropTypes.array,
