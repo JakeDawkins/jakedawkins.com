@@ -1,0 +1,159 @@
+exports[`MenuWithSearch should exist 1`] = `
+<div>
+  <div
+    className="search-wrapper">
+    <div
+      className="search-form">
+      <input
+        className="search-field"
+        placeholder="Search..."
+        type="text" />
+      <svg
+        className="icon-remove-sign">
+        <use
+          xlinkHref="#icon-close" />
+      </svg>
+      <ul
+        className="search-results search-list" />
+    </div>
+  </div>
+  <div
+    className="overlay"
+    id="fade"
+    onClick={[Function bound toggleMenu]} />
+  <a
+    className="slideButton fade"
+    id="slide">
+    <svg
+      className="icon-menu"
+      id="open"
+      onClick={[Function bound toggleMenu]}
+      style={
+        Object {
+          "display": "inline"
+        }
+      }>
+      <use
+        xlinkHref="#icon-menu" />
+    </svg>
+    <svg
+      className="icon-menu"
+      id="close"
+      onClick={[Function bound toggleMenu]}
+      style={
+        Object {
+          "display": "none"
+        }
+      }>
+      <use
+        xlinkHref="#icon-close" />
+    </svg>
+  </a>
+  <aside
+    className=""
+    id="sidebar">
+    <nav
+      id="navigation">
+      <h2>
+        MENU
+      </h2>
+      <ul>
+        <li>
+          <a
+            onClick={[Function bound handleClick]}
+            style={Object {}}>
+            Posts
+          </a>
+        </li>
+        <li>
+          <a
+            onClick={[Function bound handleClick]}
+            style={Object {}}>
+            About
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+</div>
+`;
+
+exports[`MenuWithSearch should render props correctly 1`] = `
+<div>
+  <div
+    className="search-wrapper">
+    <div
+      className="search-form">
+      <input
+        className="search-field"
+        placeholder="Search..."
+        type="text" />
+      <svg
+        className="icon-remove-sign">
+        <use
+          xlinkHref="#icon-close" />
+      </svg>
+      <ul
+        className="search-results search-list" />
+    </div>
+  </div>
+  <div
+    className="overlay slide"
+    id="fade"
+    onClick={[Function bound toggleMenu]} />
+  <a
+    className="slideButton fade slide"
+    id="slide">
+    <svg
+      className="icon-menu"
+      id="open"
+      onClick={[Function bound toggleMenu]}
+      style={
+        Object {
+          "display": "none"
+        }
+      }>
+      <use
+        xlinkHref="#icon-menu" />
+    </svg>
+    <svg
+      className="icon-menu"
+      id="close"
+      onClick={[Function bound toggleMenu]}
+      style={
+        Object {
+          "display": "inline"
+        }
+      }>
+      <use
+        xlinkHref="#icon-close" />
+    </svg>
+  </a>
+  <aside
+    className="slide"
+    id="sidebar">
+    <nav
+      id="navigation">
+      <h2>
+        MENU
+      </h2>
+      <ul>
+        <li>
+          <a
+            onClick={[Function bound handleClick]}
+            style={Object {}}>
+            Posts
+          </a>
+        </li>
+        <li>
+          <a
+            onClick={[Function bound handleClick]}
+            style={Object {}}>
+            About
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+</div>
+`;
