@@ -5,7 +5,9 @@ import { Link } from "react-router";
 let index = 0;
 
 const renderTags = (tags) => {
-  if (!tags.isArray) return;
+  console.log(tags);
+  // if (!tags.isArray) return;
+  if (tags.constructor !== Array) return; 
   return tags.map(tag => {
     // return <a key={index++} href={`/categories/#${tag}`}>{tag}</a>
     return <span key={index++}>{tag}</span>

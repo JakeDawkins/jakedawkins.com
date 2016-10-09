@@ -106,7 +106,14 @@ exports[`Post should render props correctly 1`] = `
       </a>
     </p>
     <div
-      className="tags" />
+      className="tags">
+      <span>
+        web
+      </span>
+      <span>
+        react
+      </span>
+    </div>
   </div>
 </article>
 `;
