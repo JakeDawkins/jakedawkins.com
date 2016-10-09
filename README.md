@@ -10,7 +10,6 @@ I stumbled upon [Willian Justen's Jekyll theme](https://github.com/willianjusten
 ----
 
 ### Future Work
-- Add interaction tests to menu 
 - Finish cleaning up unnecessary/unorganized SCSS files
 - Connect to a CMS (content management system)
 - Hook up search
