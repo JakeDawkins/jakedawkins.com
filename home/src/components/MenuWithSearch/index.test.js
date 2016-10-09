@@ -13,16 +13,11 @@ describe("MenuWithSearch", () => {
   });
 
   it("should render props correctly", () => {
-    // const menuWithSearch = renderer.create(
-    //   <MenuWithSearch />
-    // );
-
     const menuWithSearchSlide = renderer.create(
       <MenuWithSearch slide={true}/>
     );
 
     expect(menuWithSearchSlide).toMatchSnapshot();
-    // expect(menuWithSearchSlide).not.toBe(menuWithSearch);
   });
 
 });
