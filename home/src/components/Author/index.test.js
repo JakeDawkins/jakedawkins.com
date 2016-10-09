@@ -9,7 +9,7 @@ describe("Author", () => {
       <Author />
     );
 
-    expect(author).toBeDefined();
+    expect(author).toMatchSnapshot();
   });
 
   it("should render props correctly", () => {
