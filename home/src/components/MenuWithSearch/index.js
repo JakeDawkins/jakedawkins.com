@@ -22,11 +22,9 @@ class MenuWithSearch extends Component {
   }
 
   toggleMenu(){
-    console.log("toggle to ", !this.state.slide);
     this.setState({
       slide: !this.state.slide
     });
-    //#sidebar add class slide
   }
 
   render(){

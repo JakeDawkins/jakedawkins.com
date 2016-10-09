@@ -1,3 +1,37 @@
+exports[`Author should exist 1`] = `
+<section
+  className="author"
+  itemProp="author">
+  <div
+    className="details"
+    itemScope={true}
+    itemType="http://schema.org/Person">
+    <img
+      alt={undefined}
+      className="img-rounded"
+      itemProp="image"
+      src={undefined} />
+    <p
+      className="def">
+      Author
+    </p>
+    <h3
+      className="name">
+      <a
+        itemProp="name"
+        onClick={[Function bound handleClick]}
+        style={Object {}} />
+    </h3>
+    <p
+      className="desc" />
+    <a
+      className="email"
+      href="mailto:undefined"
+      itemProp="email" />
+  </div>
+</section>
+`;
+
 exports[`Author should render props correctly 1`] = `
 <section
   className="author"
