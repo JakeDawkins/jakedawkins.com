@@ -1,6 +1,7 @@
 import Post from './';
 import React from 'react';
 import renderer from 'react-test-renderer';
+import "./postListItem.scss";
 
 const post = {
     postId: 0,

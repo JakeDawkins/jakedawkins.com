@@ -1,5 +1,6 @@
 import React, { PropTypes } from "react";
 import PostListItem from "../PostListItem";
+import "./postList.scss";
 
 let index = 0;
 

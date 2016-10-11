@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from "react";
-import "./menuWithSearch.scss"
+import "./menuWithSearch.scss";
+import "./search.scss"; //just hides the div for now
 import { Link } from "react-router";
 
 class MenuWithSearch extends Component {

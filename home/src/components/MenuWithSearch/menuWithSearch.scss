@@ -1,5 +1,33 @@
 @import "../../styles/variables";
 
+a {
+  &.slideButton.slide {
+    left: 15.625rem;
+    pointer-events: none;
+  }
+}
+.overlay {
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all .25s ease;
+  cursor: pointer;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background: transparent;
+  z-index: 30;
+  &.slide {
+    pointer-events: auto;
+    left: 240px;
+    background: $color--black--overlay;
+  }
+}
+#close {
+  display: none;
+}
+
 aside {
   display: block;
   transition: all .25s ease;

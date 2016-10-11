@@ -1,3 +1,5 @@
+@import "../../styles/variables";
+
 //@extend-elements
 //original selectors
 //.search-wrapper *zoom 1:after, .search-wrapper *zoom 1:before
@@ -14,7 +16,6 @@
   line-height: 0;
   content: "";
 }
-
 
 .dosearch {
   right: 10px;

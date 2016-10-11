@@ -1,7 +1,7 @@
 import React, { PropTypes } from "react";
 import ReactMarkdown from "react-markdown";
 import { Link } from "react-router";
-import "../../styles/_post.scss";
+import "./post.scss";
 
 import Author from "../Author";
 import data from "../../api/data.js"; //data for author
