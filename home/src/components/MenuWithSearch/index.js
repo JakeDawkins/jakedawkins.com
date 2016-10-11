@@ -2,8 +2,6 @@ import React, { Component, PropTypes } from "react";
 import "./menuWithSearch.scss"
 import { Link } from "react-router";
 
-// XXX Can I move all aside styles here?
-
 class MenuWithSearch extends Component {
 
   // links unused currently

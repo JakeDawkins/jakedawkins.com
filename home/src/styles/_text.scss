@@ -114,31 +114,3 @@ sup {
 dfn {
   font-style: italic;
 }
-aside {
-  position: fixed;
-  height: 100%;
-  width: 15rem;
-  padding: 2.5rem 0 0;
-  top: 0;
-  left: -15rem;
-  background: $color--aside;
-  z-index: 20;
-  @media only screen and(min-width:37.5rem) {
-    pre {
-      font-size: 1rem;
-      padding: 2.5rem 0;
-      margin: 3.125rem 0;
-    }
-    .highlight {
-      word-wrap: break-word;
-    }
-  }
-  @media only screen and(max-width:37.5rem) {
-    pre code {
-      overflow-x: scroll;
-    }
-  }
-  .highlight {
-    margin: 0;
-  }
-}
