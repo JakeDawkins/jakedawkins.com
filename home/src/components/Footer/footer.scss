@@ -1,9 +1,6 @@
 @import "../../styles/variables";
 
-//@extend-elements
-//original selectors
-//footer p, footer a
-%extend_1 {
+%footer_text {
   text-decoration: none;
   font-family: $font--header;
   font-weight: 300;
@@ -18,10 +15,10 @@ footer {
   padding: 1.563rem 0;
   margin-top: 100px;
   p {
-    @extend %extend_1;
+    @extend %footer_text;
   }
   a {
-    @extend %extend_1;
+    @extend %footer_text;
     &:hover {
       color: $color--red;
     }

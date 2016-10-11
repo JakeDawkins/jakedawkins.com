@@ -20,14 +20,15 @@ body {
 	left: 0;
 	right: 0;
 	margin: auto;
+	transition: all .25s ease;
 }
 #root {
 	height:100%;
 }
-article {
-	display: block;
+a {
+	transition: all .25s ease;
 }
-aside {
+article {
 	display: block;
 }
 details {
