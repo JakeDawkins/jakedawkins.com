@@ -1,0 +1,50 @@
+import React from 'react';
+
+import { gql, graphql } from 'react-apollo';
+
+import Header from '../components/header';
+import ContentList from '../components/content-list';
+import Social from '../components/social';
+import Footer from '../components/footer';
+
+const Home = ({ data }) =>
+  !data.loading &&
+  <div style={styles.container}>
+    <Header
+      heading={data.allSites[0].title}
+      subHeading={data.allSites[0].tagline}
+    />
+    <ContentList content={data.allPosts} />
+    <Social accounts={data.allSocialAccounts} />
+    <Footer />
+  </div>;
+
+const styles = {
+  container: {
+    minHeight: 'min-content',
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+};
+
+export default graphql(gql`
+  {
+    allSites {
+      id
+      title
+      tagline
+    }
+    allPosts {
+      title
+      type
+      id
+    }
+    allSocialAccounts {
+      name
+      url
+    }
+  }
+`)(Home);

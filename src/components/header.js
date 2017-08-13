@@ -1,12 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import styles from '../util/styles';
 
-console.log(styles);
 export default ({ heading, subHeading }) =>
   <div style={styles.wrapper}>
-    <h1 style={{ ...styles.heading, ...headerStyles.main }}>
-      {heading}
-    </h1>
+    <Link to="/">
+      <h1 style={{ ...styles.heading, ...headerStyles.main }}>
+        {heading}
+      </h1>
+    </Link>
     <h3
       style={{
         ...styles.subHeading,

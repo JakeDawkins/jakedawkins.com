@@ -1,49 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import {
+  ApolloClient,
+  ApolloProvider,
+  createNetworkInterface,
+} from 'react-apollo';
+
 import './app.css';
 import registerServiceWorker from './registerServiceWorker';
 
 import Background from './assets/bg.png';
 
-import Header from './components/header';
-import Content from './components/content';
-import Social from './components/social';
-import Footer from './components/footer';
+import Home from './pages/home';
+import Post from './pages/post';
+
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+const client = new ApolloClient({
+  networkInterface: createNetworkInterface({
+    uri: 'https://api.graphcms.com/simple/v1/cj5tn2xagdqe30122bgt8ds9x',
+  }),
+});
 
 const App = () => {
   return (
-    <div style={styles.container}>
-      <Header heading="Jake Dawkins" subHeading="I make dope stuff" />
-      <Content content={content} />
-      <Social accounts={socials} />
-      <Footer />
-    </div>
+    <ApolloProvider client={client}>
+      <Router>
+        <div style={styles.container}>
+          <Route exact path="/" component={Home} />
+          <Route path="/post/:id" component={Post} />
+        </div>
+      </Router>
+    </ApolloProvider>
   );
 };
-
-const content = [
-  {
-    type: 'editorial',
-    title: 'The Importance of Unimportant Hobbies',
-    url: 'https://google.com',
-  },
-  {
-    type: 'photo',
-    title: 'Click this because I want you to',
-    url: 'https://google.com',
-  },
-  {
-    type: 'link',
-    title: 'I Promise This Link Is Safe',
-    url: 'https://google.com',
-  },
-];
-
-const socials = [
-  { name: 'twitter', url: 'https://twitter.com/jakedawkins' },
-  { name: 'github', url: 'https://github.com/jakedawkins' },
-  { name: 'medium', url: 'https://medium.com/@jakedawkins' },
-];
 
 const styles = {
   container: {
@@ -55,7 +46,6 @@ const styles = {
     justifyContent: 'space-between',
     backgroundImage: `url(${Background})`,
     backgroundRepeat: 'repeat',
-    fontFamily: 'helvetica',
   },
 };
 

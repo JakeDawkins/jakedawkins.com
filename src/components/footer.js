@@ -12,7 +12,9 @@ export default () =>
         style={footerStyles.harambe}
         href="https://en.wikipedia.org/wiki/Killing_of_Harambe"
       >
-        🐒
+        <span role="img" aria-label="monkey">
+          🐒
+        </span>
       </a>
     </small>
   </div>;
