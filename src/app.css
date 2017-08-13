@@ -5,20 +5,31 @@ body,
   height: 100%;
   margin: 0;
   display: flex;
+  font-family: 'Open Sans', helvetica, sans-serif;
 }
 
-h1 {
+div {
+  font-family: 'Open Sans', helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Roboto', Helvetica, sans-serif;
   display: inline-block;
-  background-color: white;
-  padding: 16px;
-  text-align: center;
   margin: 0;
 }
 
-h2 {
-  display: inline-block;
-  text-align: center;
-  background-color: white;
-  padding: 8px;
-  margin: 0;
+a {
+  text-decoration: underline;
+  color: #101010;
+}
+
+a:hover,
+a:visited,
+a:active {
+  color: #101010;
 }
