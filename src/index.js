@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import createBrowserHistory from 'history/createBrowserHistory';
 import {
   ApolloClient,
   ApolloProvider,
@@ -17,6 +17,8 @@ import Post from './pages/post';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
+const history = createBrowserHistory();
+
 const client = new ApolloClient({
   networkInterface: createNetworkInterface({
     uri: 'https://api.graphcms.com/simple/v1/cj5tn2xagdqe30122bgt8ds9x',
@@ -26,7 +28,7 @@ const client = new ApolloClient({
 const App = () => {
   return (
     <ApolloProvider client={client}>
-      <Router>
+      <Router history={history}>
         <div style={styles.container}>
           <Route exact path="/" component={Home} />
           <Route path="/post/:id" component={Post} />
@@ -46,8 +48,10 @@ const styles = {
     justifyContent: 'space-between',
     backgroundImage: `url(${Background})`,
     backgroundRepeat: 'repeat',
+    width: '100%',
+    maxWidth: '100%',
   },
 };
 
 ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+// registerServiceWorker();

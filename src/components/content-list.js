@@ -28,7 +28,7 @@ export default ({ content }) =>
           type === 'link'
             ? <a
                 key={title}
-                style={{ ...contentStyles.item, marginTop: i === 0 ? 0 : 16 }}
+                style={{ ...contentStyles.item, marginTop: i === 0 ? 0 : 8 }}
                 href={externalLink}
               >
                 <div style={contentStyles.item}>
@@ -40,7 +40,7 @@ export default ({ content }) =>
               </a>
             : <Link
                 key={title}
-                style={{ ...contentStyles.item, marginTop: i === 0 ? 0 : 16 }}
+                style={{ ...contentStyles.item, marginTop: i === 0 ? 0 : 8 }}
                 to={`post/${id}`}
               >
                 <div style={contentStyles.item}>

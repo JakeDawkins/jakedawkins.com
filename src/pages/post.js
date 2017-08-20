@@ -1,24 +1,26 @@
 import React from 'react';
 import Markdown from 'react-markdown';
 import { gql, graphql } from 'react-apollo';
+import Loading from 'react-spinkit';
 
 import Header from '../components/header';
 import Footer from '../components/footer';
 
 export const Post = ({ data }) =>
-  !data.loading &&
-  <div style={styles.container}>
-    <Header heading="Jake Dawkins" subHeading="I make dope stuff" />
+  data.loading
+    ? <Loading fadeIn={'quarter'} style={{ marginTop: 64 }} name="pacman" />
+    : <div style={styles.container}>
+        <Header heading="Jake Dawkins" subHeading="I make dope stuff" />
 
-    <div style={styles.markdown}>
-      <h1>
-        {data.Post.title}
-      </h1>
-      <hr />
-      <Markdown source={data.Post.body} />
-    </div>
-    <Footer />
-  </div>;
+        <div className={'markdown'} style={styles.markdown}>
+          <h1>
+            {data.Post.title}
+          </h1>
+          <hr />
+          <Markdown source={data.Post.body} />
+        </div>
+        <Footer />
+      </div>;
 
 const styles = {
   container: {
@@ -28,14 +30,16 @@ const styles = {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'space-between',
+    maxWidth: '100%',
+    overflow: 'hidden',
   },
   markdown: {
     overflow: 'hidden',
     backgroundColor: 'white',
     minHeight: '50%',
-    width: '100%',
-    maxWidth: '512px',
     padding: '16px',
+    width: '512px',
+    maxWidth: '100%',
     marginTop: '32px',
   },
 };
