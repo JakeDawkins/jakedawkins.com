@@ -10,13 +10,21 @@
     "react-markdown": "^2.5.0",
     "react-router-dom": "^4.1.2",
     "react-scripts": "1.0.10",
-    "react-spinkit": "^3.0.0"
+    "react-spinkit": "^3.0.0",
+    "reason-react": "^0.2.3"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "react-scripts build && cp build/index.html build/400.html && cp build/index.html build/200.html && surge build/ jakedawkins.com"
+    "deploy": "react-scripts build && cp build/index.html build/400.html && cp build/index.html build/200.html && surge build/ jakedawkins.com",
+    "symlink": "ln -s ~/projects/jakedawkins.com/lib/js/src/components/ ~/projects/jakedawkins.com/src/components/reason",
+    "bs-build": "bsb -make-world",
+    "bs-watch": "bsb -make-world -w",
+    "bs-clean": "bsb -clean-world"
+  },
+  "devDependencies": {
+    "bs-platform": "^1.8.2"
   }
 }

@@ -7,7 +7,9 @@ import Loading from 'react-spinkit';
 import Header from '../components/header';
 import ContentList from '../components/content-list';
 import Social from '../components/social';
-import Footer from '../components/footer';
+
+// import Footer from '../components/footer';
+const Footer = require('../components/reason/footer').default;
 
 const Home = ({ data }) =>
   data.loading
