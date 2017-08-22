@@ -1154,6 +1154,10 @@ browserslist@^2.1.2, browserslist@^2.1.3:
     caniuse-lite "^1.0.30000710"
     electron-to-chromium "^1.3.17"
 
+bs-platform@^1.8.2:
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-1.8.2.tgz#2aba1cfc73e21feaa8902d67b5ddbec975938554"
+
 bser@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/bser/-/bser-1.0.2.tgz#381116970b2a6deea5646dd15dd7278444b56169"
@@ -1603,7 +1607,7 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-create-react-class@^15.6.0:
+create-react-class@^15.0.0, create-react-class@^15.6.0:
   version "15.6.0"
   resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.6.0.tgz#ab448497c26566e1e29413e883207d57cfe7bed4"
   dependencies:
@@ -5254,6 +5258,12 @@ readline2@^1.0.1:
     code-point-at "^1.0.0"
     is-fullwidth-code-point "^1.0.0"
     mute-stream "0.0.5"
+
+reason-react@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/reason-react/-/reason-react-0.2.3.tgz#7a2654b9bf85b25ccd53ae6bd84d3f33238220ae"
+  dependencies:
+    create-react-class "^15.0.0"
 
 rechoir@^0.6.2:
   version "0.6.2"

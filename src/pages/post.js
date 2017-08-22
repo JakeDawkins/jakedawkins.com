@@ -4,7 +4,8 @@ import { gql, graphql } from 'react-apollo';
 import Loading from 'react-spinkit';
 
 import Header from '../components/header';
-import Footer from '../components/footer';
+// import Footer from '../components/footer';
+const Footer = require('../components/reason/footer').default;
 
 export const Post = ({ data }) =>
   data.loading

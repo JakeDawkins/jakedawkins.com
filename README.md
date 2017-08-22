@@ -1,5 +1,14 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+## Setup
+
+- clone & cd into repo.
+- change the `symlink` command to have the correct paths for your system.
+- run `yarn symlink` to setup link to `lib/js/components`. 
+- `yarn install && yarn bs-build`
+- `yarn start`
+
+
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
