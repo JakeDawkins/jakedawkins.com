@@ -20,38 +20,37 @@ const icon = type => {
   }
 };
 
-export default ({ content }) =>
+export default ({ content }) => (
   <div style={styles.wrapper}>
     {content &&
       content.map(
         ({ type, title, externalLink, id }, i) =>
-          type === 'link'
-            ? <a
-                key={title}
-                style={{ ...contentStyles.item, marginTop: i === 0 ? 0 : 8 }}
-                href={externalLink}
-              >
-                <div style={contentStyles.item}>
-                  <img style={contentStyles.img} src={icon(type)} alt={type} />
-                  <h2 style={contentStyles.h2}>
-                    {title}
-                  </h2>
-                </div>
-              </a>
-            : <Link
-                key={title}
-                style={{ ...contentStyles.item, marginTop: i === 0 ? 0 : 8 }}
-                to={`post/${id}`}
-              >
-                <div style={contentStyles.item}>
-                  <img style={contentStyles.img} src={icon(type)} alt={type} />
-                  <h2 style={contentStyles.h2}>
-                    {title}
-                  </h2>
-                </div>
-              </Link>
+          type === 'LINK' ? (
+            <a
+              key={title}
+              style={{ ...contentStyles.item, marginTop: i === 0 ? 0 : 8 }}
+              href={externalLink}
+            >
+              <div style={contentStyles.item}>
+                <img style={contentStyles.img} src={icon(type)} alt={type} />
+                <h2 style={contentStyles.h2}>{title}</h2>
+              </div>
+            </a>
+          ) : (
+            <Link
+              key={title}
+              style={{ ...contentStyles.item, marginTop: i === 0 ? 0 : 8 }}
+              to={`post/${id}`}
+            >
+              <div style={contentStyles.item}>
+                <img style={contentStyles.img} src={icon(type)} alt={type} />
+                <h2 style={contentStyles.h2}>{title}</h2>
+              </div>
+            </Link>
+          ),
       )}
-  </div>;
+  </div>
+);
 
 const contentStyles = {
   item: {

@@ -12,17 +12,19 @@ import Social from '../components/social';
 const Footer = require('../components/reason/footer').default;
 
 const Home = ({ data }) =>
-  data.loading
-    ? <Loading fadeIn={'quarter'} style={{ marginTop: 64 }} name="pacman" />
-    : <div style={styles.container}>
-        <Header
-          heading={data.allSites[0].title}
-          subHeading={data.allSites[0].tagline}
-        />
-        <ContentList content={data.allPosts} />
-        <Social accounts={data.allSocialAccounts} />
-        <Footer />
-      </div>;
+  data.loading ? (
+    <Loading fadeIn={'quarter'} style={{ marginTop: 64 }} name="pacman" />
+  ) : (
+    <div style={styles.container}>
+      <Header
+        heading={data.allSites[0].title}
+        subHeading={data.allSites[0].tagline}
+      />
+      <ContentList content={data.allPosts} />
+      <Social accounts={data.allSocialAccounts} />
+      <Footer />
+    </div>
+  );
 
 const styles = {
   container: {
@@ -42,10 +44,11 @@ export default graphql(gql`
       title
       tagline
     }
-    allPosts {
+    allPosts(orderBy: createdAt_DESC) {
       title
       type
       id
+      externalLink
     }
     allSocialAccounts {
       name
