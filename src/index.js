@@ -10,7 +10,7 @@ import {
 import './app.css';
 import registerServiceWorker from './registerServiceWorker';
 
-import Background from './assets/bg.png';
+// import Background from './assets/bg.png';
 
 import Home from './pages/home';
 import Post from './pages/post';
@@ -46,8 +46,8 @@ const styles = {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'space-between',
-    backgroundImage: `url(${Background})`,
-    backgroundRepeat: 'repeat',
+    // backgroundImage: `url(${Background})`,
+    // backgroundRepeat: 'repeat',
     width: '100%',
     maxWidth: '100%',
   },

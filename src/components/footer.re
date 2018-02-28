@@ -23,7 +23,7 @@ let makeFooter = fun children => {
       <small style=textStyle >
         (se {j|©2017 Jake Dawkins. It's okay. You can |j})
         <a href="https://github.com/jakedawkins/jakedawkins.com">
-          (se "steal this shit.")
+          (se "steal this.")
         </a>
         <a
           href="https://en.wikipedia.org/wiki/Killing_of_Harambe"

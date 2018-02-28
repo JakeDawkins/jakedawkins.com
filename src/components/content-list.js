@@ -62,6 +62,7 @@ const contentStyles = {
     justifyContent: 'flex-start',
     alignItems: 'center',
     textDecoration: 'none',
+    borderBottom: '1px solid #d8d8d8',
   },
   h2: {
     display: 'inline-block',
