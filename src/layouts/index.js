@@ -7,7 +7,9 @@ import Header from '../components/header';
 import Footer from '../components/footer';
 import './index.css';
 
-const TemplateWrapper = ({ children, data }) => {
+import siteData from '../info';
+
+const TemplateWrapper = ({ children }) => {
   return (
     <View style={styles.container}>
       <Helmet
@@ -24,25 +26,13 @@ const TemplateWrapper = ({ children, data }) => {
         ]}
       />
       <View style={styles.body}>
-        <Header title={data.allSites.edges[0].node.title} />
+        <Header title={siteData.title} />
         <View style={styles.content}>{children()}</View>
         <Footer />
       </View>
     </View>
   );
 };
-
-export const query = graphql`
-  query BasicLayoutQuery {
-    allSites {
-      edges {
-        node {
-          title
-        }
-      }
-    }
-  }
-`;
 
 const styles = StyleSheet.create({
   container: { flex: 1, marginHorizontal: 8, marginVertical: 16 },
