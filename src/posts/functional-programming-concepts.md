@@ -1,7 +1,8 @@
 ---
-title: "Functional Programming Concepts"
+title: "Intro to Functional Programming Concepts"
 type: "WRITING"
 date: "2016-00-00" #idk what this should be
+description: "Some early notes of mine taken while I was learning functional programming"
 ---
 
 ## What this is

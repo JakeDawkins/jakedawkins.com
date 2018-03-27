@@ -5,6 +5,7 @@ import { View, Text } from 'react-primitives';
 import Heading from '../components/heading';
 import Badge from '../components/badge';
 import ContentItem from '../components/content-item-row';
+import SmartLink from '../components/link';
 
 import siteData from '../info';
 
@@ -19,8 +20,10 @@ const IndexPage = ({ data }) => {
     .sort(sortByDate)
     .map(p => ({ ...p.node.frontmatter, slug: p.node.fields.slug }));
 
-  const writing = posts.filter(({ type }) => type === 'WRITING');
-  const speaking = posts.filter(({ type }) => type === 'SPEAKING');
+  const writing = posts.filter(({ type, hide }) => type === 'WRITING' && !hide);
+  const speaking = posts.filter(
+    ({ type, hide }) => type === 'SPEAKING' && !hide,
+  );
 
   const socialAccounts = siteData.socialAccounts;
 
@@ -29,18 +32,22 @@ const IndexPage = ({ data }) => {
       <Heading text={siteData.title} />
       <View style={{ flexDirection: 'row' }}>
         {socialAccounts.map((a, i) => (
-          <a href={a.url} style={{ textDecoration: 'none' }} target="_blank">
+          <SmartLink
+            to={a.url}
+            style={{ textDecoration: 'none' }}
+            target="_blank"
+          >
             <Badge
               leftText={a.siteName}
               rightText={a.handle}
               rightColor={a.color}
               style={{ marginLeft: i !== 0 ? 8 : 0 }}
             />
-          </a>
+          </SmartLink>
         ))}
       </View>
 
-      <Text style={{ marginTop: 16, fontSize: 18 }}>{siteData.bio}</Text>
+      <Text style={{ marginTop: 16, fontSize: 16 }}>{siteData.bio}</Text>
 
       <Heading level={2} text="Writing" style={{ marginTop: 32 }} />
 
@@ -80,6 +87,7 @@ export const query = graphql`
             linkTitle
             date
             type
+            hide
           }
           timeToRead
           html

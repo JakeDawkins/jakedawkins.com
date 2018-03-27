@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'gatsby-link';
 import { View, StyleSheet, Text, Image } from 'react-primitives';
 
 const Footer = ({ title, subtitle }) => (

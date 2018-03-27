@@ -1,15 +1,24 @@
 import React from 'react';
-import Link from 'gatsby-link';
 import { View, StyleSheet, Text, Image } from 'react-primitives';
+import Link from './link';
 
 import logo from '../assets/jd-logo.png';
 
 export default ({ title }) => (
   <View style={styles.container}>
-    {/* <Link to="/"> */}
-    <Image source={logo} style={styles.logo} />
-    <Text style={styles.title}>{title}</Text>
-    {/* </Link> */}
+    <Link
+      to="/"
+      style={{
+        textDecoration: 'none',
+        color: 'black',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+      }}
+    >
+      <Image source={logo} style={styles.logo} />
+      <Text style={styles.title}>{title}</Text>
+    </Link>
   </View>
 );
 

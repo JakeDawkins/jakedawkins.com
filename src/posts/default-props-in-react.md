@@ -2,6 +2,7 @@
 title: "Default Props in React"
 type: "WRITING"
 date: "2016-00-00" #idk what this should be
+hide: true
 ---
 
 If you've been around React for any length of time, you're almost certainly aware of proptypes (or the equivalent in whatever type system you're using). I've been aware of these since one of my first tutorials.
