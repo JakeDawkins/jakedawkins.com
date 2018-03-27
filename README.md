@@ -1,13 +1,31 @@
-# gatsby-starter-default
-The default Gatsby starter
+# jakedawkins.com
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/)
+My personal website, built using [Gatsby](https://www.gatsbyjs.org). Styled to look similar to GitHub Markdown.
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
+## Uses
+
+* [react-primitives](https://github.com/lelandrichardson/react-primitives)
+* [gatsby-react-native-web](https://github.com/slorber/gatsby-plugin-react-native-web) - copied the code in `gatsby-browser`, `gatsby-node`, and `gatsby-ssr` files.
+* [github-markdown-css](https://github.com/sindresorhus/github-markdown-css) - post styling
+
+---
+
+## Run locally
+
+requires gatsby cli
+
 ```
-gatsby new gatsby-example-site
+git clone https://github.com/JakeDawkins/jakedawkins.com.git
+cd jakedawkins.com
+gatsby develop
 ```
+
+---
 
 ## Deploy
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+Assumes you're deploying to github pages. You will need to change the path prefix to match your repository name. More information [here](https://www.gatsbyjs.org/docs/how-gatsby-works-with-github-pages/).
+
+```
+yarn deploy
+```
