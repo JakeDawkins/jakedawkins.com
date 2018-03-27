@@ -9,6 +9,10 @@
 # production
 /build
 
+# gatsby
+/public
+.cache
+
 # misc
 .DS_Store
 .env.local
@@ -19,7 +23,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# Reason
-/lib/bs
-.merlin

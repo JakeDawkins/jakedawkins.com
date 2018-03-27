@@ -1,30 +1,35 @@
 {
-  "name": "jakedawkins.com",
-  "version": "0.1.0",
-  "private": true,
+  "name": "gatsby-starter-default",
+  "description": "Gatsby default starter",
+  "version": "1.0.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "history": "^4.6.3",
-    "react": "^15.6.1",
-    "react-apollo": "^1.4.12",
-    "react-dom": "^15.6.1",
-    "react-markdown": "^2.5.0",
-    "react-router-dom": "^4.1.2",
-    "react-scripts": "1.0.10",
-    "react-spinkit": "^3.0.0",
-    "reason-react": "^0.2.3"
+    "gatsby": "^1.9.223",
+    "gatsby-link": "^1.6.38",
+    "gatsby-plugin-favicon": "^2.1.1",
+    "gatsby-plugin-react-helmet": "^2.0.6",
+    "gatsby-plugin-react-next": "^1.0.11",
+    "gatsby-source-filesystem": "^1.5.27",
+    "gatsby-source-graphcms": "^0.0.1",
+    "gatsby-transformer-remark": "^1.7.37",
+    "github-markdown-css": "^2.10.0",
+    "react-helmet": "^5.2.0",
+    "react-native-web": "^0.5.3",
+    "react-primitives": "^0.5.0"
   },
+  "keywords": ["gatsby"],
+  "license": "MIT",
+  "main": "n/a",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "deploy": "react-scripts build && cp build/index.html build/400.html && cp build/index.html build/200.html && surge build/ jakedawkins.com",
-    "symlink": "ln -s ~/projects/jakedawkins.com/lib/js/src/components/ ~/projects/jakedawkins.com/src/components/reason",
-    "bs-build": "bsb -make-world",
-    "bs-watch": "bsb -make-world -w",
-    "bs-clean": "bsb -clean-world"
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format":
+      "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "devDependencies": {
-    "bs-platform": "^1.8.2"
+    "gh-pages": "^1.1.0",
+    "prettier": "^1.11.1"
   }
 }

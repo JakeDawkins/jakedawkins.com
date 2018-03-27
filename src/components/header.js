@@ -1,38 +1,37 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { View, StyleSheet, Text, Image } from 'react-primitives';
+import Link from './link';
 
-import styles from '../util/styles';
+import logo from '../assets/jd-logo.png';
 
-export default ({ heading, subHeading }) =>
-  <div style={styles.wrapper}>
-    <Link to="/">
-      <h1 style={{ ...styles.heading, ...headerStyles.main }}>
-        {heading}
-      </h1>
-    </Link>
-    <h3
+export default ({ title }) => (
+  <View style={styles.container}>
+    <Link
+      to="/"
       style={{
-        ...styles.subHeading,
-        ...headerStyles.subHeading,
-        ...{ marginTop: 8 },
+        textDecoration: 'none',
+        color: 'black',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
       }}
     >
-      {subHeading}
-    </h3>
-  </div>;
+      <Image source={logo} style={styles.logo} />
+      <Text style={styles.title}>{title}</Text>
+    </Link>
+  </View>
+);
 
-const headerStyles = {
-  main: {
-    backgroundColor: 'white',
-    padding: '8px 32px',
-    textAlign: 'center',
-    letterSpacing: 1.2,
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#f6f8fa',
+    borderBottomWidth: 1,
+    borderBottomColor: '#dddddd',
+    padding: 8,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
-  subHeading: {
-    textAlign: 'center',
-    backgroundColor: 'white',
-    padding: '4px 8px',
-    marginBottom: '0px',
-    letterSpacing: 1.2,
-  },
-};
+  logo: { height: 10, width: 16 },
+  title: { marginLeft: 8, fontWeight: 'bold' },
+});
