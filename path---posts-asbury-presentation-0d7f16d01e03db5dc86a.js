@@ -1,0 +1,2 @@
+webpackJsonp([87921508055974],{516:function(t,n){t.exports={data:{markdownRemark:{html:"",frontmatter:{title:"When Front-End Met Back-End: A GraphQL Love Story"}}},pathContext:{slug:"/posts/asbury-presentation/"}}}});
+//# sourceMappingURL=path---posts-asbury-presentation-0d7f16d01e03db5dc86a.js.map
