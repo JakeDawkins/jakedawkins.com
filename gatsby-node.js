@@ -44,11 +44,11 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   });
 };
 
-// exports.modifyWebpackConfig = ({ config, stage }) => {
-//   if (stage === 'build-html') {
-//     config.loader('null', {
-//       test: /react-art/,
-//       loader: 'null-loader',
-//     });
-//   }
-// };
+exports.modifyWebpackConfig = ({ config, stage }) => {
+  if (stage === 'build-html') {
+    config.loader('null', {
+      test: /art/,
+      loader: 'null-loader',
+    });
+  }
+};

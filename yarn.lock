@@ -7214,6 +7214,22 @@ react-native-web@^0.3.2:
     react-art "^16.2.0"
     react-timer-mixin "^0.13.3"
 
+react-native-web@^0.5.3:
+  version "0.5.3"
+  resolved "https://registry.npmjs.org/react-native-web/-/react-native-web-0.5.3.tgz#1c977e28b0a22006838bf08d361f664935c180ed"
+  dependencies:
+    array-find-index "^1.0.2"
+    create-react-class "^15.6.2"
+    debounce "^1.1.0"
+    deep-assign "^2.0.0"
+    fbjs "^0.8.16"
+    hyphenate-style-name "^1.0.2"
+    inline-style-prefixer "^4.0.0"
+    normalize-css-color "^1.0.2"
+    prop-types "^15.6.0"
+    react-art "^16.2.0"
+    react-timer-mixin "^0.13.3"
+
 react-primitives@^0.5.0:
   version "0.5.0"
   resolved "https://registry.npmjs.org/react-primitives/-/react-primitives-0.5.0.tgz#98b5a2c9dc8a572c8e9badb2af6da512a71b884d"
