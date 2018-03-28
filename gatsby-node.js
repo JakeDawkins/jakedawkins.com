@@ -45,7 +45,8 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 };
 
 exports.modifyWebpackConfig = ({ config, stage }) => {
-  if (stage === 'build-html') {
+  // console.log(stage);
+  if (stage === 'build-html' || stage === 'develop-html') {
     config.loader('null', {
       test: /art/,
       loader: 'null-loader',

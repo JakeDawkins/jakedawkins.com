@@ -35,15 +35,21 @@ const TemplateWrapper = ({ children }) => {
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, marginHorizontal: 8, marginVertical: 16 },
+  container: {
+    flex: 1,
+    marginHorizontal: 8,
+    marginVertical: 16,
+    marginBottom: 16,
+  },
   body: {
-    margin: '0 auto',
-    maxWidth: 960,
-    marginHorizontal: 'auto',
-    width: '100%',
-    borderWidth: 1,
     borderColor: '#dddddd',
     borderRadius: 3,
+    borderWidth: 1,
+    marginBottom: 16,
+    marginHorizontal: 'auto',
+    marginTop: 0,
+    maxWidth: 960,
+    width: '100%',
   },
   content: {
     padding: 48,

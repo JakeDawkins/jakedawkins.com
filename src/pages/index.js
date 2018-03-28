@@ -30,8 +30,8 @@ const IndexPage = ({ data }) => {
   return (
     <View>
       <Heading text={siteData.title} />
-      <View style={{ flexDirection: 'row' }}>
-        {socialAccounts.map((a, i) => (
+      <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
+        {socialAccounts.map((a, i, all) => (
           <SmartLink
             to={a.url}
             style={{ textDecoration: 'none' }}
@@ -41,7 +41,7 @@ const IndexPage = ({ data }) => {
               leftText={a.siteName}
               rightText={a.handle}
               rightColor={a.color}
-              style={{ marginLeft: i !== 0 ? 8 : 0 }}
+              style={{ marginRight: i !== all.length - 1 ? 8 : 0 }}
             />
           </SmartLink>
         ))}
