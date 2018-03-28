@@ -1,6 +1,8 @@
 export default {
-  bio:
-    "I'm Jake! I was born and raised in South Carolina, but recently relocated to New York City. I'm currently lead engineer on the mobile team at Major League Soccer. I work with React, React Native, and GraphQL to build a next generation of fan experiences. I thoroughly enjoy working with others, teaching, and learning new things.\n\nThis site is just a summary of some of the things I've been working on. It is not at all exhaustive, and will continue to change.",
+  bio: [
+    "I'm Jake! I was born and raised in South Carolina, but recently relocated to New York City. I'm currently lead engineer on the mobile team at Major League Soccer. I work with React, React Native, and GraphQL to build a next generation of fan experiences. I thoroughly enjoy working with others, teaching, and learning new things.",
+    "This site is just a summary of some of the things I've been working on. It is not at all exhaustive, and will continue to change.",
+  ],
   title: 'Jake Dawkins',
   socialAccounts: [
     {

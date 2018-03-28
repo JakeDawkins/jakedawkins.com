@@ -47,7 +47,11 @@ const IndexPage = ({ data }) => {
         ))}
       </View>
 
-      <Text style={{ marginTop: 16, fontSize: 16 }}>{siteData.bio}</Text>
+      {siteData.bio.map((paragraph, i) => (
+        <Text key={i} style={{ marginTop: 16, fontSize: 16 }}>
+          {paragraph}
+        </Text>
+      ))}
 
       <Heading level={2} text="Writing" style={{ marginTop: 32 }} />
 
