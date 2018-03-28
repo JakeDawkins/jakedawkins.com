@@ -26,7 +26,7 @@ export const Item = ({
 
 const linkStyle = {
   textDecoration: 'none',
-  color: 'blue',
+  color: '#0366d6',
   marginTop: 4,
   fontSize: 16,
   fontFamily: 'sans-serif',
