@@ -1,0 +1,2 @@
+webpackJsonp([58423741113392],{519:function(t,a){t.exports={data:{markdownRemark:{html:"",frontmatter:{title:"Authorization in GraphQL"}}},pathContext:{slug:"/posts/authorization-in-graphql/"}}}});
+//# sourceMappingURL=path---posts-authorization-in-graphql-f861918402f80a531f6d.js.map
