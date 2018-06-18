@@ -1,5 +1,9 @@
 {
   "assetsByChunkName": {
+    "path---posts-testing-react-apollo": [
+      "path---posts-testing-react-apollo-6df2b3a6f5ce0791329c.js",
+      "path---posts-testing-react-apollo-6df2b3a6f5ce0791329c.js.map"
+    ],
     "path---posts-default-props-in-react": [
       "path---posts-default-props-in-react-f2c8acad1b07415c836d.js",
       "path---posts-default-props-in-react-f2c8acad1b07415c836d.js.map"
@@ -29,8 +33,8 @@
       "path---posts-make-coding-fun-fb9869e0cf5a62771510.js.map"
     ],
     "path---index": [
-      "path---index-924a5927c7ed5f348777.js",
-      "path---index-924a5927c7ed5f348777.js.map"
+      "path---index-b850f5f9cf2eeeb211c6.js",
+      "path---index-b850f5f9cf2eeeb211c6.js.map"
     ],
     "component---src-pages-404-js": [
       "component---src-pages-404-js-fe07050596c342c553b5.js",
@@ -67,9 +71,9 @@
       "path---posts-more-testable-react-components-a74456021d7309c3bf09.js.map"
     ],
     "app": [
-      "app-24fe703c346782fb8455.js",
+      "app-8340c055a30f44707c6b.js",
       "build-js-styles.css",
-      "app-24fe703c346782fb8455.js.map",
+      "app-8340c055a30f44707c6b.js.map",
       "build-js-styles.css.map"
     ],
     "path---posts-object-key-validation-in-javascript": [
