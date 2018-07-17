@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "jake-dawkins-site",
+  "description": "JakeDawkins.com",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Jake Dawkins",
   "dependencies": {
     "emotion": "^9.2.6",
     "emotion-server": "^9.2.6",
@@ -18,17 +18,16 @@
     "react-emotion": "^9.2.6",
     "react-helmet": "^5.2.0"
   },
-  "keywords": [
-    "gatsby"
-  ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
+    "format":
+      "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gatsby build && echo \"jakedawkins.com\" > public/CNAME && gh-pages -d public"
+    "deploy":
+      "gatsby build && echo \"jakedawkins.com\" > public/CNAME && gh-pages -d public"
   },
   "devDependencies": {
     "gh-pages": "^1.1.0",

@@ -2,7 +2,6 @@ module.exports = {
   siteMetadata: {
     title: 'Jake Dawkins',
   },
-  // pathPrefix: '/jakedawkins.com',
   plugins: [
     'gatsby-plugin-react-next',
     'gatsby-plugin-react-helmet',

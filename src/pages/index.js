@@ -1,11 +1,7 @@
 import React from 'react';
-import Link from 'gatsby-link';
 import styled, { css } from 'react-emotion';
-import Rule from '../components/rule';
-import Badge from '../components/badge';
-import ContentItem from '../components/content-item-row';
-import SmartLink from '../components/link';
 
+import { Rule, Badge, ContentItemRow, Link } from '../components';
 import siteData from '../info';
 
 const sortByDate = (a, b) => {
@@ -20,16 +16,17 @@ const SocialWrapper = styled.div({
   flexWrap: 'wrap',
 });
 
-const Bio = styled.p({
-  marginTop: 16,
-  fontSize: 16,
-});
+const Bio = styled.p({ marginTop: 16, fontSize: 16 });
+const SiteTitle = styled.h1({ fontWeight: 600 });
+const SectionTitle = styled.h2({ marginTop: 32, fontWeight: 600 });
 
 const IndexPage = ({ data }) => {
+  // reduce the posts from the returned data
   const posts = data.allMarkdownRemark.edges
     .sort(sortByDate)
     .map(p => ({ ...p.node.frontmatter, slug: p.node.fields.slug }));
 
+  // filter posts by writing/speaking posts
   const writing = posts.filter(({ type, hide }) => type === 'WRITING' && !hide);
   const speaking = posts.filter(
     ({ type, hide }) => type === 'SPEAKING' && !hide,
@@ -39,12 +36,12 @@ const IndexPage = ({ data }) => {
 
   return (
     <div>
-      <h1 className={css({ fontWeight: 600 })}>{siteData.title}</h1>
+      <SiteTitle>{siteData.title}</SiteTitle>
       <Rule />
 
       <SocialWrapper>
         {socialAccounts.map((a, i, all) => (
-          <SmartLink
+          <Link
             key={a.url}
             to={a.url}
             style={{ textDecoration: 'none' }}
@@ -56,17 +53,17 @@ const IndexPage = ({ data }) => {
               rightColor={a.color}
               style={{ marginRight: i !== all.length - 1 ? 8 : 0 }}
             />
-          </SmartLink>
+          </Link>
         ))}
       </SocialWrapper>
 
       {siteData.bio.map((paragraph, i) => <Bio key={i}>{paragraph}</Bio>)}
 
-      <h2 className={css({ marginTop: 32, fontWeight: 600 })}>Writing</h2>
+      <SectionTitle>Writing</SectionTitle>
       <Rule />
 
       {writing.map(({ title, description, linkTitle, link, slug }) => (
-        <ContentItem
+        <ContentItemRow
           title={title}
           description={description}
           readMoreTitle={linkTitle ? linkTitle : 'Read More'}
@@ -76,11 +73,11 @@ const IndexPage = ({ data }) => {
         />
       ))}
 
-      <h2 className={css({ marginTop: 32, fontWeight: 600 })}>Speaking</h2>
+      <SectionTitle>Speaking</SectionTitle>
       <Rule />
 
       {speaking.map(({ title, description, linkTitle, link, slu }) => (
-        <ContentItem
+        <ContentItemRow
           title={title}
           description={description}
           readMoreTitle={linkTitle ? linkTitle : 'Read More'}

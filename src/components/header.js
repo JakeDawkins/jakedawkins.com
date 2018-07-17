@@ -19,18 +19,17 @@ const Wrapper = styled.div({
   alignItems: 'center',
 });
 
+const linkStyle = {
+  textDecoration: 'none',
+  color: 'black',
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+};
+
 export default ({ title }) => (
   <Wrapper>
-    <Link
-      to="/"
-      style={{
-        textDecoration: 'none',
-        color: 'black',
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
-      }}
-    >
+    <Link to="/" style={linkStyle}>
       <img src={logo} width={16} height={10} className={css({ margin: 0 })} />
       <Title>{title}</Title>
     </Link>

@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import styled from 'react-emotion';
-import Header from '../components/header';
-import Footer from '../components/footer';
-import './index.css';
 
+import { Header, Footer } from '../components';
+import './index.css';
 import siteData from '../info';
 
 const Wrapper = styled.div({

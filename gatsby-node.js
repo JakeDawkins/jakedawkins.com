@@ -43,13 +43,3 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     });
   });
 };
-
-// exports.modifyWebpackConfig = ({ config, stage }) => {
-//   // console.log(stage);
-//   if (stage === 'build-html' || stage === 'develop-html') {
-//     config.loader('null', {
-//       test: /art/,
-//       loader: 'null-loader',
-//     });
-//   }
-// };

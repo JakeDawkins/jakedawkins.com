@@ -1,22 +1,25 @@
-# jakedawkins.com
+# JakeDawkins.com
 
-My personal website, built using [Gatsby](https://www.gatsbyjs.org). Styled to look similar to GitHub Markdown.
+## 🌎 Check out my site at [jakedawkins.com](https://jakedawkins.com)
+
+My personal website, built using [Gatsby](https://www.gatsbyjs.org). Styled to look similar to the GitHub Markdown preview.
 
 ## Uses
 
-* [react-primitives](https://github.com/lelandrichardson/react-primitives)
-* [gatsby-react-native-web](https://github.com/slorber/gatsby-plugin-react-native-web) - copied the code in `gatsby-browser`, `gatsby-node`, and `gatsby-ssr` files.
+* [Emotion](https://emotion.sh) for styling
+* [gatsby-plugin-favicon](https://github.com/Creatiwity/gatsby-plugin-favicon) to generate the site's various favicons
 * [github-markdown-css](https://github.com/sindresorhus/github-markdown-css) - post styling
 
 ---
 
-## Run locally
+## To run locally...
 
-requires gatsby cli
+Install the [Gatsy CLI](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-cli)
 
 ```
 git clone https://github.com/JakeDawkins/jakedawkins.com.git
 cd jakedawkins.com
+yarn
 gatsby develop
 ```
 
@@ -24,8 +27,10 @@ gatsby develop
 
 ## Deploy
 
-Assumes you're deploying to github pages. You will need to change the path prefix to match your repository name. More information [here](https://www.gatsbyjs.org/docs/how-gatsby-works-with-github-pages/).
+Assuming you're deploying to github pages, You will need to have this repository set up with your own GitHub repository, and have write privileges.
 
-```
-yarn deploy
-```
+You will need to change the CNAME file generation in the deploy script to match your url.
+
+`package.json > scripts > deploy`
+
+With both of those steps done, deploying is as easy as running `yarn deploy`

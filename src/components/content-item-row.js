@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'react-emotion';
-import Link, { isInternal } from './link';
-import Rule from './rule';
+
+import { Link, isInternal, Rule } from './';
 
 const Wrapper = styled.div(({ style }) => ({
   flexDirection: 'column',
@@ -17,6 +17,14 @@ const Title = styled.h5({
   marginBottom: 0,
   fontWeight: 600,
 });
+
+const linkStyle = {
+  textDecoration: 'none',
+  color: '#0366d6',
+  marginTop: 4,
+  fontSize: 16,
+  fontFamily: 'sans-serif',
+};
 
 export const Item = ({
   title,
@@ -37,13 +45,5 @@ export const Item = ({
     </Link>
   </Wrapper>
 );
-
-const linkStyle = {
-  textDecoration: 'none',
-  color: '#0366d6',
-  marginTop: 4,
-  fontSize: 16,
-  fontFamily: 'sans-serif',
-};
 
 export default Item;
