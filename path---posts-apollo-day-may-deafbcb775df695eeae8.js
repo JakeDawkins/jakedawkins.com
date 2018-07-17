@@ -1,2 +1,2 @@
-webpackJsonp([0xcb4b12fda745],{276:function(a,t){a.exports={data:{markdownRemark:{html:"",frontmatter:{title:"A Hands-On Look at Apollo GraphQL"}}},pathContext:{slug:"/posts/apollo-day-may/"}}}});
+webpackJsonp([0xcb4b12fda745],{278:function(a,t){a.exports={data:{markdownRemark:{html:"",frontmatter:{title:"A Hands-On Look at Apollo GraphQL"}}},pathContext:{slug:"/posts/apollo-day-may/"}}}});
 //# sourceMappingURL=path---posts-apollo-day-may-deafbcb775df695eeae8.js.map
