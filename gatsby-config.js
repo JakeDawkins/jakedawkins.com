@@ -4,8 +4,9 @@ module.exports = {
   },
   // pathPrefix: '/jakedawkins.com',
   plugins: [
-    `gatsby-plugin-react-next`,
+    'gatsby-plugin-react-next',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-emotion',
     {
       resolve: `gatsby-plugin-favicon`,
       options: {

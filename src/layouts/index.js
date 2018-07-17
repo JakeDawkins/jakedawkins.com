@@ -1,17 +1,61 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { View, StyleSheet } from 'react-primitives';
-
+import styled, { injectGlobal } from 'react-emotion';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import './index.css';
 
 import siteData from '../info';
 
+injectGlobal`
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+  }
+
+  p {
+    font-size: 14px;
+    margin: 0;
+  }
+
+  img {
+    margin: 0;
+  }
+`;
+
+const Wrapper = styled.div({
+  flex: 1,
+  margin: '8px 16px 16px 16px',
+  flexGrow: 1,
+});
+
+const Body = styled.div({
+  borderStyle: 'solid',
+  flexDirection: 'column',
+  borderColor: '#dddddd',
+  borderRadius: 3,
+  borderWidth: 1,
+  margin: '0 auto 16px auto',
+  maxWidth: 960,
+  width: '100%',
+  flexGrow: 1,
+});
+
+const Content = styled.div({
+  padding: 48,
+  wordWrap: 'break-word',
+  flexGrow: 1,
+});
+
 const TemplateWrapper = ({ children }) => {
   return (
-    <View style={styles.container}>
+    <Wrapper>
       <Helmet
         title="Jake Dawkins"
         meta={[
@@ -25,36 +69,14 @@ const TemplateWrapper = ({ children }) => {
           },
         ]}
       />
-      <View style={styles.body}>
+      <Body>
         <Header title={siteData.title} />
-        <View style={styles.content}>{children()}</View>
+        <Content>{children()}</Content>
         <Footer />
-      </View>
-    </View>
+      </Body>
+    </Wrapper>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginHorizontal: 8,
-    marginVertical: 16,
-    marginBottom: 16,
-  },
-  body: {
-    borderColor: '#dddddd',
-    borderRadius: 3,
-    borderWidth: 1,
-    marginBottom: 16,
-    marginHorizontal: 'auto',
-    marginTop: 0,
-    maxWidth: 960,
-    width: '100%',
-  },
-  content: {
-    padding: 48,
-  },
-});
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func,

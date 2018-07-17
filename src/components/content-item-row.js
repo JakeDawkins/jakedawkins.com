@@ -1,7 +1,22 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-primitives';
+import styled, { css } from 'react-emotion';
 import Link, { isInternal } from './link';
-import Heading from './heading';
+import Rule from './rule';
+
+const Wrapper = styled.div(({ style }) => ({
+  flexDirection: 'column',
+  ...style,
+}));
+
+const Description = styled.p({
+  fontSize: 16,
+  marginTop: 8,
+});
+
+const Title = styled.h5({
+  marginBottom: 0,
+  fontWeight: 600,
+});
 
 export const Item = ({
   title,
@@ -10,10 +25,9 @@ export const Item = ({
   readMoreUrl,
   style,
 }) => (
-  <View style={style}>
-    {/* <Text style={styles.title}>{title}</Text> */}
-    <Heading level={4} text={title} rule={false} />
-    <Text style={styles.description}>{description}</Text>
+  <Wrapper style={style}>
+    <Title>{title}</Title>
+    <Description>{description}</Description>
     <Link
       to={readMoreUrl}
       style={linkStyle}
@@ -21,7 +35,7 @@ export const Item = ({
     >
       {readMoreTitle}
     </Link>
-  </View>
+  </Wrapper>
 );
 
 const linkStyle = {
@@ -31,10 +45,5 @@ const linkStyle = {
   fontSize: 16,
   fontFamily: 'sans-serif',
 };
-
-const styles = StyleSheet.create({
-  description: { fontSize: 16, marginTop: 4 },
-  title: { fontWeight: 'bold', fontSize: 16 },
-});
 
 export default Item;

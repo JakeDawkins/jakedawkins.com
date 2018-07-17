@@ -1,11 +1,26 @@
 import React from 'react';
-import { View, StyleSheet, Text, Image } from 'react-primitives';
 import Link from './link';
+import styled from 'react-emotion';
 
 import logo from '../assets/jd-logo.png';
 
+const Title = styled.p({
+  marginLeft: 8,
+  fontWeight: 600,
+});
+
+const Wrapper = styled.div({
+  flex: 1,
+  backgroundColor: '#f6f8fa',
+  borderBottomWidth: 1,
+  borderBottomColor: '#dddddd',
+  padding: 8,
+  flexDirection: 'row',
+  alignItems: 'center',
+});
+
 export default ({ title }) => (
-  <View style={styles.container}>
+  <Wrapper>
     <Link
       to="/"
       style={{
@@ -16,22 +31,8 @@ export default ({ title }) => (
         alignItems: 'center',
       }}
     >
-      <Image source={logo} style={styles.logo} />
-      <Text style={styles.title}>{title}</Text>
+      <img src={logo} width={16} height={10} />
+      <Title>{title}</Title>
     </Link>
-  </View>
+  </Wrapper>
 );
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f6f8fa',
-    borderBottomWidth: 1,
-    borderBottomColor: '#dddddd',
-    padding: 8,
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  logo: { height: 10, width: 16 },
-  title: { marginLeft: 8, fontWeight: 'bold' },
-});

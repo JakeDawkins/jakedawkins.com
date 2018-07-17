@@ -1,8 +1,7 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import { View, Text } from 'react-primitives';
-
-import Heading from '../components/heading';
+import styled, { css } from 'react-emotion';
+import Rule from '../components/rule';
 import Badge from '../components/badge';
 import ContentItem from '../components/content-item-row';
 import SmartLink from '../components/link';
@@ -14,6 +13,17 @@ const sortByDate = (a, b) => {
   if (a.node.frontmatter.date > b.node.frontmatter.date) return -1;
   return 0;
 };
+
+const SocialWrapper = styled.div({
+  display: 'flex',
+  flexDirection: 'row',
+  flexWrap: 'wrap',
+});
+
+const Bio = styled.p({
+  marginTop: 16,
+  fontSize: 16,
+});
 
 const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges
@@ -28,11 +38,14 @@ const IndexPage = ({ data }) => {
   const socialAccounts = siteData.socialAccounts;
 
   return (
-    <View>
-      <Heading text={siteData.title} />
-      <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
+    <div>
+      <h1 className={css({ fontWeight: 600 })}>{siteData.title}</h1>
+      <Rule />
+
+      <SocialWrapper>
         {socialAccounts.map((a, i, all) => (
           <SmartLink
+            key={a.url}
             to={a.url}
             style={{ textDecoration: 'none' }}
             target="_blank"
@@ -45,15 +58,12 @@ const IndexPage = ({ data }) => {
             />
           </SmartLink>
         ))}
-      </View>
+      </SocialWrapper>
 
-      {siteData.bio.map((paragraph, i) => (
-        <Text key={i} style={{ marginTop: 16, fontSize: 16 }}>
-          {paragraph}
-        </Text>
-      ))}
+      {siteData.bio.map((paragraph, i) => <Bio key={i}>{paragraph}</Bio>)}
 
-      <Heading level={2} text="Writing" style={{ marginTop: 32 }} />
+      <h2 className={css({ marginTop: 32, fontWeight: 600 })}>Writing</h2>
+      <Rule />
 
       {writing.map(({ title, description, linkTitle, link, slug }) => (
         <ContentItem
@@ -62,10 +72,13 @@ const IndexPage = ({ data }) => {
           readMoreTitle={linkTitle ? linkTitle : 'Read More'}
           readMoreUrl={link ? link : slug}
           style={{ marginTop: 32 }}
+          key={`${title}-${link}`}
         />
       ))}
 
-      <Heading level={2} text="Speaking" style={{ marginTop: 32 }} />
+      <h2 className={css({ marginTop: 32, fontWeight: 600 })}>Speaking</h2>
+      <Rule />
+
       {speaking.map(({ title, description, linkTitle, link, slu }) => (
         <ContentItem
           title={title}
@@ -73,9 +86,10 @@ const IndexPage = ({ data }) => {
           readMoreTitle={linkTitle ? linkTitle : 'Read More'}
           readMoreUrl={link ? link : slug}
           style={{ marginTop: 32 }}
+          key={`${title}-${link}`}
         />
       ))}
-    </View>
+    </div>
   );
 };
 
