@@ -1,33 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import styled, { injectGlobal } from 'react-emotion';
+import styled from 'react-emotion';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import './index.css';
 
 import siteData from '../info';
-
-injectGlobal`
-  * {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-  }
-
-  p {
-    font-size: 14px;
-    margin: 0;
-  }
-
-  img {
-    margin: 0;
-  }
-`;
 
 const Wrapper = styled.div({
   flex: 1,
