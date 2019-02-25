@@ -22,7 +22,7 @@ const Text = styled.p({
 
 const Footer = () => (
   <Wrapper>
-    <Text>&copy;2018 Jake Dawkins</Text>
+    <Text>&copy;2019 Jake Dawkins</Text>
   </Wrapper>
 );
 
