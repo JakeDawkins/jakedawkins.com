@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from './link';
-import styled, { css } from 'react-emotion';
+import styled from '@emotion/styled';
+import { css } from '@emotion/core';
 
 import logo from '../assets/jd-logo.png';
 
@@ -30,7 +31,13 @@ const linkStyle = {
 export default ({ title }) => (
   <Wrapper>
     <Link to="/" style={linkStyle}>
-      <img src={logo} width={16} height={10} className={css({ margin: 0 })} />
+      <img
+        src={logo}
+        alt="jd logo"
+        width={16}
+        height={10}
+        className={css({ margin: 0 })}
+      />
       <Title>{title}</Title>
     </Link>
   </Wrapper>
