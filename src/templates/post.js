@@ -1,5 +1,6 @@
 import React from 'react';
 import 'github-markdown-css';
+import { graphql } from 'gatsby';
 
 export default ({ data }) => {
   const post = data.markdownRemark;

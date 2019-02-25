@@ -1,7 +1,8 @@
 import React from 'react';
-import styled, { css } from 'react-emotion';
+import styled from '@emotion/styled';
+import { graphql } from 'gatsby';
 
-import { Rule, Badge, ContentItemRow, Link } from '../components';
+import { Rule, Badge, ContentItemRow, Link, Layout } from '../components';
 import siteData from '../info';
 
 const sortByDate = (a, b) => {
@@ -35,58 +36,60 @@ const IndexPage = ({ data }) => {
   const socialAccounts = siteData.socialAccounts;
 
   return (
-    <div>
-      <SiteTitle>{siteData.title}</SiteTitle>
-      <Rule />
+    <Layout>
+      <div>
+        <SiteTitle>{siteData.title}</SiteTitle>
+        <Rule />
 
-      <SocialWrapper>
-        {socialAccounts.map((a, i, all) => (
-          <Link
-            key={a.url}
-            to={a.url}
-            style={{ textDecoration: 'none' }}
-            target="_blank"
-          >
-            <Badge
-              leftText={a.siteName}
-              rightText={a.handle}
-              rightColor={a.color}
-              style={{ marginRight: i !== all.length - 1 ? 8 : 0 }}
-            />
-          </Link>
+        <SocialWrapper>
+          {socialAccounts.map((a, i, all) => (
+            <Link
+              key={a.url}
+              to={a.url}
+              style={{ textDecoration: 'none' }}
+              target="_blank"
+            >
+              <Badge
+                leftText={a.siteName}
+                rightText={a.handle}
+                rightColor={a.color}
+                style={{ marginRight: i !== all.length - 1 ? 8 : 0 }}
+              />
+            </Link>
+          ))}
+        </SocialWrapper>
+
+        {siteData.bio.map((paragraph, i) => <Bio key={i}>{paragraph}</Bio>)}
+
+        <SectionTitle>Writing</SectionTitle>
+        <Rule />
+
+        {writing.map(({ title, description, linkTitle, link, slug }) => (
+          <ContentItemRow
+            title={title}
+            description={description}
+            readMoreTitle={linkTitle ? linkTitle : 'Read More'}
+            readMoreUrl={link ? link : slug}
+            style={{ marginTop: 32 }}
+            key={`${title}-${link}`}
+          />
         ))}
-      </SocialWrapper>
 
-      {siteData.bio.map((paragraph, i) => <Bio key={i}>{paragraph}</Bio>)}
+        <SectionTitle>Speaking</SectionTitle>
+        <Rule />
 
-      <SectionTitle>Writing</SectionTitle>
-      <Rule />
-
-      {writing.map(({ title, description, linkTitle, link, slug }) => (
-        <ContentItemRow
-          title={title}
-          description={description}
-          readMoreTitle={linkTitle ? linkTitle : 'Read More'}
-          readMoreUrl={link ? link : slug}
-          style={{ marginTop: 32 }}
-          key={`${title}-${link}`}
-        />
-      ))}
-
-      <SectionTitle>Speaking</SectionTitle>
-      <Rule />
-
-      {speaking.map(({ title, description, linkTitle, link, slu }) => (
-        <ContentItemRow
-          title={title}
-          description={description}
-          readMoreTitle={linkTitle ? linkTitle : 'Read More'}
-          readMoreUrl={link ? link : slug}
-          style={{ marginTop: 32 }}
-          key={`${title}-${link}`}
-        />
-      ))}
-    </div>
+        {speaking.map(({ title, description, linkTitle, link, slug }) => (
+          <ContentItemRow
+            title={title}
+            description={description}
+            readMoreTitle={linkTitle ? linkTitle : 'Read More'}
+            readMoreUrl={link ? link : slug}
+            style={{ marginTop: 32 }}
+            key={`${title}-${link}`}
+          />
+        ))}
+      </div>
+    </Layout>
   );
 };
 

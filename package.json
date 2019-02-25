@@ -4,18 +4,18 @@
   "version": "1.0.0",
   "author": "Jake Dawkins",
   "dependencies": {
-    "emotion": "^9.2.6",
-    "emotion-server": "^9.2.6",
-    "gatsby": "^1.9.223",
-    "gatsby-link": "^1.6.38",
-    "gatsby-plugin-emotion": "^1.1.17",
-    "gatsby-plugin-favicon": "^2.1.1",
-    "gatsby-plugin-react-helmet": "^2.0.6",
-    "gatsby-plugin-react-next": "^1.0.11",
-    "gatsby-source-filesystem": "^1.5.27",
-    "gatsby-transformer-remark": "^1.7.37",
+    "@emotion/core": "^10.0.7",
+    "@emotion/styled": "^10.0.7",
+    "gatsby": "^2.1.17",
+    "gatsby-link": "^2.0.12",
+    "gatsby-plugin-emotion": "^4.0.4",
+    "gatsby-plugin-favicon": "^3.1.5",
+    "gatsby-plugin-react-helmet": "^3.0.6",
+    "gatsby-source-filesystem": "^2.0.22",
+    "gatsby-transformer-remark": "^2.2.6",
     "github-markdown-css": "^2.10.0",
-    "react-emotion": "^9.2.6",
+    "react": "^16.8.3",
+    "react-dom": "^16.4.0",
     "react-helmet": "^5.2.0"
   },
   "license": "MIT",
@@ -23,11 +23,9 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format":
-      "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy":
-      "gatsby build && echo \"jakedawkins.com\" > public/CNAME && gh-pages -d public"
+    "deploy": "gatsby build && echo \"jakedawkins.com\" > public/CNAME && gh-pages -d public"
   },
   "devDependencies": {
     "gh-pages": "^1.1.0",

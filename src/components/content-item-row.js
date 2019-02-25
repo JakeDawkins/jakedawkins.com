@@ -1,7 +1,7 @@
 import React from 'react';
-import styled, { css } from 'react-emotion';
+import styled from '@emotion/styled';
 
-import { Link, isInternal, Rule } from './';
+import { Link, isInternal } from './';
 
 const Wrapper = styled.div(({ style }) => ({
   flexDirection: 'column',
