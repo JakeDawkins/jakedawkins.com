@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "name": "jake-dawkins-site",
+  "description": null,
+  "icons": {
+    "60": "/icons-a11c67d4f854fb2af18b6f7bd8546765/firefox_app_60x60.png",
+    "128": "/icons-a11c67d4f854fb2af18b6f7bd8546765/firefox_app_128x128.png",
+    "512": "/icons-a11c67d4f854fb2af18b6f7bd8546765/firefox_app_512x512.png"
+  },
+  "developer": {
+    "name": null,
+    "url": null
+  }
+}
