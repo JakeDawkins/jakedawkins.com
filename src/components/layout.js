@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
+import { Global, css } from '@emotion/core';
 
 import { Header, Footer } from '../components';
 import siteData from '../info';
@@ -9,7 +10,6 @@ import siteData from '../info';
 const Wrapper = styled.div({
   flex: 1,
   flexGrow: 1,
-  backgroundColor: '#fafafa',
   color: '#333333',
 });
 
@@ -22,7 +22,6 @@ const Body = styled.div({
 });
 
 const Content = styled.div({
-  // padding: 48,
   wordWrap: 'break-word',
   flexGrow: 1,
 });
@@ -43,10 +42,18 @@ const Layout = ({ children, atHomePage }) => (
           content: 'software, engineering, javascript, technology, tech',
         },
       ]}
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Merriweather:900|Open+Sans:400"
-      rel="stylesheet"
+    >
+      <link
+        href="https://fonts.googleapis.com/css?family=Merriweather:900|Open+Sans:400"
+        rel="stylesheet"
+      />
+    </Helmet>
+    <Global
+      styles={css`
+        html {
+          background-color: #fafafa;
+        }
+      `}
     />
     <Body>
       <Header
