@@ -4,21 +4,11 @@ import styled from '@emotion/styled';
 const Wrapper = styled.div({
   display: 'flex',
   flex: 1,
-  backgroundColor: '#f6f8fa',
-  borderTopWidth: 1,
-  borderTopColor: '#dddddd',
-  padding: 8,
-  flexDirection: 'row',
-  alignItems: 'center',
   justifyContent: 'center',
+  marginTop: '32px',
 });
 
-const Text = styled.p({
-  margin: 0,
-  padding: 0,
-  fontFamily: 'sans-serif',
-  fontSize: 14,
-});
+const Text = styled.p({ fontFamily: "'Open Sans', sans-serif" });
 
 const Footer = () => (
   <Wrapper>

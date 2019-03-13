@@ -2,8 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { graphql } from 'gatsby';
 
-import { Rule, Badge, ContentItemRow, Link, Layout } from '../components';
-import siteData from '../info';
+import { ContentItemRow, Layout } from '../components';
 
 const sortByDate = (a, b) => {
   if (b.node.frontmatter.date > a.node.frontmatter.date) return 1;
@@ -11,15 +10,12 @@ const sortByDate = (a, b) => {
   return 0;
 };
 
-const SocialWrapper = styled.div({
-  display: 'flex',
-  flexDirection: 'row',
-  flexWrap: 'wrap',
+const SectionTitle = styled.h2({
+  marginTop: '32px',
+  fontWeight: 900,
+  fontFamily: 'Merriweather',
+  fontSize: '32px',
 });
-
-const Bio = styled.p({ marginTop: 16, fontSize: 16 });
-const SiteTitle = styled.h1({ fontWeight: 600 });
-const SectionTitle = styled.h2({ marginTop: 32, fontWeight: 600 });
 
 const IndexPage = ({ data }) => {
   // reduce the posts from the returned data
@@ -33,37 +29,10 @@ const IndexPage = ({ data }) => {
     ({ type, hide }) => type === 'SPEAKING' && !hide,
   );
 
-  const socialAccounts = siteData.socialAccounts;
-
   return (
     <Layout>
       <div>
-        <SiteTitle>{siteData.title}</SiteTitle>
-        <Rule />
-
-        <SocialWrapper>
-          {socialAccounts.map((a, i, all) => (
-            <Link
-              key={a.url}
-              to={a.url}
-              style={{ textDecoration: 'none' }}
-              target="_blank"
-            >
-              <Badge
-                leftText={a.siteName}
-                rightText={a.handle}
-                rightColor={a.color}
-                style={{ marginRight: i !== all.length - 1 ? 8 : 0 }}
-              />
-            </Link>
-          ))}
-        </SocialWrapper>
-
-        {siteData.bio.map((paragraph, i) => <Bio key={i}>{paragraph}</Bio>)}
-
         <SectionTitle>Writing</SectionTitle>
-        <Rule />
-
         {writing.map(({ title, description, linkTitle, link, slug }) => (
           <ContentItemRow
             title={title}
@@ -76,8 +45,6 @@ const IndexPage = ({ data }) => {
         ))}
 
         <SectionTitle>Speaking</SectionTitle>
-        <Rule />
-
         {speaking.map(({ title, description, linkTitle, link, slug }) => (
           <ContentItemRow
             title={title}

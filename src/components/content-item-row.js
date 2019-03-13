@@ -9,21 +9,25 @@ const Wrapper = styled.div(({ style }) => ({
 }));
 
 const Description = styled.p({
-  fontSize: 16,
-  marginTop: 8,
+  fontSize: '16px',
+  marginTop: '8px',
+  fontFamily: "'Open Sans', sans-serif",
+  margin: '8px 0',
 });
 
-const Title = styled.h5({
+const Title = styled.h3({
+  fontSize: '16px',
   marginBottom: 0,
-  fontWeight: 600,
+  fontWeight: 900,
+  fontFamily: 'Merriweather',
 });
 
 const linkStyle = {
   textDecoration: 'none',
   color: '#0366d6',
-  marginTop: 4,
-  fontSize: 16,
-  fontFamily: 'sans-serif',
+  marginTop: '4px',
+  fontSize: '16px',
+  fontFamily: "'Open Sans', sans-serif",
 };
 
 export const Item = ({

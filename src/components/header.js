@@ -1,44 +1,61 @@
 import React from 'react';
-import Link from './link';
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
-
-import logo from '../assets/jd-logo.png';
-
-const Title = styled.p({
-  margin: '0 0 0 8px',
-  fontWeight: 600,
-});
+import Link from './link';
+import { Button } from './';
 
 const Wrapper = styled.div({
-  flex: 1,
-  backgroundColor: '#f6f8fa',
-  borderBottomWidth: 1,
-  borderBottomColor: '#dddddd',
-  padding: 8,
-  flexDirection: 'row',
-  alignItems: 'center',
+  display: 'flex',
+  flexDirection: 'column',
+  width: '100%',
 });
 
-const linkStyle = {
+const Title = styled.h1(({ small }) => ({
+  margin: '0 0 0 0',
+  fontWeight: 900,
+  fontFamily: 'Merriweather',
+  fontSize: small ? 32 : 64,
+  borderBottom: '5px solid black',
+  display: 'inline-block',
+}));
+
+const LinkWrapper = styled(Link)({
   textDecoration: 'none',
   color: 'black',
-  display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'center',
+  flexDirection: 'column',
+});
+
+const SocialWrapper = styled.span();
+const buttonStyle = {
+  marginRight: '16px',
+  marginTop: '32px',
 };
 
-export default ({ title }) => (
+export default ({ title, links, atHomePage = true }) => (
   <Wrapper>
-    <Link to="/" style={linkStyle}>
-      <img
-        src={logo}
-        alt="jd logo"
-        width={16}
-        height={10}
-        className={css({ margin: 0 })}
-      />
-      <Title>{title}</Title>
-    </Link>
+    <LinkWrapper to="/">
+      {atHomePage ? (
+        <>
+          <Title>Jake</Title>
+          <br />
+          <Title>Dawkins</Title>
+        </>
+      ) : (
+        <Title small={true}>Back to home...</Title>
+      )}
+    </LinkWrapper>
+    {atHomePage && (
+      <SocialWrapper>
+        {links.map(link => (
+          <Link
+            key={link.url}
+            to={link.url}
+            style={{ textDecoration: 'none' }}
+            target="_blank"
+          >
+            <Button style={buttonStyle}>{link.siteName}</Button>
+          </Link>
+        ))}
+      </SocialWrapper>
+    )}
   </Wrapper>
 );
