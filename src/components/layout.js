@@ -4,60 +4,65 @@ import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
 
 import { Header, Footer } from '../components';
-import './index.css';
 import siteData from '../info';
 
 const Wrapper = styled.div({
   flex: 1,
-  margin: '8px 16px 16px 16px',
   flexGrow: 1,
+  backgroundColor: '#fafafa',
+  color: '#333333',
 });
 
 const Body = styled.div({
-  borderStyle: 'solid',
   flexDirection: 'column',
-  borderColor: '#dddddd',
-  borderRadius: 3,
-  borderWidth: 1,
-  margin: '0 auto 16px auto',
-  maxWidth: 960,
+  margin: '16px auto 16px auto',
+  maxWidth: 720,
   width: '100%',
   flexGrow: 1,
 });
 
 const Content = styled.div({
-  padding: 48,
+  // padding: 48,
   wordWrap: 'break-word',
   flexGrow: 1,
 });
 
-const TemplateWrapper = ({ children }) => {
-  return (
-    <Wrapper>
-      <Helmet
-        title="Jake Dawkins"
-        meta={[
-          {
-            name: 'description',
-            content: 'Personal site of Jake Dawkins, Software Engineer in NYC',
-          },
-          {
-            name: 'keywords',
-            content: 'software, engineering, javascript, technology, tech',
-          },
-        ]}
+const socialAccounts = siteData.socialAccounts;
+
+const Layout = ({ children, atHomePage }) => (
+  <Wrapper>
+    <Helmet
+      title="Jake Dawkins"
+      meta={[
+        {
+          name: 'description',
+          content: 'Personal site of Jake Dawkins, Software Engineer in NYC',
+        },
+        {
+          name: 'keywords',
+          content: 'software, engineering, javascript, technology, tech',
+        },
+      ]}
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather:900|Open+Sans:400"
+      rel="stylesheet"
+    />
+    <Body>
+      <Header
+        title={siteData.title}
+        links={socialAccounts}
+        atHomePage={atHomePage}
       />
-      <Body>
-        <Header title={siteData.title} />
-        <Content>{children}</Content>
-        <Footer />
-      </Body>
-    </Wrapper>
-  );
-};
+      <Content>{children}</Content>
+      <Footer />
+    </Body>
+  </Wrapper>
+);
 
-TemplateWrapper.propTypes = {
+Layout.propTypes = {
   children: PropTypes.func,
+  atHomePage: PropTypes.bool,
 };
 
-export default TemplateWrapper;
+export default Layout;
