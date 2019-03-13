@@ -34,11 +34,15 @@ export default ({ title, links, atHomePage = true }) => (
   <Wrapper>
     <LinkWrapper to="/">
       {atHomePage ? (
-        <>
-          <Title>Jake</Title>
-          <br />
-          <Title>Dawkins</Title>
-        </>
+        title.split(' ').map((word, i, all) => {
+          if (i === 0) return <Title>{word}</Title>;
+          return (
+            <>
+              <br />
+              <Title>{word}</Title>
+            </>
+          );
+        })
       ) : (
         <Title small={true}>Back to home...</Title>
       )}
