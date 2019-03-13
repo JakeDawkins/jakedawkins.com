@@ -15,6 +15,7 @@ const SectionTitle = styled.h2({
   fontWeight: 900,
   fontFamily: 'Merriweather',
   fontSize: '32px',
+  color: '#333',
 });
 
 const IndexPage = ({ data }) => {

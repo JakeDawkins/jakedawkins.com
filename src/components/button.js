@@ -7,7 +7,7 @@ const Wrapper = styled.span({
   lineHeight: '14px',
   fontWeight: '600',
   backgroundColor: '#fff',
-  border: 'solid #222 2px',
+  border: 'solid #333 2px',
   display: 'inline-block',
   borderRadius: '5px',
   padding: '6px 12px',
@@ -17,7 +17,7 @@ const Wrapper = styled.span({
   verticalAlign: 'middle',
   ':hover': {
     backgroundColor: '#f5f5f5',
-    boxShadow: '2px 2px 0 #222',
+    boxShadow: '2px 2px 0 #333',
   },
   color: '#333',
   fontFamily: "'Open Sans', sans-serif",

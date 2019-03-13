@@ -13,6 +13,7 @@ const Description = styled.p({
   marginTop: '8px',
   fontFamily: "'Open Sans', sans-serif",
   margin: '8px 0',
+  color: '#333',
 });
 
 const Title = styled.h3({
@@ -20,6 +21,7 @@ const Title = styled.h3({
   marginBottom: 0,
   fontWeight: 900,
   fontFamily: 'Merriweather',
+  color: '#333',
 });
 
 const linkStyle = {

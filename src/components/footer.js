@@ -8,7 +8,7 @@ const Wrapper = styled.div({
   marginTop: '32px',
 });
 
-const Text = styled.p({ fontFamily: "'Open Sans', sans-serif" });
+const Text = styled.p({ fontFamily: "'Open Sans', sans-serif", color: '#333' });
 
 const Footer = () => (
   <Wrapper>

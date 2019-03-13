@@ -14,13 +14,14 @@ const Title = styled.h1(({ small }) => ({
   fontWeight: 900,
   fontFamily: 'Merriweather',
   fontSize: small ? 32 : 64,
-  borderBottom: '5px solid black',
+  borderBottom: '5px solid #333',
   display: 'inline-block',
+  color: '#333',
 }));
 
 const LinkWrapper = styled(Link)({
   textDecoration: 'none',
-  color: 'black',
+  color: '#333',
   flexDirection: 'column',
 });
 
