@@ -7,6 +7,8 @@ import { Global, css } from '@emotion/core';
 import { Header, Footer } from '../components';
 import siteData from '../info';
 
+const { socialAccounts, title, bio } = siteData;
+
 const Wrapper = styled.div({
   flex: 1,
   flexGrow: 1,
@@ -25,8 +27,6 @@ const Content = styled.div({
   wordWrap: 'break-word',
   flexGrow: 1,
 });
-
-const socialAccounts = siteData.socialAccounts;
 
 const Layout = ({ children, atHomePage }) => (
   <Wrapper>
@@ -57,9 +57,10 @@ const Layout = ({ children, atHomePage }) => (
     />
     <Body>
       <Header
-        title={siteData.title}
+        title={title}
         links={socialAccounts}
         atHomePage={atHomePage}
+        bio={bio}
       />
       <Content>{children}</Content>
       <Footer />

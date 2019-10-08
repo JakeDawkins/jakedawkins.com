@@ -31,7 +31,15 @@ const buttonStyle = {
   marginTop: '32px',
 };
 
-export default ({ title, links, atHomePage = true }) => (
+const Bio = styled.p({
+  fontSize: '16px',
+  margin: '32px 0 0 0',
+  fontFamily: "'Open Sans', sans-serif",
+  // margin: '8px 0',
+  color: '#333',
+});
+
+export default ({ title, links, atHomePage = true, bio }) => (
   <Wrapper>
     <LinkWrapper to="/">
       {atHomePage ? (
@@ -49,18 +57,21 @@ export default ({ title, links, atHomePage = true }) => (
       )}
     </LinkWrapper>
     {atHomePage && (
-      <SocialWrapper>
-        {links.map(link => (
-          <Link
-            key={link.url}
-            to={link.url}
-            style={{ textDecoration: 'none' }}
-            target="_blank"
-          >
-            <Button style={buttonStyle}>{link.siteName}</Button>
-          </Link>
-        ))}
-      </SocialWrapper>
+      <div>
+        <Bio>{bio}</Bio>
+        <SocialWrapper>
+          {links.map(link => (
+            <Link
+              key={link.url}
+              to={link.url}
+              style={{ textDecoration: 'none' }}
+              target="_blank"
+            >
+              <Button style={buttonStyle}>{link.siteName}</Button>
+            </Link>
+          ))}
+        </SocialWrapper>
+      </div>
     )}
   </Wrapper>
 );
