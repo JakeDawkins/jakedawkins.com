@@ -1,7 +1,7 @@
 ---
 title: Getting Acquainted with Rust — First Look
 date: '2020-03-12'
-description: 'Exploring where Rust shines, and mt first impressions'
+description: 'Exploring where Rust shines, and my first impressions'
 ---
 
 ![Cover photo -- Ferris in space](cover.png)

@@ -1,6 +1,6 @@
 ---
 title: Unwrap and Expect in Rust
-date: '2020-04-15'
+date: '2020-04-16'
 description: 'Explaining how to use unwrap and expect in Rust project to handle Option and Result!'
 ---
 
@@ -10,7 +10,11 @@ A concept that I quickly came across when learning rust was that of the `Result`
 
 `Option` is Rust's way of expressing the lack of a value, similar to JavaScript's idea of `null` or `undefined`. Option tends to work similar to how enums work, but if enums had values _for their values_ (if that wording makes any sense at all). So `Option`s can have one of two values. `Some` or `None`. In other words, they have either `Some`thing in them, or nothing in them. Like a box. Now, `Some`'s value still has a type, it's not a free-for-all, but as for `Option` itself, it's always in one of those two states.
 
+![Option is either a value or None](options.png)
+
 `Result` is similar in concept but built to handle a different case. In JavaScript, errors or failures in functions are generally handled with exception throwing. And if you're lucky, you may even have the forethought to wrap those functions in a `try`/ `catch` block to mitigate any errors that occur in the function call. Well luckily, in Rust, there's a nicer way to handle a function that can either do something successfully or not—the `Result` type. `Result` also exists in one of two states: `Ok` or `Err`. `Ok` is similar to the `Some` type—it wraps another type, while `Err` also wraps an error type that the internals of the function can throw (or return in this case).
+
+![Result is either Ok or Err](results.png)
 
 But how do we handle these types? What do we do with `Option`s or `Result`s? Well that's where `unwrap` and `expect` come in! But first, let's look at how to use `Option` and `Result` _without_ these helpers:
 
@@ -89,6 +93,8 @@ thread 'main' panicked at 'status fetching', src/main.rs:5:27
 ```
 
 We could do all this manually using `match` and `panic` just like we did above, but condensing all that to a single function call makes life a lot easier (and code easier to read).
+
+![grid showing unwrap/expect results on different values](unwrap-expect-grid.png)
 
 ## Conclusion
 
