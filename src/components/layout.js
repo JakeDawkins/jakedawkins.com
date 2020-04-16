@@ -1,76 +1,70 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import styled from '@emotion/styled';
-import { Global, css } from '@emotion/core';
+import React from "react"
+import { Link } from "gatsby"
 
-import { Header, Footer } from '../components';
-import siteData from '../info';
+import { rhythm, scale } from "../utils/typography"
 
-const { socialAccounts, title, bio } = siteData;
+const Layout = ({ location, title, children }) => {
+  const rootPath = `${__PATH_PREFIX__}/`
+  let header
 
-const Wrapper = styled.div({
-  flex: 1,
-  flexGrow: 1,
-  color: '#333333',
-});
-
-const Body = styled.div({
-  flexDirection: 'column',
-  margin: '16px auto 16px auto',
-  maxWidth: 720,
-  width: '100%',
-  flexGrow: 1,
-});
-
-const Content = styled.div({
-  wordWrap: 'break-word',
-  flexGrow: 1,
-});
-
-const Layout = ({ children, atHomePage }) => (
-  <Wrapper>
-    <Helmet
-      title="Jake Dawkins"
-      meta={[
-        {
-          name: 'description',
-          content: 'Personal site of Jake Dawkins, Software Engineer in NYC',
-        },
-        {
-          name: 'keywords',
-          content: 'software, engineering, javascript, technology, tech',
-        },
-      ]}
+  if (location.pathname === rootPath) {
+    header = (
+      <h1
+        style={{
+          ...scale(1.5),
+          marginBottom: rhythm(1.5),
+          marginTop: 0,
+        }}
+      >
+        <Link
+          style={{
+            boxShadow: `none`,
+            color: `inherit`,
+          }}
+          to={`/`}
+        >
+          {title}
+        </Link>
+      </h1>
+    )
+  } else {
+    header = (
+      <h3
+        style={{
+          fontFamily: `Montserrat, sans-serif`,
+          marginTop: 0,
+        }}
+      >
+        <Link
+          style={{
+            boxShadow: `none`,
+            color: `inherit`,
+          }}
+          to={`/`}
+        >
+          {title}
+        </Link>
+      </h3>
+    )
+  }
+  return (
+    <div
+      style={{
+        marginLeft: `auto`,
+        marginRight: `auto`,
+        maxWidth: rhythm(24),
+        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+      }}
     >
-      <link
-        href="https://fonts.googleapis.com/css?family=Merriweather:900|Open+Sans:400"
-        rel="stylesheet"
-      />
-    </Helmet>
-    <Global
-      styles={css`
-        html {
-          background-color: #fafafa;
-        }
-      `}
-    />
-    <Body>
-      <Header
-        title={title}
-        links={socialAccounts}
-        atHomePage={atHomePage}
-        bio={bio}
-      />
-      <Content>{children}</Content>
-      <Footer />
-    </Body>
-  </Wrapper>
-);
+      <header>{header}</header>
+      <main>{children}</main>
+      <footer>
+        © {new Date().getFullYear()}, Built with
+        {` `}
+        <a href="https://www.gatsbyjs.org">Gatsby</a>
+      </footer>
+    </div>
+  )
+}
 
-Layout.propTypes = {
-  children: PropTypes.func,
-  atHomePage: PropTypes.bool,
-};
-
-export default Layout;
+export default Layout
