@@ -3,6 +3,7 @@ title: 'The White Room'
 type: 'MUSINGS'
 date: '2019-10-08'
 description: 'A vision I had of redemption and freedom.'
+hide: true
 ---
 
 ![The White Room](https://images.unsplash.com/photo-1515511856280-7b23f68d2996?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2253&q=80)

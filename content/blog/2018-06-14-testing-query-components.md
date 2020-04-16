@@ -6,10 +6,6 @@ cover: 'https://unsplash.it/400/300/?random?ApolloQuery'
 linkTitle: 'Read on Medium'
 date: '2018-06-14'
 type: 'WRITING'
-categories:
-  - Tech
-tags:
-  - Writing
 ---
 
 ## This shouldn't render
