@@ -3,7 +3,7 @@ title: 'Desk 01 - Design'
 type: 'WRITING'
 date: '2020-08-11'
 description: 'An ode to midcentury writing desks, made with walnut'
-# cover: './front.jpg'
+cover: 'https://jakedawkins.com/static/112e8eb5809812362673631a48954af9/d2602/front.jpg'
 ---
 
 ![](./front.jpg)
