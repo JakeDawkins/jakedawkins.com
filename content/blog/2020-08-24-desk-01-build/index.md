@@ -6,7 +6,7 @@ description: 'How I went about building the desk'
 cover: 'https://jakedawkins.com/static/112e8eb5809812362673631a48954af9/d2602/front.jpg'
 ---
 
-In [my last post](./2020-08-11-desk-01), I walked through how I went about designing and redesigning my latest project, a midcentury-inspired writing desk! In this post, I'm going to be discussing the work that went into actually _building_ the desk.
+In [my last post](../2020-08-11-desk-01), I walked through how I went about designing and redesigning my latest project, a midcentury-inspired writing desk! In this post, I'm going to be discussing the work that went into actually _building_ the desk.
 
 I drew up designs in SketchUp and rough-estimated how much lumber I was going to need, and went and picked up 7 (I think) pieces of edge-surfaced walnut, each between 8-10ft long.
 
