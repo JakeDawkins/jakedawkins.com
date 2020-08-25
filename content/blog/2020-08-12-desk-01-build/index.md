@@ -42,8 +42,6 @@ After glue-up, there was a lot of work that needed to be done to the panels. I m
 
 After planing, I took my orbital sander and sanded the panels with 150 and then 220-grit sandpaper to smooth them out as much as possible. This left the panels looking beautiful and smooth and ready to be cut down to size.
 
-![](./panel-rough.jpg)
-
 Which leads us to...
 
 ## My big mistake
