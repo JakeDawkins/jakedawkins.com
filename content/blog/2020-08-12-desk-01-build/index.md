@@ -1,7 +1,7 @@
 ---
 title: 'Desk 01 - The Build'
 type: 'WRITING'
-date: '2020-08-11'
+date: '2020-08-24'
 description: 'How I went about building the desk'
 cover: 'https://jakedawkins.com/static/112e8eb5809812362673631a48954af9/d2602/front.jpg'
 ---
