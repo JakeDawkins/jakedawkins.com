@@ -18,6 +18,10 @@ const BlogIndex = ({ data, location }) => {
         if (node.frontmatter.hide) return;
         const title = node.frontmatter.title || node.fields.slug;
         const link = node.frontmatter.link;
+        const formattedDate = new Date(node.frontmatter.date)
+          .toDateString()
+          .substr(4);
+
         return (
           <article key={node.fields.slug}>
             <header>
@@ -37,7 +41,7 @@ const BlogIndex = ({ data, location }) => {
                   </Link>
                 )}
               </h3>
-              <small>{node.frontmatter.date}</small>
+              <small>{formattedDate}</small>
             </header>
             <section>
               <p
@@ -70,7 +74,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date
             title
             description
             link

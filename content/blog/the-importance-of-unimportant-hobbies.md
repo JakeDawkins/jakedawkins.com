@@ -1,8 +1,8 @@
 ---
-title: "The Importance of Unimportant Hobbies"
-type: "WRITING"
-date: "2016-00-00" #idk what this should be
-description: "A lesson that I learned a while back about rest and relaxation"
+title: 'The Importance of Unimportant Hobbies'
+type: 'WRITING'
+date: '2017-02-01'
+description: 'A lesson that I learned a while back about rest and relaxation'
 ---
 
 It sounds counterintuitive, but this bit of advice has impacted me more than most:

@@ -1,8 +1,8 @@
 ---
-title: "More Testable React Components"
-type: "WRITING"
-date: "2016-00-00" #idk what this should be
-description: "Some simple lessons I learned while refactoring components for unit testing"
+title: 'More Testable React Components'
+type: 'WRITING'
+date: '2016-10-01'
+description: 'Some simple lessons I learned while refactoring components for unit testing'
 ---
 
 Testing code is not easy. At least not at first. Learning to test logic for any faults can be a painful process. Especially if you weren't the one to write it.
