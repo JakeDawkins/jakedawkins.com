@@ -3,7 +3,7 @@ module.exports = {
     title: `Jake Dawkins`,
     author: {
       name: `Jake Dawkins`,
-      summary: `who is an Open Source Engineer at Apollo GraphQL. He maintains the Apollo CLI & Editor Extensions. Loves learning, teaching and is a purveyor of fine memes.`,
+      summary: `who is a senior product engineer at Carbon Health. Previously, he maintained the Apollo CLI & Editor Extensions. He's a private pilot, ameteur woodworker, speaker, and all-around serial hobbyist.`,
     },
     description: `Personal site and blog for Jake Dawkins`,
     siteUrl: `https://jakedawkins.com`,
