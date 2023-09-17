@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html class="theme-sleek astro-QC6HDHB4" lang="en">
+  <head>
+    <!-- Global Metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="Blogster">
+    <meta name="theme-color" content="#ffffff">
+
+<!-- 
+  This is an example. 
+  Use https://realfavicongenerator.net to generate the icons and manifest. 
+-->
+<link href="/favicon.ico" rel="shortcut icon">
+
+    <!-- Primary Meta Tags --><title>React Style Guide</title>
+<meta name="title" content="React Style Guide">
+<meta name="description" content="Build modern conventional React components">
+
+
+<!-- Open Graph / Facebook -->
+<meta property="og:title" content="React Style Guide">
+<meta property="og:description" content="Build modern conventional React components">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://jakedawkins.com/blog/react-style-guide">
+<meta property="article:author" content="Jake Dawkins">
+<meta property="article:published_time" content="2022-06-08T00:00:00.000Z">
+
+
+
+
+
+<!-- Twitter -->
+<meta property="twitter:title" content="React Style Guide">
+<meta property="twitter:description" content="Build modern conventional React components">
+<meta property="twitter:site" content="@jakedawkins">
+<meta property="twitter:creator" content="@jakedawkins">
+<meta property="twitter:card" content="summary_large_image">
+
+
+<!-- {twitter.url && <meta property="twitter:url" content={twitter.url} />} -->
+
+    <!-- 
+    We don't want to use <link /> to load fonts from Google CDN 
+    but if you want to switch font this is the easiest way 
+    to check how your page will look with the new font.
+--><!-- 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&display=block"
+        rel="stylesheet"
+    />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400&display=swap"
+        rel="stylesheet"
+    />
+--><link rel="preload" href="/fonts/open-sans-v34-latin-regular.woff2" as="font" type="font/woff2" crossorigin="crossorigin"><link rel="preload" href="/fonts/open-sans-v34-latin-700.woff2" as="font" type="font/woff2" crossorigin="crossorigin"><link rel="preload" href="/fonts/open-sans-v34-latin-800.woff2" as="font" type="font/woff2" crossorigin="crossorigin"><link rel="preload" href="/fonts/open-sans-v34-latin-italic.woff2" as="font" type="font/woff2" crossorigin="crossorigin"><style>
+    /* open-sans-regular - latin */
+    @font-face {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 400;
+      font-display: fallback;
+      src: local(""),
+        url("/fonts/open-sans-v34-latin-regular.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url("/fonts/open-sans-v34-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+    /* open-sans-700 - latin */
+    @font-face {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 700;
+      font-display: fallback;
+      src: local(""),
+        url("/fonts/open-sans-v34-latin-700.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url("/fonts/open-sans-v34-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+    /* open-sans-800 - latin */
+    @font-face {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 800;
+      font-display: fallback;
+      src: local(""),
+        url("/fonts/open-sans-v34-latin-800.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url("/fonts/open-sans-v34-latin-800.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+    /* open-sans-italic - latin */
+    @font-face {
+      font-family: "Open Sans";
+      font-style: italic;
+      font-weight: 400;
+      font-display: fallback;
+      src: local(""),
+        url("/fonts/open-sans-v34-latin-italic.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url("/fonts/open-sans-v34-latin-italic.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+  </style>
+
+    <script>
+  // figure out user's preferred theme and set it as html class for tailwind before paint
+  (function () {
+    if (typeof window !== "undefined") {
+      const isSystemColorSchemeDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      const storageTheme = sessionStorage.getItem("theme");
+      if (!storageTheme && isSystemColorSchemeDark) {
+        document.documentElement.classList.add("dark");
+        document.head.children.namedItem("theme-color").content = "#0e141b";
+      } else if (storageTheme === "dark") {
+        document.documentElement.classList.add("dark");
+        document.head.children.namedItem("theme-color").content = "#0e141b";
+      } else {
+        // we already server render light theme
+        document.head.children.namedItem("theme-color").content = "#ffffff";
+      }
+    }
+  })();
+</script>
+
+    <link href="/fontawesome/css/fontawesome.bareminimum.css" rel="stylesheet"><link href="/fontawesome/css/brands.bareminimum.css" rel="stylesheet"><link href="/fontawesome/css/solid.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/_slug_.51d69fd6.css" />
+<link rel="stylesheet" href="/assets/_slug_.6fa83557.css" /><script type="module" src="/hoisted.fee86805.js"></script></head>
+
+  <body class="min-h-screen max-w-3xl mx-auto px-6 sm:px-8 astro-QC6HDHB4">
+    <header class="astro-XLGIQWDQ">
+  <a class="unset absolute z-10 left-[50%] -top-[100rem] translate-x-[-50%] bg-white text-black px-8 py-2 focus:top-[initial] astro-XLGIQWDQ" href="#main">
+    Skip to content
+  </a>
+  <nav class="astro-XLGIQWDQ">
+    <section class="text-text-bold astro-XLGIQWDQ">
+      <ul class="unset flex gap-4 [&>li]:p-0 astro-XLGIQWDQ">
+        <li class="astro-XLGIQWDQ"><!-- DO NOT FORMAT. IT ADDS AN EXTRA SPACE ON RENDERED CONTENT. --><a href="/" class="astro-XLGIQWDQ unset animated-link">Home</a></li>
+        <li class="astro-XLGIQWDQ"><!-- DO NOT FORMAT. IT ADDS AN EXTRA SPACE ON RENDERED CONTENT. --><a href="/blog" class="astro-XLGIQWDQ show unset animated-link">Blog</a></li>
+        <li class="astro-XLGIQWDQ"><!-- DO NOT FORMAT. IT ADDS AN EXTRA SPACE ON RENDERED CONTENT. --><a href="/projects" class="astro-XLGIQWDQ unset animated-link">Projects</a></li>
+      </ul>
+    </section>
+  </nav>
+  <div class="max-[375px]:hidden justify-self-end py-2 flex items-center content-center text-text-bold astro-XLGIQWDQ">
+    <a class="unset text-xl ml-4 hover:text-text-link astro-XLGIQWDQ" href="https://github.com/jakedawkins">
+      <i class="fa-brands fa-github astro-XLGIQWDQ" aria-hidden="true" title="Jake Dawkins on GitHub"></i>
+      <span class="fa-sr-only astro-XLGIQWDQ">Jake Dawkins on GitHub</span>
+    </a>
+    <a class="unset text-xl ml-4 hover:text-text-link astro-XLGIQWDQ" href="https://threads.net/@jakedawkins">
+      <i class="fa-brands fa-threads astro-XLGIQWDQ" aria-hidden="true" title="Jake Dawkins on Threads"></i>
+      <span class="fa-sr-only astro-XLGIQWDQ">Jake Dawkins on Threads</span>
+    </a>
+  </div>
+  <mode-toggle class="flex astro-33G7QLPM">
+  <button class="justify-self-end bg-neutral-200 dark:bg-neutral-700 ml-4 inline-flex h-6 w-11 items-center rounded-full astro-33G7QLPM" id="mode-toggle" role="switch" type="button" tabindex="0" aria-checked="false" data-headlessui-state=""><span class="sr-only astro-33G7QLPM">Toggle dark mode</span><span id="mode-circle" class="light inline-block h-4 w-4 rounded-full bg-gradient-to-tr invisible astro-33G7QLPM"><span class="absolute top-0 right-0 w-[10px] h-[10px] rounded-full bg-gray-700 scale-[0] astro-33G7QLPM"></span>
+  </span>
+</button>
+</mode-toggle>
+
+
+
+
+</header>
+
+    <main id="main" class="astro-QC6HDHB4">
+      <section class="blog-post prose max-w-none prose-sleek astro-QC6HDHB4">
+        <h1 class="m-0 mb-[0.25em] astro-QC6HDHB4">React Style Guide</h1>
+        <time class="block mb-[2em] text-text-muted astro-QC6HDHB4">Jun 7, 2022</time>
+        <article><p>Building React components in a consistent way is critical for readability and maintainability. When components have similar controls and interaction patterns, it’s easier to know what to expect, but more importantly know when something isn’t working correctly.</p><h2 id="overview" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Overview" href="#overview" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Overview</span></h2><p>Everything mentioned in this document is heavily based on my own experience and opinions, but by no means is this the only correct way to build component systems. Some things are linked together, and changing one would require changes to another item in the list, but this combination of thoughts is by no means the only way to build applications. It is also not, very prescriptive about specific tools or frameworks (with a few exceptions), since tooling changes quicker than this document could be updated to accommodate. These ideas can largely be implemented a number of different ways effectively.</p><p>Companies and projects will vary, so adjust this guide as needed to fit.</p><h2 id="philosophy" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Philosophy" href="#philosophy" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Philosophy</span></h2><p>As a high-level philosophy, I’ve found the most success in making components modular, composable, and highly testable. With components that bring opinions with them instead of letting the caller do whatever they please, I’ve often found it easier to keep track of design systems and highlight inconsistencies in designs.</p><p>The philosophy I use is a minimal-control model. Components should work well on their own, but should be designed to fit in just about anywhere. Where this philosophy breaks apart, I often find an opportunity to improve designs or make components more robust. But when it comes to changing components, I do this when needed, rather than trying to plan for every use-case at the beginning.</p><h2 id="organize-components-by-primitives-and-compound-components" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Organize components by primitives and compound components" href="#organize-components-by-primitives-and-compound-components" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Organize components by primitives and compound components</span></h2><p>Components can usually be broken down roughly into two categories, primitives (base UI elements) and more complex components built with other primitives. An example of this distinction is a primitive Image component vs a tile with a title over the top of an image which may use a Caption and Image primitive.</p><p>Primitive components should roughly try to only be built using the platform (react/react-native) native components (like div or View), but this rule isn’t always applicable. For example, a custom TextInput component may want to use a primitive Label or Icon component inside the bounds of the TextInput. In this case, defer to the idea of a design system’s building blocks. If an element is a “Base” design primitive, it should also be considered a primitive for the sake of this conversation.</p><p>Primitive and complex components should be kept separate. The idea, being that over time the primitive component set would slowly stabilize, and could even be pulled out into its own project to be used across multiple products.</p><h2 id="use-functional-components" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Use functional components" href="#use-functional-components" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Use functional components</span></h2><p>With the introduction of hooks to React, the core maintainers of React took a clear preference for the future of functional components over class components. Functional components had long been used for stateless components that did simple rendering, since they could be more readily instantiated and were more performant.</p><p>Functional components also get around many of the prevailing issues with using the “this” keyword in class components. A number of potential bug cases can be avoided by using classless components.</p><p>Unless required by older 3rd party libraries for specific integrations, new components should be written with functional components and the accompanying hooks.</p><h2 id="build-opinionated-components" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Build opinionated components" href="#build-opinionated-components" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Build opinionated components</span></h2><p>This point may be the most controversial in this guide, but it has worked well in my past experience.</p><p>Rather than exposing a prop for every kind of control, components should lean towards less flexibility and more opinionated designs. This may mean that certain elements of the component can’t be changed by the caller, but that can be a feature of this point, rather than a bug.</p><p>For example, a basic Label component may have an Icon and a Text child. When building this new component, it may be tempting to add a prop for everything from font color to font style (italic, bold, underline, etc), even to icon rotation (for reversing arrows, for example). This style of development may fit every use case, but it would also require significantly more testing, increase bundle sizes, and complexity. And that’s without considering future use-cases that were overlooked.</p><p>Rather than building in maximum flexibility, it will be easier to build, test, and later maintain components with a narrower functionality, fitting only the needs of uses on the primary roadmap. This will also open up conversations between developers and designers. I believe an ongoing conversation about design and UX consistency is a large benefit to this approach.</p><h2 id="components-should-be-responsive-by-default" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Components should be responsive by default" href="#components-should-be-responsive-by-default" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Components should be responsive by default</span></h2><p>One exception to the above rule about opinionated components is in their placement, sizing, and container styles.</p><p>It’s extremely useful to build components to be flexible by default. Sometimes, data needs to be displayed in a precise, true-to-size way, but usually that is not the case. With the nearly infinite possible combinations of screen sizes, it’s actually easier to build components that can be resized to almost any practical size. Example use cases (in a tool like Storybook for example), should include cases of smaller and larger containers for components, to verify that they can be scaled up or down without breaking the design.</p><h2 id="components-should-allow-overwriting-of-root-styles" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Components should allow overwriting of root styles" href="#components-should-allow-overwriting-of-root-styles" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Components should allow overwriting of root styles</span></h2><p>In addition, It’s useful to have the ability to overwrite the container styles of a component. Most complex components should have a “style” prop that allows the caller to append to or overwrite the styles for the root view of the component.</p><p>In the example given earlier, with a tile that had an image and title over the top, the default styles of this component may be to have squared corners with no shadow, but it may be useful to use this same component elsewhere that requires rounded corners or a drop shadow. Likewise, background colors of components can also be overwritten similarly.</p><p>With this one prop, a large number of things can be done to modify the display of the component without breaking its internal layout or functionality. This is the “sweet spot” for the balance between opinionated components and flexibility.</p><h2 id="use-controlled-form-elements" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Use controlled form elements" href="#use-controlled-form-elements" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Use controlled form elements</span></h2><p>With the advent of form handling and validating libraries like Formik or react-form-hooks, form handling has been made quicker, more repeatable, and more scalable than ever. Validation logic can be easily shared, and field sets can be easily duplicated.</p><p>For these reasons, having form elements be controlled externally by another tool is extremely powerful. It may be overkill for certain small scenarios, but in those cases, usually a simple state variable can be used to control the state of the input.</p><h2 id="prefer-inline-atomic-styling" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Prefer inline, atomic styling" href="#prefer-inline-atomic-styling" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Prefer inline, atomic styling</span></h2><p>There are an uncountable number of ways to style React components. From React Native’s “StyleSheet”, to SCSS files, to inline styles, to all-encompassing frameworks like Styled Components. Each different method has its own fanbase and primary use-cases, and at the end of the day, great products can be built with just about any styling technology.</p><p>Atomic inline styling, in many ways, benefits from the usefulness of these other methods, while avoiding many pitfalls.</p><p>Using a tool like Tailwind allows for inline-feeling styling of components, but also allows for deduplication of classes and smaller stylesheets after builds. Tailwind generates classes for individual style properties, and allows those classes to be composed to build the intended functionality. Using tailwind still easily allows for dynamic styling and manual overrides.</p><p>One major benefit of Tailwind and similar tools over their alternatives, is the ability to define a base set of styles, like a standard spacing unit (4/6/8px for example) or a base color palette. This makes it harder for component implementers to make the wrong choice and deviate from design patterns, as well as highlights instances where designers may have missed something, opening an opportunity for improving consistency.</p><h2 id="use-usememo-for-calculations" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Use useMemo for calculations" href="#use-usememo-for-calculations" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Use useMemo for calculations</span></h2><p>Any time components perform complex calculations like sorting lists or averaging data, if this work is done inside the body of the component, there’s a risk of this work being done on every render, regardless of whether or not the data has changed. Use the “useMemo” hook to memoize these calculations.</p><h2 id="use-usecallback-for-functions-passed-to-children" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Use useCallback for functions passed to children" href="#use-usecallback-for-functions-passed-to-children" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Use useCallback for functions passed to children</span></h2><p>Similar to how useMemo is used, use the useCallback function any time a function is instantiated to pass to children. This will prevent the function from getting recreated on every rerender.</p><h2 id="testing" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Testing" href="#testing" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Testing</span></h2><h3 id="unit-test-complex-internal-logic" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Unit test complex internal logic" href="#unit-test-complex-internal-logic" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Unit test complex internal logic</span></h3><p>Components often have complicated logic that controls how they work. One great example of this is a form component’s validation logic.</p><p>Rather than trying to test this logic by interacting directly with the component, extract it out into a utility function (either in the same file as a named export or a separate utility file) and test it separately.</p><h3 id="unit-test-components" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Unit test components" href="#unit-test-components" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Unit test components</span></h3><p>Components should tested as closely as possible to how they will be used. For this reason, the react-testing-library is an excellent library to use when unit testing components. It provides utilities to find and interact with components in rendered DOM. The library has many fantastic guides on their website.</p><p>As part of unit testing components, when possible, mock out complex rendered children. This will make tests more performant, less fragile, and easier to debug.</p><h3 id="integration-test-component-sets-with-shared-state" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Integration test component sets with shared state" href="#integration-test-component-sets-with-shared-state" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Integration test component sets with shared state</span></h3><p>Often, components will share state. A parent will have state or callbacks that it passes to multiple children, and changing one child subsequently ends up affecting the other.</p><p>Rather than trying to build out end-to-end (e2e) test suites for these cases, it’ll be quicker and often less fragile to integration test these components with a tool like react-testing-library.</p><h3 id="build-e2e-smoke-tests-for-most-important-flows" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Build e2e smoke tests for most important flows" href="#build-e2e-smoke-tests-for-most-important-flows" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Build e2e smoke tests for most important flows</span></h3><p>End-to-end (e2e) tests are highly effective, but also highly fragile and difficult to write properly. For this reason, prefer using e2e testing for smoke test of critical app flows.</p><p>As a rule of thumb if a feature would be classified as an incident or outage if it was broken, e2e test it. A great example of this kind of workflow is a login flow or a purchase flow.</p><h3 id="e2e-tests-should-not-depend-on-specific-live-data" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="e2e tests should not depend on specific live data" href="#e2e-tests-should-not-depend-on-specific-live-data" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>e2e tests should not depend on specific live data</span></h3><p>When developing resilient e2e tests against production/staging data that’s not isolated to a single test run, try not to depend on specific production data. Building a test suite assuming a specific item will exist in production datasets is fragile, and could be a distraction. Instead, try to respond to production data. For example, when testing a search feature on an eCommerce site, rather than searching for a specific product that’s hard-coded in the test, first look at a list of products and store a product name/sku/upc to search for.</p><p>An exception to this rule would be if specific production data would be required. If your eCommerce site listed above sells only one thing, and that one thing disappears from the site, that would be a problem that should be addressed. Likewise, user account data may have to be hard-coded for a test user, since fetching user data for a generic user would be more dangerous.</p><p>In any case, if a test changes production data (even in isolation, like with a test organization), it should try to restore the data to its original state. This will make tests more repeatable, making debugging easier when things fail.</p><h2 id="conclusion" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Conclusion" href="#conclusion" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Conclusion</span></h2><p>This list of rules is nowhere near inclusive or mandatory. It is simply a starting point for making decisions that work well together when building React applications. Use it, adjust it, implement it however works for you.</p></article>
+      </section>
+    </main>
+    <footer class="text-sm leading-[1.75] mt-4 astro-2K5VERT3">
+  <div class="astro-2K5VERT3">
+    &copy;2023 Jake Dawkins Built with
+    <a class="unset gradient-link tracking-wider font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#f57111] to-[#f79605] hover:after:bg-gradient-to-r hover:after:from-[#f57111] hover:after:to-[#f79605] astro-2K5VERT3" href="https://github.com/flexdinesh/blogster" target="_blank">
+      Blogster</a>.
+  </div>
+</footer>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html class="theme-sleek astro-QC6HDHB4" lang="en">
+  <head>
+    <!-- Global Metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="Blogster">
+    <meta name="theme-color" content="#ffffff">
+
+<!-- 
+  This is an example. 
+  Use https://realfavicongenerator.net to generate the icons and manifest. 
+-->
+<link href="/favicon.ico" rel="shortcut icon">
+
+    <!-- Primary Meta Tags --><title>Feature Flags with React &amp; GraphQL</title>
+<meta name="title" content="Feature Flags with React &#38; GraphQL">
+<meta name="description" content="Build support for fetching feature flags, unique to users, in GraphQL">
+
+
+<!-- Open Graph / Facebook -->
+<meta property="og:title" content="Feature Flags with React &#38; GraphQL">
+<meta property="og:description" content="Build support for fetching feature flags, unique to users, in GraphQL">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://jakedawkins.com/blog/feature-flags-with-react-graphql">
+<meta property="article:author" content="Jake Dawkins">
+<meta property="article:published_time" content="2022-06-16T00:00:00.000Z">
+
+
+
+
+
+<!-- Twitter -->
+<meta property="twitter:title" content="Feature Flags with React &#38; GraphQL">
+<meta property="twitter:description" content="Build support for fetching feature flags, unique to users, in GraphQL">
+<meta property="twitter:site" content="@jakedawkins">
+<meta property="twitter:creator" content="@jakedawkins">
+<meta property="twitter:card" content="summary_large_image">
+
+
+<!-- {twitter.url && <meta property="twitter:url" content={twitter.url} />} -->
+
+    <!-- 
+    We don't want to use <link /> to load fonts from Google CDN 
+    but if you want to switch font this is the easiest way 
+    to check how your page will look with the new font.
+--><!-- 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&display=block"
+        rel="stylesheet"
+    />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400&display=swap"
+        rel="stylesheet"
+    />
+--><link rel="preload" href="/fonts/open-sans-v34-latin-regular.woff2" as="font" type="font/woff2" crossorigin="crossorigin"><link rel="preload" href="/fonts/open-sans-v34-latin-700.woff2" as="font" type="font/woff2" crossorigin="crossorigin"><link rel="preload" href="/fonts/open-sans-v34-latin-800.woff2" as="font" type="font/woff2" crossorigin="crossorigin"><link rel="preload" href="/fonts/open-sans-v34-latin-italic.woff2" as="font" type="font/woff2" crossorigin="crossorigin"><style>
+    /* open-sans-regular - latin */
+    @font-face {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 400;
+      font-display: fallback;
+      src: local(""),
+        url("/fonts/open-sans-v34-latin-regular.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url("/fonts/open-sans-v34-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+    /* open-sans-700 - latin */
+    @font-face {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 700;
+      font-display: fallback;
+      src: local(""),
+        url("/fonts/open-sans-v34-latin-700.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url("/fonts/open-sans-v34-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+    /* open-sans-800 - latin */
+    @font-face {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 800;
+      font-display: fallback;
+      src: local(""),
+        url("/fonts/open-sans-v34-latin-800.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url("/fonts/open-sans-v34-latin-800.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+    /* open-sans-italic - latin */
+    @font-face {
+      font-family: "Open Sans";
+      font-style: italic;
+      font-weight: 400;
+      font-display: fallback;
+      src: local(""),
+        url("/fonts/open-sans-v34-latin-italic.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url("/fonts/open-sans-v34-latin-italic.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+  </style>
+
+    <script>
+  // figure out user's preferred theme and set it as html class for tailwind before paint
+  (function () {
+    if (typeof window !== "undefined") {
+      const isSystemColorSchemeDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      const storageTheme = sessionStorage.getItem("theme");
+      if (!storageTheme && isSystemColorSchemeDark) {
+        document.documentElement.classList.add("dark");
+        document.head.children.namedItem("theme-color").content = "#0e141b";
+      } else if (storageTheme === "dark") {
+        document.documentElement.classList.add("dark");
+        document.head.children.namedItem("theme-color").content = "#0e141b";
+      } else {
+        // we already server render light theme
+        document.head.children.namedItem("theme-color").content = "#ffffff";
+      }
+    }
+  })();
+</script>
+
+    <link href="/fontawesome/css/fontawesome.bareminimum.css" rel="stylesheet"><link href="/fontawesome/css/brands.bareminimum.css" rel="stylesheet"><link href="/fontawesome/css/solid.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/_slug_.51d69fd6.css" />
+<link rel="stylesheet" href="/assets/_slug_.6fa83557.css" /><script type="module" src="/hoisted.fee86805.js"></script></head>
+
+  <body class="min-h-screen max-w-3xl mx-auto px-6 sm:px-8 astro-QC6HDHB4">
+    <header class="astro-XLGIQWDQ">
+  <a class="unset absolute z-10 left-[50%] -top-[100rem] translate-x-[-50%] bg-white text-black px-8 py-2 focus:top-[initial] astro-XLGIQWDQ" href="#main">
+    Skip to content
+  </a>
+  <nav class="astro-XLGIQWDQ">
+    <section class="text-text-bold astro-XLGIQWDQ">
+      <ul class="unset flex gap-4 [&>li]:p-0 astro-XLGIQWDQ">
+        <li class="astro-XLGIQWDQ"><!-- DO NOT FORMAT. IT ADDS AN EXTRA SPACE ON RENDERED CONTENT. --><a href="/" class="astro-XLGIQWDQ unset animated-link">Home</a></li>
+        <li class="astro-XLGIQWDQ"><!-- DO NOT FORMAT. IT ADDS AN EXTRA SPACE ON RENDERED CONTENT. --><a href="/blog" class="astro-XLGIQWDQ show unset animated-link">Blog</a></li>
+        <li class="astro-XLGIQWDQ"><!-- DO NOT FORMAT. IT ADDS AN EXTRA SPACE ON RENDERED CONTENT. --><a href="/projects" class="astro-XLGIQWDQ unset animated-link">Projects</a></li>
+      </ul>
+    </section>
+  </nav>
+  <div class="max-[375px]:hidden justify-self-end py-2 flex items-center content-center text-text-bold astro-XLGIQWDQ">
+    <a class="unset text-xl ml-4 hover:text-text-link astro-XLGIQWDQ" href="https://github.com/jakedawkins">
+      <i class="fa-brands fa-github astro-XLGIQWDQ" aria-hidden="true" title="Jake Dawkins on GitHub"></i>
+      <span class="fa-sr-only astro-XLGIQWDQ">Jake Dawkins on GitHub</span>
+    </a>
+    <a class="unset text-xl ml-4 hover:text-text-link astro-XLGIQWDQ" href="https://threads.net/@jakedawkins">
+      <i class="fa-brands fa-threads astro-XLGIQWDQ" aria-hidden="true" title="Jake Dawkins on Threads"></i>
+      <span class="fa-sr-only astro-XLGIQWDQ">Jake Dawkins on Threads</span>
+    </a>
+  </div>
+  <mode-toggle class="flex astro-33G7QLPM">
+  <button class="justify-self-end bg-neutral-200 dark:bg-neutral-700 ml-4 inline-flex h-6 w-11 items-center rounded-full astro-33G7QLPM" id="mode-toggle" role="switch" type="button" tabindex="0" aria-checked="false" data-headlessui-state=""><span class="sr-only astro-33G7QLPM">Toggle dark mode</span><span id="mode-circle" class="light inline-block h-4 w-4 rounded-full bg-gradient-to-tr invisible astro-33G7QLPM"><span class="absolute top-0 right-0 w-[10px] h-[10px] rounded-full bg-gray-700 scale-[0] astro-33G7QLPM"></span>
+  </span>
+</button>
+</mode-toggle>
+
+
+
+
+</header>
+
+    <main id="main" class="astro-QC6HDHB4">
+      <section class="blog-post prose max-w-none prose-sleek astro-QC6HDHB4">
+        <h1 class="m-0 mb-[0.25em] astro-QC6HDHB4">Feature Flags with React &amp; GraphQL</h1>
+        <time class="block mb-[2em] text-text-muted astro-QC6HDHB4">Jun 15, 2022</time>
+        <article><h2 id="overview" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Overview" href="#overview" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Overview</span></h2><p>Feature flags come with all kinds of uses. From limiting certain users’ access to a feature all the way to A/B testing and release management. It may not be obvious, though, how to integrate feature flag loading into a React/GraphQL app.</p><p>This post will detail how we were able to do it at Carbon Health on our newest apps. There was some prior art to using Feature Flags in a friendly way (with a similar hook API as shown below), but my work was moving these hooks into our GraphQL service and update client apps with the ability to support these hooks with GraphQL instead of prior REST endpoints.</p><h2 id="the-schema" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="The Schema" href="#the-schema" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>The Schema</span></h2><p>First up here is figuring out how to add feature flags into a GraphQL schema to begin with. This setup will depend on your individual feature flag provider and the kinds of data that the provider can return.</p><p>For the purposes of this post, we’ll assume the feature flag provider can return any kind of data, but that it will be JSON serializable. From a client, we’ll want to be able to fetch any number of feature flags at a time, and get back a list of flags and their values, which we’ll call the <code>FeatureFlagResponse</code> type.</p><pre class="language-graphql"><code class="language-graphql"><span class="token keyword">type</span> <span class="token class-name">FeatureFlagResponse</span> <span class="token punctuation">{</span>
+  <span class="token attr-name">key</span><span class="token punctuation">:</span> <span class="token scalar">String</span><span class="token operator">!</span>
+  <span class="token attr-name">value</span><span class="token punctuation">:</span> <span class="token class-name">FeatureFlagResponseBlob</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">scalar</span> <span class="token class-name">FeatureFlagResponseBlob</span>
+</code></pre>
+
+<p>We’re using a custom scalar here to indicate that these values are not simply a <code>String</code> (although that’s what the graphql service will be receiving—json). This is to indicate to clients that this data will need to be deserialized. In our case, that deserialization can just be JSON, but this could vary depending on the feature flag provider.</p><p>Lastly, the query to fetch feature flags looks like this:</p><pre class="language-graphql"><code class="language-graphql"><span class="token keyword">type</span> <span class="token class-name">Query</span> <span class="token punctuation">{</span>
+  <span class="token property-query">featureFlags</span><span class="token punctuation">(</span>
+    <span class="token description string">"""<span class="token language-markdown">
+    Any extra parameters that will be sent along
+    to the feature flag endpoint. These can also be used for targeting rules.
+    </span>"""</span>
+    <span class="token attr-name">attributes</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token atom-input class-name">FeatureFlagAttributeInput</span><span class="token operator">!</span><span class="token punctuation">]</span>
+    <span class="token description string">"""<span class="token language-markdown">
+    The flag names to be retrieved
+    </span>"""</span>
+    <span class="token attr-name">keys</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token scalar">String</span><span class="token operator">!</span><span class="token punctuation">]</span><span class="token operator">!</span>
+  <span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">FeatureFlagResponse</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">input</span> <span class="token atom-input class-name">FeatureFlagAttributeInput</span> <span class="token punctuation">{</span>
+  <span class="token attr-name">key</span><span class="token punctuation">:</span> <span class="token scalar">String</span><span class="token operator">!</span>
+  <span class="token attr-name">value</span><span class="token punctuation">:</span> <span class="token scalar">String</span><span class="token operator">!</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>You’ll notice the <code>attributes</code> argument here. This field is used for targeting of feature flags. For example, if you’re targeting a flag to a specific <code>user</code> to test out a new feature, you could pass a key and value to the attributes like so:</p><pre class="language-graphql"><code class="language-graphql"><span class="token keyword">query</span> <span class="token punctuation">{</span>
+  <span class="token property-query">featureFlags</span><span class="token punctuation">(</span>
+    <span class="token attr-name">keys</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"SHOULD_ENABLE_NEW_TEST_FEATURE"</span><span class="token punctuation">]</span>
+    <span class="token attr-name">attributes</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token attr-name">key</span><span class="token punctuation">:</span> <span class="token string">"userId"</span><span class="token punctuation">,</span> <span class="token attr-name">value</span><span class="token punctuation">:</span> <span class="token string">"123456"</span> <span class="token punctuation">}</span><span class="token punctuation">]</span>
+  <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token property">key</span>
+    <span class="token property">value</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>This will allow the provider to accept any generic attributes, and allow flexibility to build just about any kind of flag. In this case, the feature flag provider can use logic like “If userId is 123456, then enable new test feature” without needing to make schema changes for every kind of attribute added.</p><h3 id="a-note-on-types" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="A note on Types" href="#a-note-on-types" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>A note on Types</span></h3><p>These types, depending on the setup, could definitely be more strongly typed. For example, <code>key</code> could be typed as an Enum rather than a string. But that would require constant schema updates and additional translation logic, which would add addition barrier to entry. Feature flags are an incredible tool, and should (in my opinion) be used widely and easily.</p><p>These generic string/blob inputs and outputs will certainly open up some room for error. One reason for these choices is the inability to make a type union with scalar values, but mainly, I left these types as they are to allow for maximum flexibility of feature flag providers and implementations. I’ll discuss more about type safety/fallbacks in the clent-side portion below.</p><h2 id="building-the-react-hook" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Building the React Hook" href="#building-the-react-hook" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Building the React Hook</span></h2><p>Building this flag logic in GraphQL gives us a couple options: either fetch the flag value like anything else in GraphQL when loading a page/component or (a slightly more interesting route) build a hook to fetch and batch flag loading.</p><p>The idea behind this isn’t novel; if you have feature flags loaded for 20 items on a page, rather than making 20 requests to fetch feature flags from the frontend, batch them all together into a single request. What we get in addition to this, though, is the ability to do it on the backend as well. If we query for all our flags in a single query, it makes it a little easier to fetch them in bulk in the GraphQL service as well. Of course, DataLoaders can (and probably should be) used in the GraphQL service to accomplish the same from flags fetched in multiple queries.</p><h3 id="the-signature" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="The signature" href="#the-signature" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>The signature</span></h3><p>For the hook itself, there are a couple things to note. First, the types in the hook need to be generic if you’re using TypeScript. That’s because of the blob response type that we defined in the GraphQL schema. In practice, this isn’t really a problem, and it’s fairly easy to use, but it still should be noted.</p><p>Second, since you can’t conditionally call a hook, we need to add a <code>skip</code> argument to it. This will prevent the hook from loading the flag when we don’t want it to.</p><p>Other than that, we can just pass the hook the string name of hook, any attributes the feature flag provider needs for evaluation, and set a default value in case lookup fails.</p><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">function</span> useFeatureFlag<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">T</span></span><span class="token punctuation">></span></span><span class="token plain-text">(
+  flagName: string,
+  defaultValue: T,
+  attributes?: AttributeMap,
+  skip = false,
+): [T | undefined, boolean]
+</span></code></pre>
+
+<p>The return from the hook is a tuple with the typecast value and a loading state.</p><p>The usage of the hook, then, looks like this:</p><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">const</span> <span class="token punctuation">[</span>shouldEnableFeature<span class="token punctuation">,</span> loading<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useFeatureFlag</span><span class="token punctuation">(</span>
+  <span class="token string">'SHOULD_ENABLE_NEW_FEATURE'</span><span class="token punctuation">,</span>
+  <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> <span class="token literal-property property">userId</span><span class="token operator">:</span> myUserId <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<h3 id="the-implementation" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="The implementation" href="#the-implementation" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>The implementation</span></h3><p>Building out the hook itself is a little trickier, and will depend heavily on what batching library you choose, but there will be some commonalities in how things are setup. I’ll outline the general algorithm, but stop short of showing full code examples, since they’re a bit lengthy.</p><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">export</span> <span class="token keyword">function</span> useFeatureFlag<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">T</span></span><span class="token punctuation">></span></span><span class="token plain-text">(
+  flagName: string,
+  defaultValue: T,
+  attributes?: AttributeMap,
+  skip = false,
+): [T | undefined, boolean] </span><span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>value<span class="token punctuation">,</span> setValue<span class="token punctuation">]</span> <span class="token operator">=</span> useState<span class="token operator">&lt;</span><span class="token constant">T</span> <span class="token operator">|</span> <span class="token keyword">undefined</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span>fetchFlags<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useContext</span><span class="token punctuation">(</span>FeatureFlagContext<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> isMountedRef <span class="token operator">=</span> <span class="token function">useIsMountedRef</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>skip <span class="token operator">||</span> <span class="token operator">!</span>fetchFlags<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> <span class="token literal-property property">featureFlagRequest</span><span class="token operator">:</span> FeatureFlagRequest <span class="token operator">=</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">attributes</span><span class="token operator">:</span> attributes <span class="token operator">||</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">key</span><span class="token operator">:</span> flagName<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token function">fetchFlags</span><span class="token punctuation">(</span>featureFlagRequest<span class="token punctuation">,</span> <span class="token operator">!</span>anonymous<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">v</span> <span class="token operator">=></span> isMountedRef<span class="token punctuation">.</span>current <span class="token operator">&amp;&amp;</span> <span class="token function">setValue</span><span class="token punctuation">(</span>v <span class="token keyword">as</span> <span class="token constant">T</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> isMountedRef<span class="token punctuation">.</span>current <span class="token operator">&amp;&amp;</span> <span class="token function">setValue</span><span class="token punctuation">(</span>defaultValue<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>fetchFlags<span class="token punctuation">,</span> anonymous<span class="token punctuation">,</span> skip<span class="token punctuation">,</span> defaultValue<span class="token punctuation">,</span> attributes<span class="token punctuation">,</span> flagName<span class="token punctuation">,</span> isMountedRef<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">const</span> <span class="token literal-property property">returnValue</span><span class="token operator">:</span> <span class="token constant">T</span> <span class="token operator">|</span> <span class="token keyword">undefined</span> <span class="token operator">=</span> skip <span class="token operator">?</span> defaultValue <span class="token operator">:</span> value<span class="token punctuation">;</span>
+
+  <span class="token keyword">const</span> loading <span class="token operator">=</span> returnValue <span class="token operator">===</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">[</span>returnValue<span class="token punctuation">,</span> loading<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token plain-text">
+</span></code></pre>
+
+<p>This is just about the whole hook itself, ignoring the functions called within the hook. The general gist is this:</p><ol><li>set up state variables to track the value for a single flag.</li><li>have a feature flag provider further up the render tree (we’ll look at this in a bit), and if the fetch flags util hasn’t been set up yet, then skip.</li><li>Inside of a useEffect, Call the fetchFlags util, which handles the batching, and when it returns either set the state with the return value or the default value</li><li>Return the value along with loading state</li></ol><h2 id="fetchflags" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="fetchFlags" href="#fetchflags" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>fetchFlags</span></h2><p>This function is pretty dense, and a large amount of the work is done inside it. I’m not going to include the complete logic for the function (maybe in a later code example) since this post isn’t about how to set up a batching function, but the important parts are this:</p><p>The fetchFlags function should iterate over incoming requests (function calls), and group them by unique sets of <code>attributes</code>. You should split off flags to a new “chunk” (a new request that will be made to the GraphQL service) anytime there is a collision with a request’s attributes and the attributes of a chunk. You can use <a href="https://lodash.com/docs/4.17.15#intersection">lodash’s intersection function</a> to find the number of collisions like this:</p><pre class="language-jsx"><code class="language-jsx">type Chunk <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">attributes</span><span class="token operator">:</span> AttributeMap<span class="token punctuation">,</span>
+  <span class="token literal-property property">keys</span><span class="token operator">:</span> Array<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>string</span><span class="token punctuation">></span></span><span class="token plain-text">,
+};
+
+// we check to see 1) if there are any keys that overlap
+// and 2) if they have different values to determine collisions
+const collisions = intersection(chunkAttributes, requestAttributes).filter(
+  (key) => </span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> chunk<span class="token punctuation">.</span>attributes<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">!==</span> request<span class="token punctuation">.</span>attributes<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token plain-text">,
+);
+</span></code></pre>
+
+<p>After chunks are generated, we iterate over each chunk and make a GraphQL client query with them.</p><pre class="language-jsx"><code class="language-jsx">client
+  <span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">query</span><span class="token operator">:</span> <span class="token constant">FEATURE_FLAG_QUERY</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">variables</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">keys</span><span class="token operator">:</span> chunk<span class="token punctuation">.</span>keys<span class="token punctuation">,</span>
+      <span class="token literal-property property">attributes</span><span class="token operator">:</span> chunk<span class="token punctuation">.</span>attributes
+        <span class="token operator">?</span> Object<span class="token punctuation">.</span><span class="token function">entries</span><span class="token punctuation">(</span>chunk<span class="token punctuation">.</span>attributes<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">[</span>key<span class="token punctuation">,</span> value<span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+            key<span class="token punctuation">,</span>
+            value<span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+      anonymous<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> data <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> data<span class="token punctuation">.</span>featureFlags<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>We await all those operations to finish, and find the value for the flag originally requested by the hook and return it to the component.</p><h2 id="conclusion" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Conclusion" href="#conclusion" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Conclusion</span></h2><p>What you end up with is a flexible GraphQL api that can consume any generic feature flag provider and expose the ability to look up those flags by a batched (or not) GraphQL operation from any frontend app. In these examples, we use a hook to accomplish this most of the time, but that’s not mandatory.</p><p>This pattern of handling feature flags is powerful, and flexible, and hopefully would work for your use cases with minimal changes to the general setup.</p></article>
+      </section>
+    </main>
+    <footer class="text-sm leading-[1.75] mt-4 astro-2K5VERT3">
+  <div class="astro-2K5VERT3">
+    &copy;2023 Jake Dawkins Built with
+    <a class="unset gradient-link tracking-wider font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#f57111] to-[#f79605] hover:after:bg-gradient-to-r hover:after:from-[#f57111] hover:after:to-[#f79605] astro-2K5VERT3" href="https://github.com/flexdinesh/blogster" target="_blank">
+      Blogster</a>.
+  </div>
+</footer>
+
+
+    
+  </body>
+</html>

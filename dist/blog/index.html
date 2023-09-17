@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html class="theme-sleek astro-SC6KYMGI" lang="en">
+  <head>
+    <!-- Global Metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="Blogster">
+    <meta name="theme-color" content="#ffffff">
+
+<!-- 
+  This is an example. 
+  Use https://realfavicongenerator.net to generate the icons and manifest. 
+-->
+<link href="/favicon.ico" rel="shortcut icon">
+
+    <!-- Primary Meta Tags --><title>Blog | Jake Dawkins</title>
+<meta name="title" content="Blog | Jake Dawkins">
+<meta name="description" content="Welcome to my site! I write about modern web development, accessibility, and what I'm learning.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:title" content="Blog | Jake Dawkins">
+<meta property="og:description" content="Welcome to my site! I write about modern web development, accessibility, and what I'm learning.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jakedawkins.com">
+<meta property="og:image" content="https://jakedawkins.com/images/og.png">
+<meta property="og:image:alt" content="My fancy website">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter -->
+<meta property="twitter:title" content="Blog | Jake Dawkins">
+<meta property="twitter:description" content="Welcome to my site! I write about modern web development, accessibility, and what I'm learning.">
+<meta property="twitter:site" content="@jakedawkins">
+<meta property="twitter:creator" content="@jakedawkins">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://jakedawkins.com/images/og.png">
+<meta property="twitter:image:alt" content="My fancy website">
+<!-- {twitter.url && <meta property="twitter:url" content={twitter.url} />} -->
+
+    <!-- 
+    We don't want to use <link /> to load fonts from Google CDN 
+    but if you want to switch font this is the easiest way 
+    to check how your page will look with the new font.
+--><!-- 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&display=block"
+        rel="stylesheet"
+    />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400&display=swap"
+        rel="stylesheet"
+    />
+--><link rel="preload" href="/fonts/open-sans-v34-latin-regular.woff2" as="font" type="font/woff2" crossorigin="crossorigin"><link rel="preload" href="/fonts/open-sans-v34-latin-700.woff2" as="font" type="font/woff2" crossorigin="crossorigin"><link rel="preload" href="/fonts/open-sans-v34-latin-800.woff2" as="font" type="font/woff2" crossorigin="crossorigin"><link rel="preload" href="/fonts/open-sans-v34-latin-italic.woff2" as="font" type="font/woff2" crossorigin="crossorigin"><style>
+    /* open-sans-regular - latin */
+    @font-face {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 400;
+      font-display: fallback;
+      src: local(""),
+        url("/fonts/open-sans-v34-latin-regular.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url("/fonts/open-sans-v34-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+    /* open-sans-700 - latin */
+    @font-face {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 700;
+      font-display: fallback;
+      src: local(""),
+        url("/fonts/open-sans-v34-latin-700.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url("/fonts/open-sans-v34-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+    /* open-sans-800 - latin */
+    @font-face {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 800;
+      font-display: fallback;
+      src: local(""),
+        url("/fonts/open-sans-v34-latin-800.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url("/fonts/open-sans-v34-latin-800.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+    /* open-sans-italic - latin */
+    @font-face {
+      font-family: "Open Sans";
+      font-style: italic;
+      font-weight: 400;
+      font-display: fallback;
+      src: local(""),
+        url("/fonts/open-sans-v34-latin-italic.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url("/fonts/open-sans-v34-latin-italic.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+  </style>
+
+    <script>
+  // figure out user's preferred theme and set it as html class for tailwind before paint
+  (function () {
+    if (typeof window !== "undefined") {
+      const isSystemColorSchemeDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      const storageTheme = sessionStorage.getItem("theme");
+      if (!storageTheme && isSystemColorSchemeDark) {
+        document.documentElement.classList.add("dark");
+        document.head.children.namedItem("theme-color").content = "#0e141b";
+      } else if (storageTheme === "dark") {
+        document.documentElement.classList.add("dark");
+        document.head.children.namedItem("theme-color").content = "#0e141b";
+      } else {
+        // we already server render light theme
+        document.head.children.namedItem("theme-color").content = "#ffffff";
+      }
+    }
+  })();
+</script>
+
+    <link href="/fontawesome/css/fontawesome.bareminimum.css" rel="stylesheet"><link href="/fontawesome/css/brands.bareminimum.css" rel="stylesheet"><link href="/fontawesome/css/solid.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/_slug_.51d69fd6.css" />
+<link rel="stylesheet" href="/assets/blog.8fffe31c.css" /><script type="module" src="/hoisted.c270b695.js"></script></head>
+
+  <body class="min-h-screen max-w-3xl mx-auto px-6 sm:px-8 astro-SC6KYMGI">
+    <header class="astro-XLGIQWDQ">
+  <a class="unset absolute z-10 left-[50%] -top-[100rem] translate-x-[-50%] bg-white text-black px-8 py-2 focus:top-[initial] astro-XLGIQWDQ" href="#main">
+    Skip to content
+  </a>
+  <nav class="astro-XLGIQWDQ">
+    <section class="text-text-bold astro-XLGIQWDQ">
+      <ul class="unset flex gap-4 [&>li]:p-0 astro-XLGIQWDQ">
+        <li class="astro-XLGIQWDQ"><!-- DO NOT FORMAT. IT ADDS AN EXTRA SPACE ON RENDERED CONTENT. --><a href="/" class="astro-XLGIQWDQ unset animated-link">Home</a></li>
+        <li class="astro-XLGIQWDQ"><!-- DO NOT FORMAT. IT ADDS AN EXTRA SPACE ON RENDERED CONTENT. --><a href="/blog" class="astro-XLGIQWDQ show unset animated-link">Blog</a></li>
+        <li class="astro-XLGIQWDQ"><!-- DO NOT FORMAT. IT ADDS AN EXTRA SPACE ON RENDERED CONTENT. --><a href="/projects" class="astro-XLGIQWDQ unset animated-link">Projects</a></li>
+      </ul>
+    </section>
+  </nav>
+  <div class="max-[375px]:hidden justify-self-end py-2 flex items-center content-center text-text-bold astro-XLGIQWDQ">
+    <a class="unset text-xl ml-4 hover:text-text-link astro-XLGIQWDQ" href="https://github.com/jakedawkins">
+      <i class="fa-brands fa-github astro-XLGIQWDQ" aria-hidden="true" title="Jake Dawkins on GitHub"></i>
+      <span class="fa-sr-only astro-XLGIQWDQ">Jake Dawkins on GitHub</span>
+    </a>
+    <a class="unset text-xl ml-4 hover:text-text-link astro-XLGIQWDQ" href="https://threads.net/@jakedawkins">
+      <i class="fa-brands fa-threads astro-XLGIQWDQ" aria-hidden="true" title="Jake Dawkins on Threads"></i>
+      <span class="fa-sr-only astro-XLGIQWDQ">Jake Dawkins on Threads</span>
+    </a>
+  </div>
+  <mode-toggle class="flex astro-33G7QLPM">
+  <button class="justify-self-end bg-neutral-200 dark:bg-neutral-700 ml-4 inline-flex h-6 w-11 items-center rounded-full astro-33G7QLPM" id="mode-toggle" role="switch" type="button" tabindex="0" aria-checked="false" data-headlessui-state=""><span class="sr-only astro-33G7QLPM">Toggle dark mode</span><span id="mode-circle" class="light inline-block h-4 w-4 rounded-full bg-gradient-to-tr invisible astro-33G7QLPM"><span class="absolute top-0 right-0 w-[10px] h-[10px] rounded-full bg-gray-700 scale-[0] astro-33G7QLPM"></span>
+  </span>
+</button>
+</mode-toggle>
+
+
+
+
+</header>
+
+    <main id="main" class="astro-SC6KYMGI">
+      <section>
+    <ul>
+      <li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
+              <div class="title">
+                <a href="/blog/my-new-favorite-react-template" class="unset hover:text-text-link">
+                    My New Favorite React Template
+                  </a>
+              </div>
+              <div class="text-text-muted text-sm italic">
+                <time datetime="2023-02-03T00:00:00.000Z">
+                  Feb 2, 2023
+                </time>
+              </div>
+            </li><li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
+              <div class="title">
+                <a href="/blog/feature-flags-with-react-graphql" class="unset hover:text-text-link">
+                    Feature Flags with React &amp; GraphQL
+                  </a>
+              </div>
+              <div class="text-text-muted text-sm italic">
+                <time datetime="2022-06-16T00:00:00.000Z">
+                  Jun 15, 2022
+                </time>
+              </div>
+            </li><li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
+              <div class="title">
+                <a href="/blog/react-style-guide" class="unset hover:text-text-link">
+                    React Style Guide
+                  </a>
+              </div>
+              <div class="text-text-muted text-sm italic">
+                <time datetime="2022-06-08T00:00:00.000Z">
+                  Jun 7, 2022
+                </time>
+              </div>
+            </li><li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
+              <div class="title">
+                <a href="/blog/graphql-style.guide" class="unset hover:text-text-link">
+                    GraphQL Style Guide
+                  </a>
+              </div>
+              <div class="text-text-muted text-sm italic">
+                <time datetime="2022-06-02T00:00:00.000Z">
+                  Jun 1, 2022
+                </time>
+              </div>
+            </li>
+    </ul>
+  </section>
+    </main>
+    <footer class="text-sm leading-[1.75] mt-4 astro-2K5VERT3">
+  <div class="astro-2K5VERT3">
+    &copy;2023 Jake Dawkins Built with
+    <a class="unset gradient-link tracking-wider font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#f57111] to-[#f79605] hover:after:bg-gradient-to-r hover:after:from-[#f57111] hover:after:to-[#f79605] astro-2K5VERT3" href="https://github.com/flexdinesh/blogster" target="_blank">
+      Blogster</a>.
+  </div>
+</footer>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html class="theme-sleek astro-QC6HDHB4" lang="en">
+  <head>
+    <!-- Global Metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="Blogster">
+    <meta name="theme-color" content="#ffffff">
+
+<!-- 
+  This is an example. 
+  Use https://realfavicongenerator.net to generate the icons and manifest. 
+-->
+<link href="/favicon.ico" rel="shortcut icon">
+
+    <!-- Primary Meta Tags --><title>GraphQL Style Guide</title>
+<meta name="title" content="GraphQL Style Guide">
+<meta name="description" content="Designing a resilient GraphQL schema for large data graphs">
+
+
+<!-- Open Graph / Facebook -->
+<meta property="og:title" content="GraphQL Style Guide">
+<meta property="og:description" content="Designing a resilient GraphQL schema for large data graphs">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://jakedawkins.com/blog/graphql-style.guide">
+<meta property="article:author" content="Jake Dawkins">
+<meta property="article:published_time" content="2022-06-02T00:00:00.000Z">
+
+
+
+
+
+<!-- Twitter -->
+<meta property="twitter:title" content="GraphQL Style Guide">
+<meta property="twitter:description" content="Designing a resilient GraphQL schema for large data graphs">
+<meta property="twitter:site" content="@jakedawkins">
+<meta property="twitter:creator" content="@jakedawkins">
+<meta property="twitter:card" content="summary_large_image">
+
+
+<!-- {twitter.url && <meta property="twitter:url" content={twitter.url} />} -->
+
+    <!-- 
+    We don't want to use <link /> to load fonts from Google CDN 
+    but if you want to switch font this is the easiest way 
+    to check how your page will look with the new font.
+--><!-- 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&display=block"
+        rel="stylesheet"
+    />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400&display=swap"
+        rel="stylesheet"
+    />
+--><link rel="preload" href="/fonts/open-sans-v34-latin-regular.woff2" as="font" type="font/woff2" crossorigin="crossorigin"><link rel="preload" href="/fonts/open-sans-v34-latin-700.woff2" as="font" type="font/woff2" crossorigin="crossorigin"><link rel="preload" href="/fonts/open-sans-v34-latin-800.woff2" as="font" type="font/woff2" crossorigin="crossorigin"><link rel="preload" href="/fonts/open-sans-v34-latin-italic.woff2" as="font" type="font/woff2" crossorigin="crossorigin"><style>
+    /* open-sans-regular - latin */
+    @font-face {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 400;
+      font-display: fallback;
+      src: local(""),
+        url("/fonts/open-sans-v34-latin-regular.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url("/fonts/open-sans-v34-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+    /* open-sans-700 - latin */
+    @font-face {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 700;
+      font-display: fallback;
+      src: local(""),
+        url("/fonts/open-sans-v34-latin-700.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url("/fonts/open-sans-v34-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+    /* open-sans-800 - latin */
+    @font-face {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 800;
+      font-display: fallback;
+      src: local(""),
+        url("/fonts/open-sans-v34-latin-800.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url("/fonts/open-sans-v34-latin-800.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+    /* open-sans-italic - latin */
+    @font-face {
+      font-family: "Open Sans";
+      font-style: italic;
+      font-weight: 400;
+      font-display: fallback;
+      src: local(""),
+        url("/fonts/open-sans-v34-latin-italic.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url("/fonts/open-sans-v34-latin-italic.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+  </style>
+
+    <script>
+  // figure out user's preferred theme and set it as html class for tailwind before paint
+  (function () {
+    if (typeof window !== "undefined") {
+      const isSystemColorSchemeDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      const storageTheme = sessionStorage.getItem("theme");
+      if (!storageTheme && isSystemColorSchemeDark) {
+        document.documentElement.classList.add("dark");
+        document.head.children.namedItem("theme-color").content = "#0e141b";
+      } else if (storageTheme === "dark") {
+        document.documentElement.classList.add("dark");
+        document.head.children.namedItem("theme-color").content = "#0e141b";
+      } else {
+        // we already server render light theme
+        document.head.children.namedItem("theme-color").content = "#ffffff";
+      }
+    }
+  })();
+</script>
+
+    <link href="/fontawesome/css/fontawesome.bareminimum.css" rel="stylesheet"><link href="/fontawesome/css/brands.bareminimum.css" rel="stylesheet"><link href="/fontawesome/css/solid.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/_slug_.51d69fd6.css" />
+<link rel="stylesheet" href="/assets/_slug_.6fa83557.css" /><script type="module" src="/hoisted.fee86805.js"></script></head>
+
+  <body class="min-h-screen max-w-3xl mx-auto px-6 sm:px-8 astro-QC6HDHB4">
+    <header class="astro-XLGIQWDQ">
+  <a class="unset absolute z-10 left-[50%] -top-[100rem] translate-x-[-50%] bg-white text-black px-8 py-2 focus:top-[initial] astro-XLGIQWDQ" href="#main">
+    Skip to content
+  </a>
+  <nav class="astro-XLGIQWDQ">
+    <section class="text-text-bold astro-XLGIQWDQ">
+      <ul class="unset flex gap-4 [&>li]:p-0 astro-XLGIQWDQ">
+        <li class="astro-XLGIQWDQ"><!-- DO NOT FORMAT. IT ADDS AN EXTRA SPACE ON RENDERED CONTENT. --><a href="/" class="astro-XLGIQWDQ unset animated-link">Home</a></li>
+        <li class="astro-XLGIQWDQ"><!-- DO NOT FORMAT. IT ADDS AN EXTRA SPACE ON RENDERED CONTENT. --><a href="/blog" class="astro-XLGIQWDQ show unset animated-link">Blog</a></li>
+        <li class="astro-XLGIQWDQ"><!-- DO NOT FORMAT. IT ADDS AN EXTRA SPACE ON RENDERED CONTENT. --><a href="/projects" class="astro-XLGIQWDQ unset animated-link">Projects</a></li>
+      </ul>
+    </section>
+  </nav>
+  <div class="max-[375px]:hidden justify-self-end py-2 flex items-center content-center text-text-bold astro-XLGIQWDQ">
+    <a class="unset text-xl ml-4 hover:text-text-link astro-XLGIQWDQ" href="https://github.com/jakedawkins">
+      <i class="fa-brands fa-github astro-XLGIQWDQ" aria-hidden="true" title="Jake Dawkins on GitHub"></i>
+      <span class="fa-sr-only astro-XLGIQWDQ">Jake Dawkins on GitHub</span>
+    </a>
+    <a class="unset text-xl ml-4 hover:text-text-link astro-XLGIQWDQ" href="https://threads.net/@jakedawkins">
+      <i class="fa-brands fa-threads astro-XLGIQWDQ" aria-hidden="true" title="Jake Dawkins on Threads"></i>
+      <span class="fa-sr-only astro-XLGIQWDQ">Jake Dawkins on Threads</span>
+    </a>
+  </div>
+  <mode-toggle class="flex astro-33G7QLPM">
+  <button class="justify-self-end bg-neutral-200 dark:bg-neutral-700 ml-4 inline-flex h-6 w-11 items-center rounded-full astro-33G7QLPM" id="mode-toggle" role="switch" type="button" tabindex="0" aria-checked="false" data-headlessui-state=""><span class="sr-only astro-33G7QLPM">Toggle dark mode</span><span id="mode-circle" class="light inline-block h-4 w-4 rounded-full bg-gradient-to-tr invisible astro-33G7QLPM"><span class="absolute top-0 right-0 w-[10px] h-[10px] rounded-full bg-gray-700 scale-[0] astro-33G7QLPM"></span>
+  </span>
+</button>
+</mode-toggle>
+
+
+
+
+</header>
+
+    <main id="main" class="astro-QC6HDHB4">
+      <section class="blog-post prose max-w-none prose-sleek astro-QC6HDHB4">
+        <h1 class="m-0 mb-[0.25em] astro-QC6HDHB4">GraphQL Style Guide</h1>
+        <time class="block mb-[2em] text-text-muted astro-QC6HDHB4">Jun 1, 2022</time>
+        <article><blockquote><p>This document was originally started by myself for use on Carbon Health's data graph. It has since been expanded on and changed in some ways, to conceal private information about Carbon's graph or to omit irrelevant information for the public. As with any style guide, this was build by a combination of personal experience and also through guides compiled by others, so the thoughts (and some of the text) may be from other authors. I've tried to footnote specific instances of this as well as possible.</p></blockquote><p>This document aims to establish a consistent and intentional style for designing a GraphQL schema.</p><p>In many sections, there is also a <strong>tldr;</strong> (too long, didn’t read) note with quick takeaways and practical instructions without the longer explanation above</p><h2 id="philosophy" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Philosophy" href="#philosophy" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Philosophy</span></h2><p>Much of this document aims to make schemas as flexible and robust as possible, hoping to prevent many situations which could be breaking changes for clients. GraphQL is designed in such a way to allow for constant schema changes and migrations in a safe way, preventing true “Breaking” changes from happening often. Combined with telemetry tooling such as Apollo Studio, we can also safely make changes that would otherwise be dangerous or breaking in a safe way. But avoiding these kinds of migrations in the first place is largely possible with thoughtful schema design.</p><p>For that reason, this style guide will begin with a discussion about breaking changes, what kinds of things are breaking vs non-breaking, then will go into depth on best practices for schema design to prevent necessary breaking migrations as the schema scales.</p><h2 id="breaking-and-nonbreaking-changes" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Breaking &#38; Nonbreaking Changes" href="#breaking-and-nonbreaking-changes" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Breaking &amp; Nonbreaking Changes</span></h2><p>When considering breaking and non-breaking changes, there are two main concerns. First is the more obvious one of the public API. Removing expected fields or adding required arguments to existing fields would result in errors for clients.</p><p>The less obvious concern with schema changes is the implications of code generation. There are a number of schema changes (like renaming a return type of a simple, non-union field) that wouldn’t result in runtime errors for already-deployed clients, but could cause issues in future releases, requiring renaming of internal types or changes to imports.</p><p>We should also consider these effects when reviewing schema changes. Below are some examples of breaking &amp; non-breaking changes, but you can read more in <a href="https://www.apollographql.com/docs/studio/schema-checks/#types-of-schema-changes">Apollo’s Docs</a>.</p><h2 id="non-breaking-changes" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Non-breaking changes" href="#non-breaking-changes" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Non-breaking changes</span></h2><p>GraphQL clients only receive data they explicitly request, so most additive changes in GraphQL schemas are non-breaking. Adding a field to a type, adding a new type, adding an optional argument to a query/mutation are all examples of non-breaking additive changes to a schema.</p><p>Note: some non-breaking additive changes can still cause issues. For example, adding a value to an enum value isn’t technically a breaking change, but if clients are matching on all possible enum values and don’t have some default case, there may be unexpected behavior.</p><p>Other non-breaking changes include:</p><ul><li>Adding a type to a union</li><li>Applying an interface to an existing type</li><li>Adding a nullable (optional) field to an input type</li></ul><h2 id="breaking-changes" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Breaking Changes" href="#breaking-changes" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Breaking Changes</span></h2><p>Some breaking changes are obvious, like removing a field from a type. In this case, if a client is requesting a field, and expecting it to be there, removing it would be unexpected, and cause validation errors, causing the whole operation to fail. This would also break code generation for new builds. Using Apollo Studio, we can verify if a field is not used by any clients and decide when to safely make this kind of change.</p><p>Less obvious breaking changes often involve nullability. If a field in a return type was originally marked as non-nullable (!), and it is changed to be nullable, <strong>that is a breaking change</strong>. Clients requesting this field, may have made assumptions or assertions assuming this field will always exist. Making it nullable will frequently causing runtime errors for any clients. For this reason and others (mentioned below), we design fields as nullable by default. If we want to make that field non-nullable later, we can without it being a breaking change.</p><p>Similarly, for Input types, adding a new non-nullable field that didn’t previously exist will break all users of that operation, since the operation would fail in validation as well.</p><p>More potentially breaking changes include:</p><ul><li>Removing type from a union</li><li>Removing an argument</li><li>Removing a field from an Input type</li><li>Removing a value from an Enum</li><li>Changing a field or argument’s type</li><li>Changing an argument’s default value</li></ul><p>For more on breaking &amp; non-breaking changes, see <a href="https://www.apollographql.com/docs/studio/schema-checks/#types-of-schema-changes">Apollo’s docs on schema changes</a>.</p><h2 id="types" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Types" href="#types" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Types</span></h2><h3 id="nullable-by-default" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Nullable by default" href="#nullable-by-default" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Nullable by default</span></h3><blockquote><p>[1]GraphQL allows fields to be “nullable” or “non-nullable”. The former means that null may be returned instead of a value of the specified type. In general, you should prefer using nullable fields to non-nullable ones, for the following reasons:</p></blockquote><ul><li>It’s common for data to switch from required to not-required, and back again</li><li>Even when there is no prospect of a field becoming optional, it may not be available at query time, due to service outages, runtime exceptions, etc.</li><li>When a non-nullable field fails to resolve, it fails up the operation tree until the nearest nullable ancestor, and resolves that ancestor and all children as null.</li><li>Changing from a non-nullable field to a nullable field is difficult with a versionless schema</li></ul><p><a href="https://www.apollographql.com/blog/graphql/basics/using-nullability-in-graphql/">Additional Reading</a></p><blockquote><p>tldr; use nullable fields wherever possible, and think if changing a field in the future would be possible or breaking for clients</p></blockquote><h2 id="naming" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Naming" href="#naming" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Naming</span></h2><h3 id="use-specific-type-names" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Use specific type names" href="#use-specific-type-names" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Use specific type names</span></h3><p>In a large organization with a large graph, non-specific type names often lead to confusion or later migrations.</p><p>Types should not be single, non-descriptive words For example, an <code>Execution</code> type could mean something different to different teams or sections of the graph. It’d be better to name the type something like <code>RemindersJobExecution</code>. When writing Input types, their names should be postfixed by <code>Input</code>. This eases confusion about the difference in input types and return types.</p><h3 id="don't-namespace-arguments-or-fields" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Don’t namespace arguments or fields" href="#don't-namespace-arguments-or-fields" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Don’t namespace arguments or fields</span></h3><p>Because fields and arguments are inherently related to their type, there’s no need to namespace them.</p><p>❗ Bad</p><pre class="language-graphql"><code class="language-graphql"><span class="token keyword">type</span> <span class="token class-name">Query</span> <span class="token punctuation">{</span>
+  <span class="token attr-name">organization</span><span class="token punctuation">(</span><span class="token attr-name">orgId</span><span class="token punctuation">:</span> <span class="token scalar">ID</span><span class="token operator">!</span><span class="token punctuation">,</span> <span class="token attr-name">locationId</span><span class="token punctuation">:</span> <span class="token scalar">ID</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token class-name">Organization</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">type</span> <span class="token class-name">Organization</span> <span class="token punctuation">{</span>
+  <span class="token attr-name">id</span><span class="token punctuation">:</span> <span class="token scalar">ID</span>
+  <span class="token attr-name">orgName</span><span class="token punctuation">:</span> <span class="token scalar">String</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>‍ ✅ Better</p><pre class="language-graphql"><code class="language-graphql"><span class="token keyword">type</span> <span class="token class-name">Query</span> <span class="token punctuation">{</span>
+  <span class="token comment"># locationId isn't obviously associated with an org</span>
+  <span class="token comment"># so we'll leave it named as-is</span>
+  <span class="token attr-name">organization</span><span class="token punctuation">(</span><span class="token attr-name">id</span><span class="token punctuation">:</span> <span class="token scalar">ID</span><span class="token operator">!</span><span class="token punctuation">,</span> <span class="token attr-name">locationId</span><span class="token punctuation">:</span> <span class="token scalar">ID</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token class-name">Organization</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">type</span> <span class="token class-name">Organization</span> <span class="token punctuation">{</span>
+  <span class="token attr-name">id</span><span class="token punctuation">:</span> <span class="token scalar">ID</span>
+  <span class="token attr-name">name</span><span class="token punctuation">:</span> <span class="token scalar">String</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<h3 id="namespace-mutations-with-the" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Namespace Mutations with the " href="#namespace-mutations-with-the" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Namespace Mutations with the [object Object] format</span></h3><p>Since mutations mostly have to live at the root of the graph, and can't be scoped under other types easily like other things, we try to namespace them to make them easier to find and predictably nameable.</p><p>The general pattern we follow for mutation naming is</p><p><code>Entity + Action = entityAction</code></p><p>So the existing mutations:</p><ul><li><code>organization</code> (entity) + <code>addMembers</code> (action on an organization) = <code>organizationAddMembers</code></li><li><code>organizationMembers</code> (entities) + <code>changeGroup</code> (action on members) = <code>organizationMembersChangeGroup</code></li></ul><p>This pattern allows for easy searchability and when sorted alphabetically, keeps mutations on similar entities close together, making them easier to find.</p><blockquote><p>tldr; be specific with type names, and less specific for the types' fields and fields' arguments</p></blockquote><h2 id="pagination" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Pagination" href="#pagination" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Pagination</span></h2><p>Unless there is an explicit reason not to (like a guaranteed small set that needs to be fetched all at once), all list fields should be paginated by default and use the Connection interface.</p><pre class="language-graphql"><code class="language-graphql"><span class="token keyword">type</span> <span class="token class-name">Query</span> <span class="token punctuation">{</span>
+  <span class="token attr-name">offices</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">OfficeConnection</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">type</span> <span class="token class-name">OfficeConnection</span> <span class="token punctuation">{</span>
+  <span class="token attr-name">pageInfo</span><span class="token punctuation">:</span> <span class="token class-name">PageInfo</span><span class="token operator">!</span>
+  <span class="token attr-name">totalCount</span><span class="token punctuation">:</span> <span class="token scalar">Int</span>
+  <span class="token attr-name">nodes</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">Office</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">interface</span> <span class="token class-name">Connection</span> <span class="token punctuation">{</span>
+  <span class="token attr-name">pageInfo</span><span class="token punctuation">:</span> <span class="token class-name">PageInfo</span><span class="token operator">!</span>
+  <span class="token attr-name">totalCount</span><span class="token punctuation">:</span> <span class="token scalar">Int</span>
+  <span class="token attr-name">nodes</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">Node</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>Pagination in the Graph is cursor-based, rather than offset-based, and has many pieces of tooling available on the frontend and in the GraphQL service to help handle this pattern.</p><p>The full RFC outlining this pagination model as well as additional reading and resources can be found [REDACTED]</p><h2 id="linking-types" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Linking Types" href="#linking-types" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Linking Types</span></h2><blockquote><p>[2]The nature of a “graph” is that types inherently are connected to other types, and you can traverse the graph from type-to-type. For this reason, when referencing one type from another, link directly to the type</p></blockquote><p>❗ Bad</p><pre class="language-graphql"><code class="language-graphql"><span class="token keyword">type</span> <span class="token class-name">Appointment</span> <span class="token punctuation">{</span>
+  <span class="token attr-name">id</span><span class="token punctuation">:</span> <span class="token scalar">ID</span><span class="token operator">!</span>
+  <span class="token attr-name">patientID</span><span class="token punctuation">:</span> <span class="token scalar">ID</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>✅ Better</p><pre class="language-graphql"><code class="language-graphql"><span class="token keyword">type</span> <span class="token class-name">Appointment</span> <span class="token punctuation">{</span>
+  <span class="token attr-name">id</span><span class="token punctuation">:</span> <span class="token scalar">ID</span><span class="token operator">!</span>
+  <span class="token attr-name">patient</span><span class="token punctuation">:</span> <span class="token class-name">Patient</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>In this case, if you wanted the patient id from an appointment, you could just reference <code>appointment?.patient.id</code>. This is a little extra typing and a little more work to implement, but makes the graph as flexible as possible for the future, and prevents later schema migrations.</p><blockquote><p>tldr; avoid using typeId: ID fields, they're a code smell and should be replaced with <code>type: Type</code></p></blockquote><h2 id="global-object-identity" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Global Object Identity" href="#global-object-identity" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Global Object Identity</span></h2><p>An entity, for the sake of this conversation is any object that can be looked up in isolation using an id. Any entity in the graph should have an <code>id: ID!</code> field.</p><h3 id="the-node-interface" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="The Node interface" href="#the-node-interface" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>The Node interface</span></h3><p>A “Node ID” is a globally-unique, user-scoped id for a specific entity, making any entity searchable using a single, root-level node field in the graph. Graphs can implement this root field, by decrypting a node id into a given format, like <code>user_id:typename:id</code>. To clients, it would look like a random ID, but with a key, the id could be decrypted to perform entity fetches.</p><pre class="language-graphql"><code class="language-graphql"><span class="token keyword">interface</span> <span class="token class-name">Node</span> <span class="token punctuation">{</span>
+  <span class="token attr-name">id</span><span class="token punctuation">:</span> <span class="token scalar">ID</span><span class="token operator">!</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">interface</span> <span class="token class-name">User</span> <span class="token keyword">implements</span> <span class="token class-name">Node</span> <span class="token punctuation">{</span>
+  <span class="token attr-name">id</span><span class="token punctuation">:</span> <span class="token scalar">ID</span><span class="token operator">!</span>
+  <span class="token attr-name">email</span><span class="token punctuation">:</span> <span class="token scalar">String</span><span class="token operator">!</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">type</span> <span class="token class-name">Admin</span> <span class="token keyword">implements</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+  <span class="token attr-name">id</span><span class="token punctuation">:</span> <span class="token scalar">ID</span><span class="token operator">!</span>
+  <span class="token attr-name">email</span><span class="token punctuation">:</span> <span class="token scalar">String</span><span class="token operator">!</span>
+  <span class="token attr-name">roles</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">Role</span><span class="token punctuation">]</span>
+  <span class="token operator">...</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>One major benefit to implementing a node interface and corresponding resolvers is the ability to, through a single field, look up any entity in the graph. A common patter in GraphQL schema design is to use a lot of top-level lookup fields which essentially serve the same purpose. While you may still want to add some of these fields for the most used types as a convenience, using a node resolver can make schemas easier to navigate and reason about.</p><p>Another benefit to using a node interface is the ability to return lists of (or single) generic items. For example, if you're working on a news feed, there may be multiple kinds of data you want to display: articles, images, videos, links, etc. Using a node interface, any field can return a <code>Node</code> type (or a list of Nodes), and the client can decide how to render each item based on its <code>__typename</code>. If there are any types that are not being handled on the frontend, those are just ignored.</p><p>One downside to using a Node interface in practice is the type generation and type checking in frontend code.</p><pre class="language-graphql"><code class="language-graphql"><span class="token keyword">query</span> <span class="token definition-query function">MyUserQuery</span><span class="token punctuation">(</span><span class="token variable">$myUserID</span><span class="token punctuation">:</span> <span class="token scalar">ID</span><span class="token operator">!</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token property-query">node</span><span class="token punctuation">(</span><span class="token attr-name">id</span><span class="token punctuation">:</span> <span class="token variable">$myUserId</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span> <span class="token keyword">on</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+      <span class="token property">email</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>In this example, a user lookup is being done, but since we're using Node as the return type here, we must use an inline fragment to select on the type we expect, even if we know what the return type should be. Because of this technical possibility of a different return type, we'll also need to guard against that type in the frontend code</p><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">if</span> <span class="token punctuation">(</span>data<span class="token punctuation">.</span>node<span class="token punctuation">.</span>__typename <span class="token operator">!==</span> <span class="token string">'User'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// handle other cases here, maybe just throwing errors,</span>
+  <span class="token comment">// since this should be an exceptionally rare case, and</span>
+  <span class="token comment">// could signify a bug</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>Despite the drawbacks of using a Node interface, the benefits generally outweigh the costs at scale, so Node interfaces should be used when possible. For more on how this specification works, see <a href="https://graphql.org/learn/global-object-identification/">GraphQL.org's documentation</a>.</p><blockquote><p>tldr; if an object can be identified by an id, implement the Node interface and add an ID</p></blockquote><h2 id="the-user-boundary" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="The user boundary" href="#the-user-boundary" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>The user boundary</span></h2><p>A user boundary is a hard break in the graph, where only certain kinds of users can access data below that point in the graph. This can be used to control what &quot;versions&quot; of the graph users of a certain application have access to, or can be used to separate different kinds of users of a single application.</p><p>A user boundary is a fairly aggressive tool to use when designing a graph, and for most use cases would not be necessary. User boundaries are particularly useful when there are vastly different data needs for different kinds of users. Navigating a large graph may be difficult, and finding certain data could be challenging for people who are unfamiliar. A User boundary is an effective way to &quot;section off&quot; certain fields to a specific kind of user. This is also useful when trying to establish access control to fields. Sometimes, endpoints/data sources on the backend may be more permissible in their data access than preferred. Using a user boundary is one more way to prevent people from being able to access data meant for them.</p><p>With a user boundary defined, there is no way to make a single field available to multiple kinds of users without defining the field on more than one user type, so it’s important to know what kind of user(s) need access to the data that’s being added. The UserBoundary type union is blunt but effective way of keeping portions of the schema clean across multiple app users.</p><pre class="language-graphql"><code class="language-graphql"><span class="token keyword">union</span> <span class="token class-name">UserBoundary</span> <span class="token operator">=</span> <span class="token property">AdminUser</span> <span class="token operator">|</span> <span class="token property">DoctorUser</span> <span class="token operator">|</span> <span class="token property">PatientUser</span> <span class="token operator">|</span> <span class="token property">AuthenticationError</span>
+
+<span class="token keyword">type</span> <span class="token class-name">Query</span> <span class="token punctuation">{</span>
+  <span class="token attr-name">me</span><span class="token punctuation">:</span> <span class="token class-name">UserBoundary</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>Usage of the boundary from the client looks like this:</p><pre class="language-graphql"><code class="language-graphql"><span class="token keyword">query</span> <span class="token definition-query function">MyPatientData</span> <span class="token punctuation">{</span>
+  <span class="token object">me</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span> <span class="token keyword">on</span> <span class="token class-name">PatientUser</span> <span class="token punctuation">{</span>
+      <span class="token object">patient</span> <span class="token punctuation">{</span>
+        <span class="token property">datOfBirth</span>
+        <span class="token object">cases</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token operator">...</span> <span class="token keyword">on</span> <span class="token class-name">AuthenticationError</span> <span class="token punctuation">{</span>
+      <span class="token property">code</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>This way, a user can query for data that is accessible to a specific kind of expected user (like a patient) and fetch information relevant to a patient only.</p><h2 id="errors-as-data" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Errors as data" href="#errors-as-data" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Errors as data</span></h2><p>One of the benefits of GraphQL is the ability to customize errors and have usable error states for when things don’t go as planned. There are a couple methods for handling and representing errors to users, useful in different scenarios</p><p>There’s an excellent <a href="https://www.youtube.com/watch?v=RDNTP66oY2o">talk by Sasha Solomon on representing errors as data in GraphQL</a>.</p><h3 id="errors-in-queries" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Errors in Queries" href="#errors-in-queries" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Errors in Queries</span></h3><p>One of the first things encountered in Carbon’s GraphQL schema is the user boundary. It’s under the me field at the top of the schema, and represents one of the primary ways for representing query errors: a type union with Error Types.</p><p>Using type unions in GraphQL is extremely powerful. It allows the schema to represent complex error cases for fetching data. In the case of the user boundary, its type is defined like so:</p><pre class="language-graphql"><code class="language-graphql"><span class="token keyword">type</span> <span class="token class-name">Query</span> <span class="token punctuation">{</span>
+  <span class="token attr-name">me</span><span class="token punctuation">:</span> <span class="token class-name">UserBoundary</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">union</span> <span class="token class-name">UserBoundary</span> <span class="token operator">=</span>
+    <span class="token property">AdminUser</span>
+  <span class="token operator">|</span> <span class="token property">SupportUser</span>
+  <span class="token operator">|</span> <span class="token property">DoctorUser</span>
+  <span class="token operator">|</span> <span class="token property">VisitorUser</span>
+  <span class="token operator">|</span> <span class="token property">AuthenticationError</span>
+</code></pre>
+
+<p>This allows the resolver to return a specific kind of data or any number of error cases (in this example, only a single AuthenticationError case).</p><blockquote><p>tldr; for operations that are complex or involve information that could be useful for resolving errors, use a type union of the successful datatype and any error cases. Alternatively, for simple errors, just return null for the field.</p></blockquote><h3 id="errors-in-mutations" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Errors in mutations" href="#errors-in-mutations" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Errors in mutations</span></h3><p>Mutations act in an interesting way: they’re used for modifying data, but also allow for refetching the updated data, allowing for proper cache updates on the client after the success of the operation. When writing a mutation, be sure to implement the <code>MutationResponse</code> interface to represent the success and error cases properly</p><pre class="language-graphql"><code class="language-graphql"><span class="token comment"># This interface can be used on the result of an _entire_ mutation or on a _piece_ of the</span>
+<span class="token comment"># mutation, like in the case of updating multiple users, the result of updating each user</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">MutationResponse</span> <span class="token punctuation">{</span>
+  <span class="token comment"># Overall success of the mutation. If there are any errors, this should be false</span>
+  <span class="token attr-name">success</span><span class="token punctuation">:</span> <span class="token scalar">Boolean</span><span class="token operator">!</span>
+  <span class="token attr-name">message</span><span class="token punctuation">:</span> <span class="token scalar">String</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>Currently, there is a message field in the response type interface, which is intended to be a user-readable error message. There is an open RFC (link redacted) for removing this field in exchange for an error code, which can be used for logical decisions on the client based on different kinds of errors</p><p>In the case of a mutation which updates a single piece of data (like modifying an attribute on a user), the <code>MutationResponse</code> can be implemented to return the modified object like so:</p><pre class="language-graphql"><code class="language-graphql"><span class="token keyword">type</span> <span class="token class-name">Mutation</span> <span class="token punctuation">{</span>
+  <span class="token attr-name">userUpdateEmail</span><span class="token punctuation">(</span><span class="token attr-name">id</span><span class="token punctuation">:</span> <span class="token scalar">ID</span><span class="token operator">!</span><span class="token punctuation">,</span> <span class="token attr-name">email</span><span class="token punctuation">:</span> <span class="token scalar">String</span><span class="token operator">!</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token class-name">UserUpdateEmailResponse</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">type</span> <span class="token class-name">UserUpdateEmailResponse</span> <span class="token keyword">implements</span> <span class="token class-name">MutationResponse</span> <span class="token punctuation">{</span>
+  <span class="token attr-name">success</span><span class="token punctuation">:</span> <span class="token scalar">Boolean</span><span class="token operator">!</span>
+  <span class="token attr-name">message</span><span class="token punctuation">:</span> <span class="token scalar">String</span>
+  <span class="token attr-name">user</span><span class="token punctuation">:</span> <span class="token class-name">User</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>In more complex or bulk mutations, more data may be needed to fully represent the possible success and error (or partial error) cases of the mutation.</p><pre class="language-graphql"><code class="language-graphql"><span class="token keyword">type</span> <span class="token class-name">Mutation</span> <span class="token punctuation">{</span>
+  <span class="token attr-name">organizationMembersSendInvitation</span><span class="token punctuation">(</span>
+    <span class="token attr-name">memberIds</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token scalar">ID</span><span class="token operator">!</span><span class="token punctuation">]</span><span class="token operator">!</span>
+    <span class="token attr-name">message</span><span class="token punctuation">:</span> <span class="token scalar">String</span><span class="token operator">!</span>
+  <span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token class-name">OrganizationChangeMembersResponse</span><span class="token operator">!</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># This response type can be used when editing/creating/moving bulk sets of members</span>
+
+<span class="token keyword">type</span> <span class="token class-name">OrganizationChangeMembersResponse</span> <span class="token keyword">implements</span> <span class="token class-name">MutationResponse</span> <span class="token punctuation">{</span>
+  <span class="token attr-name">success</span><span class="token punctuation">:</span> <span class="token scalar">Boolean</span><span class="token operator">!</span>
+  <span class="token attr-name">message</span><span class="token punctuation">:</span> <span class="token scalar">String</span>
+  <span class="token attr-name">members</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">OrganizationMemberChangeResponse</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># This type can represent changes to any member that requires a refetch of the member</span>
+
+<span class="token keyword">type</span> <span class="token class-name">OrganizationMemberChangeResponse</span> <span class="token keyword">implements</span> <span class="token class-name">MutationResponse</span> <span class="token punctuation">{</span>
+  <span class="token attr-name">success</span><span class="token punctuation">:</span> <span class="token scalar">Boolean</span><span class="token operator">!</span>
+  <span class="token attr-name">message</span><span class="token punctuation">:</span> <span class="token scalar">String</span>
+  <span class="token attr-name">member</span><span class="token punctuation">:</span> <span class="token class-name">OrganizationMember</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>Note how this works: the two response types (one for <code>Member</code> and another for <code>Members</code>) each implement the <code>MutationResponse</code>, and the <code>OrganizationMemberChangeResponse</code> type returns the changed <code>Member</code>.</p><blockquote><p>tldr; for mutations, implement the MutationResponse interface for each piece of data being mutated as well as for the operation as a whole.</p></blockquote><h2 id="todo" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Todo" href="#todo" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Todo</span></h2><p>This document is a continuous work in progress, and doesn't cover everything that should be considered when designing schemas, left out, and good points to add in the future include:</p><ul><li>When and how to use Custom scalars, e.g. DateTime</li><li>Deprecation (removing and renaming fields)</li><li>“Major” vs “Minor” schema changes</li><li>Changes in convention, major new fields, branches of the graph, etc.</li></ul><h2 id="resources-and-references" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+        <a aria-label="link to this heading" aria-describedby="Resources &#38; References" href="#resources-and-references" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+            <i class="fa-solid fa-hashtag"></i>
+        </a>
+    </span><span>Resources &amp; References</span></h2><ul><li>[1] <a href="https://docs.gitlab.com/ee/development/api_graphql_styleguide.html#nullable-fields">https://docs.gitlab.com/ee/development/api_graphql_styleguide.html#nullable-fields</a></li><li>[2] <a href="https://yelp.github.io/graphql-guidelines/schema-design.html#be-specific-when-naming-types">https://yelp.github.io/graphql-guidelines/schema-design.html#be-specific-when-naming-types</a></li><li>[3] <a href="https://yelp.github.io/graphql-guidelines/schema-design.html#be-specific-when-naming-types">https://github.com/hendrikniemann/graphql-style-guide</a></li><li>[4] <a href="https://atheros.ai/blog/graphql-best-practices-for-graphql-schema-design">https://atheros.ai/blog/graphql-best-practices-for-graphql-schema-design</a></li></ul></article>
+      </section>
+    </main>
+    <footer class="text-sm leading-[1.75] mt-4 astro-2K5VERT3">
+  <div class="astro-2K5VERT3">
+    &copy;2023 Jake Dawkins Built with
+    <a class="unset gradient-link tracking-wider font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#f57111] to-[#f79605] hover:after:bg-gradient-to-r hover:after:from-[#f57111] hover:after:to-[#f79605] astro-2K5VERT3" href="https://github.com/flexdinesh/blogster" target="_blank">
+      Blogster</a>.
+  </div>
+</footer>
+
+
+    
+  </body>
+</html>
