@@ -15,6 +15,7 @@ import ThemeScript from "./ThemeScript.astro";
 import Favicon from "./Favicon.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import WorkInProgress from "src/components/WorkInProgress.astro";
 ---
 
 <!DOCTYPE html>
@@ -36,6 +37,7 @@ import Footer from "../components/Footer.astro";
   >
     <Header />
     <main id="main">
+      <WorkInProgress />
       <slot name="main" />
     </main>
     <Footer />
