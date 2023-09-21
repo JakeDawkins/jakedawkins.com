@@ -222,6 +222,31 @@ With that, the input should work with a mask, no problem! Notice the `/`
 that gets added automatically when the user types. This is accomplished by passing
 in a `mask="99/99"` prop to the component.
 
+## What about errors?
+
+Once we've gotten the component setup and working in it's "happy path", we can add
+an error state using [proper aria attributes for errors](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-errormessage)
+using the `aria-errormessage` and `aria-invalid` props.
+
+```jsx
+// inputCompProps
+'aria-errormessage': errorMessage ? `${id}-error` : undefined,
+'aria-invalid': !!errorMessage,
+
+// rendered error message
+{errorMessage ? (
+  <p
+    className="ml-4 mt-2 text-darkerRed text-sm font-bold"
+    id={`${id}-error`}
+  >
+    {errorMessage}
+  </p>
+) : null}
+```
+
+![Showing the input in its errored state with a red border, red label, and error message](/images/blog/input-error.png)
+![Voiceover message "08/11, Insertion at end of text., Expiration Date, edit text"](/images/blog/input-error-voiceover.png)
+
 ## Putting it all together
 
 With that, the componet is complete! For easier copying, here is the complete
@@ -234,11 +259,15 @@ import ReactInputMask from 'react-input-mask';
 type FloatingLabelInputProps = InputHTMLAttributes<HTMLInputElement> & {
   label: string,
   mask?: string,
+  containerClassName?: string,
+  errorMessage?: string,
 };
 
 export default function FloatingLabelInput({
   label,
   mask,
+  containerClassName = '',
+  errorMessage,
   ...inputProps
 }: FloatingLabelInputProps) {
   const [isFocused, setIsFocused] = useState(false);
@@ -285,48 +314,68 @@ export default function FloatingLabelInput({
       ...inputProps,
       id: id,
       className:
-        'px-4 pb-2 pt-6 border border-gray h-[60px] rounded-lg bg-lightestGray' +
+        'flex flex-1 px-4 pb-2 pt-6 border border-gray h-[60px] rounded-lg bg-lightestGray' +
         ' ' +
-        inputProps.className,
+        (inputProps.className || ' ') +
+        (inputProps.disabled ? ' cursor-not-allowed' : '') +
+        (errorMessage ? ' border-2 border-darkerRed' : ''),
       onFocus: onFocus,
       onBlur: onBlur,
       onChange,
+      disabled: inputProps.disabled,
+      'aria-errormessage': errorMessage ? `${id}-error` : undefined,
+      'aria-invalid': !!errorMessage,
     }),
-    [id, inputProps, onBlur, onChange, onFocus],
+    [errorMessage, id, inputProps, onBlur, onChange, onFocus],
   );
   return (
-    <div className="relative flex items-center">
-      <label
-        htmlFor={id}
-        className={
-          'absolute text-darkGray ml-4 transition' +
-          (elevateLabel
-            ? ' text-[13px] leading-[20px] -translate-y-4 font-bold'
-            : '') +
-          (isFocused ? ' text-purple' : '')
-        }
-      >
-        {label}
-      </label>
-      {mask ? (
-        <ReactInputMask
-          {...inputCompProps}
-          mask={mask}
-          maskPlaceholder={null}
-        />
-      ) : (
-        <input {...inputCompProps} />
-      )}
-    </div>
+    <>
+      <div className={'relative flex items-center ' + containerClassName}>
+        <label
+          htmlFor={id}
+          className={
+            'absolute text-darkGray ml-4 transition' +
+            (elevateLabel
+              ? ' text-[13px] leading-[20px] -translate-y-4 font-bold'
+              : '') +
+            (isFocused ? ' text-purple' : '') +
+            (errorMessage ? ' text-darkerRed' : '')
+          }
+        >
+          {label}
+        </label>
+        {mask ? (
+          <ReactInputMask
+            {...inputCompProps}
+            mask={mask}
+            maskPlaceholder={null}
+          />
+        ) : (
+          <input {...inputCompProps} />
+        )}
+      </div>
+      {errorMessage ? (
+        <p
+          className="ml-4 mt-2 text-darkerRed text-sm font-bold"
+          id={`${id}-error`}
+        >
+          {errorMessage}
+        </p>
+      ) : null}
+    </>
   );
 }
 ```
 
+In addition to what was described above, In the final code, I've also added a
+`disabled` state for the component, since we needed to change the cursor in that
+state.
+
 ## Conclusion
 
-We built this using only a few imports, a few tailwind classes, and a bit of React
-best practices. It's a component that is keyboard and screen-reader accessible by
-default, and usable among a wide range of cases.
+We built this using only a few imports, a few tailwind classes, and a bit of React.
+It's a component that is keyboard and screen-reader accessible by default, and
+usable among a wide range of cases.
 
 ![Focused input with an "8/11" value](/images/blog/input-final.png)
 ![Screenshot of voiceover text saying "08/11, insertion at end of text., Expiration date, edit text"](/images/blog/input-final-voiceover.png)
