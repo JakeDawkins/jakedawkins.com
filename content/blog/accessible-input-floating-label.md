@@ -226,7 +226,8 @@ in a `mask="99/99"` prop to the component.
 
 Once we've gotten the component setup and working in it's "happy path", we can add
 an error state using [proper aria attributes for errors](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-errormessage)
-using the `aria-errormessage` and `aria-invalid` props.
+using the `aria-errormessage` and `aria-invalid` props. We'll assume an added
+`errorMessage: string` prop.
 
 ```jsx
 // inputCompProps
