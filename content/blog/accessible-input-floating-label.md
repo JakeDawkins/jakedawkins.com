@@ -31,6 +31,8 @@ that this post will focus on:
 With these requirements in-place, let's get to work! Or, if you're just looking
 for some code to copy/paste, you can jump [straight to the completed source code](#putting-it-all-together).
 
+> Much of the CSS used in this post originally comes from [this blog post by Stanko Tadić](https://muffinman.io/blog/css-only-floating-input-labels/). For more of a deep dive on how the CSS here works, read his post!
+
 ## Just my type
 
 For the component types, we want this component to act very much like any other
@@ -334,3 +336,8 @@ You could easily extend this component to include custom styling or label logic
 by adding more props, but did I leave something out? Could I have improved this
 or made it easier? Let me know on [Threads](https://threads.net/@jakedawkins).
 Or give me a follow to stay in the loop for future posts like this!
+
+## Additional Reading
+
+- There is a [supposed way to do all of this](https://flowbite.com/docs/forms/floating-label/)
+  using only tailwind, but it's fairly lengthy and I haven't verified it works
