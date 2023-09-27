@@ -5,9 +5,11 @@ description: 'Building an accessible input component with a floating label using
 date: 2023-09-27
 ---
 
+![A text input with a label positioned inside the input, above the input's value](/images/blog/input-header.png)
+
 ## Introduction
 
-Many designers love inputs like the below image; with a label floating over the input
+Many designers love inputs like these; with a label floating over the input
 that moves out of the way for text input when a user focuses the input. Of course
 they love it, though! [Inputs need labels](https://www.w3.org/WAI/tutorials/forms/labels/),
 and labels take up space. Having a label live inside the bounds of an input makes
