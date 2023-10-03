@@ -2,7 +2,7 @@
 external: false
 title: 'Building an Accessible Input with a Floating Label'
 description: 'Building an accessible input component with a floating label using React, Tailwind, React Input Mask, and Storybook'
-date: 2023-09-27
+date: 2023-09-27T20:00:00-04:00
 ---
 
 ![A text input with a label positioned inside the input, above the input's value](/images/blog/input-header.png)
