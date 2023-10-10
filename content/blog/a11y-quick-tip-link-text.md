@@ -54,7 +54,7 @@ Other methods include:
 
 For a full list of ways to provide valid link context, see the [Understanding link purpose in context page from the W3C](https://www.w3.org/WAI/WCAG21/Understanding/link-purpose-in-context.html)
 
-## Links without context (WCAG 2.4.9 Level AAA)
+## Links without context
 
 Many links don't have a way of programmatically determining their context, meaning
 they don't exist in a `li` `p` or other element that can provide context for them.
