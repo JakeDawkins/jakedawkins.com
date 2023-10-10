@@ -2,7 +2,7 @@
 external: false
 title: 'A11y Fast: Link Purpose'
 description: 'How to make pages more nagivable and understandable through descriptive and consistent links'
-date: 2023-10-09T20:00:00-04:00
+date: 2023-10-10T20:00:00-04:00
 draft: false
 ---
 
