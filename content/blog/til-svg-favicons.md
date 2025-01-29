@@ -7,7 +7,7 @@ date: 2025-01-29
 
 ## TIL favicons are more complicated than I knew.
 
-- You CAN use SVGs for favicons [more info in this block post](<[text](https://css-tricks.com/svg-favicons-and-all-the-fun-things-we-can-do-with-them/)>)
+- You CAN use SVGs for favicons [more info in this blog post](<[text](https://css-tricks.com/svg-favicons-and-all-the-fun-things-we-can-do-with-them/)>)
 - Favicons CAN also use PNGs
 - Support for SVGs is mixed
 
