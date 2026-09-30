@@ -1,8 +1,10 @@
 ---
-external: false
-title: Getting Acquainted with Rust — First Look
-date: 2020-03-12
-description: 'Exploring where Rust shines, and my first impressions'
+title: "Getting Acquainted with Rust\u200a\u2014\u200aFirst Look"
+description: "Exploring where Rust shines, and my first impressions"
+type: note
+stage: budding
+planted: 2020-03-12
+topics: [rust]
 ---
 
 ![Cover photo -- Ferris in space](/images/blog/rust-cover.png)
@@ -29,7 +31,7 @@ The command-line ebook has helped me develop and design a good sample project, a
 
 I’ve been working on building a simple proof of concept CLI app that acts as a client to Apollo Graph Manager and lets users download a schema published to the registry. The user can specify what graph they’d like to download, what variant they’d like to use, API keys (as flags and env variables), output destinations (stdout or file paths), and more. So far, it’s been a lot of fun to figure out!I
 
-![It works (running a simple command and downloading a schema to output.json)!](/images/blog/rust-sample.gif)_It works (running a simple command and downloading a schema to output.json)!_
+![A terminal running cargo run -- download_schema -o schema.json -g engine -v master, which prints Written to schema.json](/images/blog/rust-sample.gif)_It works (running a simple command and downloading a schema to output.json)!_
 
 ## Initial takes
 
@@ -45,11 +47,11 @@ I’m used to working with types in TypeScript, and I learned programming throug
 
 I’m am, however, still a bit confused about value references, like &str vs std::string::String types and having to use .to_string() on string literals to fix type issues. As I said though, I think that's more a result of not having gone through those sections in the book rather than a something fundamentally difficult to understand. On the bright side, the errors for these kinds of issues are helpful and Google searches have been surprisingly fruitful!
 
-![What a helpful error message after messing up string types!](/images/blog/rust-editor.png)_What a helpful error message after messing up string types!_
+![An editor tooltip for Rust error E0308, mismatched types: expected struct std::string::String, found &str, with a hint to call .to_string()](/images/blog/rust-editor.png)_What a helpful error message after messing up string types!_
 
 [Attributes](https://doc.rust-lang.org/rust-by-example/attribute.html#attributes) have been confusing as well, as there’s not a parallel that I’ve used in other languages. They’re used all over the place, for various purposes. Attributes look like #[this] and if you’re not familiar with them can be pretty strange. I’m excited to learn more about them, what all they can accomplish, and how they work, but for now, I’ll just keep learning them one-by-one as I encounter them. I will admit though, there are a lot of really powerful uses that I’ve come upon so far. Maybe my favorite use of attributes so far is marking functions and modules as tests to be run with cargo test using the #[test] attribute. In the VS Code extension, it even adds a button to run the test immediately within the editor! This attribute makes it really easy to build unit tests right alongside the code it’s testing—I **really** like this.
 
-![Annotating test functions with the test attribute](/images/blog/rust-tests.png)_Annotating test functions with the test attribute_
+![Two Rust functions, find_a_match and find_multiple_matches, each marked with #[test] and a Run test link above it](/images/blog/rust-tests.png)_Annotating test functions with the test attribute_
 
 ### The Tooling
 
@@ -59,7 +61,7 @@ If there was one thing I wish Cargo did better, it’d have to do with build spe
 
 In a similar vein, I’ve found the VS Code extension both extremely useful, but also slower than I’d like. Since I’m quite the noob, I make more than my fair share of mistakes. Right now, when I make them though, the VS Code extension takes **5–6 seconds** to update with the changes and show my my errors and warnings, which definitely seems too slow. Are other editors faster than this at updates? Do I have something configured incorrectly? Let me know! Until then, however, I’ll keep enjoying the convenience that I DO get from the VS Code extension, since it’s still super useful!
 
-![The ability to see documentation hover is by itself a really great feature!](/images/blog/rust-hover-docs.png)_The ability to see documentation hover is by itself a really great feature!_
+![An editor hover card for File::create showing its signature and docs: it opens a file in write-only mode, creating or truncating it](/images/blog/rust-hover-docs.png)_The ability to see documentation hover is by itself a really great feature!_
 
 ### The Ecosystem
 

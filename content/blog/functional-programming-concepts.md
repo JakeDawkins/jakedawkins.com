@@ -1,8 +1,10 @@
 ---
-external: false
-title: 'Intro to Functional Programming Concepts'
-date: 2016-08-01
-description: 'Some early notes of mine taken while I was learning functional programming'
+title: "Intro to Functional Programming Concepts"
+description: "Some early notes of mine taken while I was learning functional programming"
+type: note
+stage: evergreen
+planted: 2016-08-01
+topics: [javascript, functional-programming]
 ---
 
 ## What this is

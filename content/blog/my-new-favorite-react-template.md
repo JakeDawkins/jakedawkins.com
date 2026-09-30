@@ -1,8 +1,10 @@
 ---
-external: false
-title: 'My New Favorite React Template'
-description: 'A new template for React apps that I built and used while interviewing'
-date: 2023-02-03
+title: "My New Favorite React Template"
+description: "A new template for React apps that I built and used while interviewing"
+type: note
+stage: outdated
+planted: 2023-02-03
+topics: [react, tooling]
 ---
 
 **tldr;** [GitHub link](https://github.com/JakeDawkins/next-ts-apollo-template) to the template

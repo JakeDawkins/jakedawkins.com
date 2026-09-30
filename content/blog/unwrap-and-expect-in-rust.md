@@ -1,8 +1,10 @@
 ---
-external: false
-title: Unwrap and Expect in Rust
-date: 2020-04-16
-description: 'Explaining how to use unwrap and expect in Rust project to handle Option and Result!'
+title: "Unwrap and Expect in Rust"
+description: "Explaining how to use unwrap and expect in Rust project to handle Option and Result!"
+type: note
+stage: evergreen
+planted: 2020-04-16
+topics: [rust]
 ---
 
 A concept that I quickly came across when learning rust was that of the `Result` and `Option` types. Handling of these types is a bit different from my experience handling types in TypeScript, and I was quickly introduced to two useful functions: `unwrap` and `expect` to make my life a little easier. But before diving into `unwrap` and `expect`, I think it's useful to understand how these two types work to begin with. So hold on for a (not too long) introduction to `Option` and `Result` :)

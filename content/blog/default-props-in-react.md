@@ -1,8 +1,10 @@
 ---
-external: false
-title: 'Default Props in React'
+title: "Default Props in React"
 description: "(Deprecated) using React class components' default props"
-date: 2016-01-05
+type: note
+stage: outdated
+planted: 2016-01-05
+topics: [react]
 ---
 
 If you've been around React for any length of time, you're almost certainly aware of proptypes (or the equivalent in whatever type system you're using). I've been aware of these since one of my first tutorials.

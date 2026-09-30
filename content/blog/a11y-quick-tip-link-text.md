@@ -1,9 +1,10 @@
 ---
-external: false
-title: 'A11y Fast: Link Purpose'
-description: 'How to make pages more nagivable and understandable through descriptive and consistent links'
-date: 2023-10-10T20:00:00-04:00
-draft: false
+title: "A11y Fast: Link Purpose"
+description: "How to make pages more nagivable and understandable through descriptive and consistent links"
+type: article
+stage: evergreen
+planted: 2023-10-10
+topics: [accessibility]
 ---
 
 ![a large image of a link that says "read more..."](/images/blog/links-header.png)

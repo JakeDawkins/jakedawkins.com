@@ -1,8 +1,10 @@
 ---
-external: false
-title: 'TIL: NPM Legacy Peer Dependencies'
-description: 'An easier route forward when upgrading dependencies and you run into peer dependency issues.'
-date: 2025-02-05
+title: "TIL: NPM Legacy Peer Dependencies"
+description: "An easier route forward when upgrading dependencies and you run into peer dependency issues."
+type: til
+stage: evergreen
+planted: 2025-02-05
+topics: [tooling, javascript]
 ---
 
 ## TIL NPM lets you bypass peer dependency checks when upgrading dependencies.

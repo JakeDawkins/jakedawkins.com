@@ -1,8 +1,11 @@
 ---
-external: false
-title: 'Building an Accessible Input with a Floating Label'
-description: 'Building an accessible input component with a floating label using React, Tailwind, React Input Mask, and Storybook'
-date: 2023-09-27T20:00:00-04:00
+title: "Building an Accessible Input with a Floating Label"
+description: "Building an accessible input component with a floating label using React, Tailwind, React Input Mask, and Storybook"
+type: article
+stage: evergreen
+planted: 2023-09-27
+topics: [accessibility, react, css]
+featured: true
 ---
 
 ![A text input with a label positioned inside the input, above the input's value](/images/blog/input-header.png)
@@ -323,7 +326,7 @@ using the `aria-errormessage` and `aria-invalid` props. We'll assume an added
 With that, the component is complete! For easier copying, here is the complete
 source code:
 
-{% githubgist id="1a1716da579b626cd7258e6bf6bb1743" /%}
+[View the full component on GitHub Gist](https://gist.github.com/1a1716da579b626cd7258e6bf6bb1743)
 
 ## Conclusion
 

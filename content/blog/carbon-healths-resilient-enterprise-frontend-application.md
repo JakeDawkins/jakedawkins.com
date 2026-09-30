@@ -1,9 +1,10 @@
 ---
-external: false
 title: "Carbon Health's Resilient Enterprise Frontend Application"
-description: 'A peek under the hood into how Carbon Health rebuilt their enterprise app, engineered for speed and resilience'
-date: 2022-06-13
-draft: false
+description: "A peek under the hood into how Carbon Health rebuilt their enterprise app, engineered for speed and resilience"
+type: article
+stage: evergreen
+planted: 2022-06-13
+topics: [react, architecture, testing]
 ---
 
 ## Overview

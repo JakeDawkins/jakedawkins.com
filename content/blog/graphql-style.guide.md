@@ -1,9 +1,11 @@
 ---
-external: false
-draft: false
-title: GraphQL Style Guide
-description: Designing a resilient GraphQL schema for large data graphs
-date: 2022-06-02
+title: "GraphQL Style Guide"
+description: "Designing a resilient GraphQL schema for large data graphs"
+type: article
+stage: evergreen
+planted: 2022-06-02
+topics: [graphql, architecture]
+featured: true
 ---
 
 > This document was originally started by myself for use on Carbon Health's data graph. It has since been expanded on and changed in some ways, to conceal private information about Carbon's graph or to omit irrelevant information for the public. As with any style guide, this was build by a combination of personal experience and also through guides compiled by others, so the thoughts (and some of the text) may be from other authors. I've tried to footnote specific instances of this as well as possible.

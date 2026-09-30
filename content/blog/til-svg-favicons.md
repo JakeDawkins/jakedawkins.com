@@ -1,8 +1,10 @@
 ---
-external: false
-title: 'TIL: SVG Favicons'
-description: 'I learned favicons are a more complicated topic than I expected!'
-date: 2025-01-29
+title: "TIL: SVG Favicons"
+description: "I learned favicons are a more complicated topic than I expected!"
+type: til
+stage: evergreen
+planted: 2025-01-29
+topics: [tooling, css]
 ---
 
 ## TIL favicons are more complicated than I knew.

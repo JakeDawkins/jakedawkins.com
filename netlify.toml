@@ -1,0 +1,12 @@
+# Netlify build and deploy settings for jakedawkins.com (Next.js static export).
+# Settings here override the Netlify UI.
+
+[build]
+  command = "npm run build"   # next build + generates out/_redirects
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Redirects are generated into out/_redirects by scripts/redirects.mjs.
+# Headers (caching, content types) live in public/_headers.

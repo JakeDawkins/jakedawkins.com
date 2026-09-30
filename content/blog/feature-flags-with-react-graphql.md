@@ -1,9 +1,10 @@
 ---
-external: false
-title: Feature Flags with React & GraphQL
-description: Build support for fetching feature flags, unique to users, in GraphQL
-date: 2022-06-16
-draft: false
+title: "Feature Flags with React & GraphQL"
+description: "Build support for fetching feature flags, unique to users, in GraphQL"
+type: article
+stage: evergreen
+planted: 2022-06-16
+topics: [react, graphql]
 ---
 
 ## Overview

@@ -1,50 +1,50 @@
-# Blogster
+# jakedawkins.com
 
-Theme: **sleek**
+Next.js 16 static export, deployed on Netlify.
 
-Blogster is a collection of beautiful, accessible and performant blog templates built with [Astro](https://astro.build) and [Markdoc](https://markdoc.dev).
+```sh
+npm install
+npm run dev              # http://localhost:3000
+npm run build            # static site in out/, plus out/_redirects
+npm run check:redirects  # every old-site URL still resolves
+npm run check:a11y       # axe WCAG 2.2 AA audit of every page, light and dark
+npm run cv:pdf           # after build: regenerate public/jake-dawkins-cv.pdf (commit it)
+```
 
-Check out the demo here - [Blogster sleek template](https://blogster-sleek.netlify.app).
+## Content
 
-## Sleek Template
+| What | Where | Format |
+| --- | --- | --- |
+| Blog (articles, notes, TILs) | `content/blog/*.md` / `*.mdx` | Markdown + frontmatter. `.mdx` can embed `<MetricChart>`, `<BeforeAfter>`, `<Callout>` |
+| CV | `data/cv.ts` | Typed data. Each highlight can carry `evidence` (chart, before/after, quote, link) |
+| Projects | `data/projects.ts` | Typed data with a status |
+| Talks | `data/talks.ts` | Typed data |
 
-A beautiful, performant and accessible theme built with [Tailwind](https://tailwindcss.com).
+Blog frontmatter:
 
-- **Fast**. Fast by default. Astro websites are engineered to be fast and load before you could blink, even when not cached.
-- **Dark mode**. All themes have light/dark mode built-in.
-- **Mobile first**. Responsive and loads fast in all devices.
-- **Accessible**. A well thought out semantic and accessible content.
-- **Perfect lighthouse score.** 100 across the board.
-- **Easy content authoring**. Author content using markdown (`.md`) from your code editor or directly in GitHub.
-- **Extended markdown with [Markdoc](https://markdoc.dev).** Type-safe custom components like YouTube embed, Twitter embed (or anything you want really) in your markdown (`.md`) files.
-- **RSS feed**. Your blog has an RSS feed setup that can be accessed at `/rss.xml`.
-- **SEO**. All pages are setup with all the SEO you might need.
+```yaml
+title: Errors as data in GraphQL
+description: One-line summary.
+type: article | note | til
+stage: seedling | budding | evergreen | outdated   # shown as Draft / In progress / Complete / No longer current
+planted: 2025-02-10  # published
+tended: 2026-07-21   # optional, last updated; defaults to planted
+topics: [graphql, architecture]
+featured: true       # optional, shows on home
+url: https://...     # optional, for posts published elsewhere (links out, no local page)
+```
 
-## How do I add content?
+Linking to `/blog/<slug>/` from any post creates a backlink on the target post.
 
-All the content is written in markdown (.md) and grouped as `blog` or `projects` in the `content` directory. All the default markdown syntax will work. You also have a few example custom markdown elements like _YouTube embed_, _Twitter embed_, etc. You can create your own custom components too in two easy steps.
+After changing `data/cv.ts`, run `npm run build && npm run cv:pdf` and commit the new PDF.
 
-1. Add a markdoc config. Check out the markdoc config in [src/lib/markdoc/config.ts](src/lib/markdoc/config.ts) to learn how to add custom components.
-2. Add a component to render your custom component. Check out the Renderer in [src/components/Renderer.astro](src/components/Renderer.astro).
+## SEO and indexing
 
-## How do I make it my blog?
+- Posts keep the old site's `/blog/<slug>/` URLs, so existing links and rankings carry over with no redirect. `scripts/redirects.mjs` writes the few 301s that are needed (old sitemap URLs, the external Apollo post) to `out/_redirects`.
+- Heading anchors match the old site (`lib/rehype-heading-ids.ts`), so `#section` links keep working.
+- Every page sets canonical, Open Graph, and Twitter tags (`lib/seo.ts`). Posts get a generated social card at `/og/<slug>/image.png`, plus `BlogPosting` (with `creativeWorkStatus` for maturity) and breadcrumb JSON-LD. The CV has `ProfilePage` JSON-LD.
+- Generated at build time: `sitemap.xml`, `robots.txt`, `rss.xml`, `llms.txt`, `llms-full.txt`, `cv.md`, `resume.json` (JSON Resume v1.0.0).
 
-Easy.
+## Deploying
 
-- All content is static and everything is straight forward. Change whatever you need to change.
-- Delete or update the content in `content/{content-group}`. `content-group` could be `blog`, `projects` or `anything`.
-- (Optional) If you need more content types like _Notes_, just create a new dir in `content` and add a new frontmatter validator like [src/lib/markdoc/blog/frontmatter](src/lib/markdoc/blog/frontmatter).
-
-## How do I deploy?
-
-`yarn build` will generate a static website in `dist` dir. You can host it with any static hosting. If you need a recommendation, check out [Netlify](netlify.com).
-
-## Credit
-
-Thanks to other templates that inspired this theme.
-
-- [Official Astro Blog template](https://github.com/withastro/astro/tree/main/examples/blog)
-
-## License
-
-MIT © [Dinesh Pandiyan](https://github.com/flexdinesh)
+Netlify builds from the repo root using `netlify.toml` (`npm run build`, publish `out`, Node 22). `public/_headers` sets long-lived caching for hashed assets. `.github/workflows/scheduled-rebuild.yml` rebuilds weekly through a Netlify build hook (set the `NETLIFY_BUILD_HOOK` repo secret) so date-based content stays current.

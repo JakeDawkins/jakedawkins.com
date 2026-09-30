@@ -1,8 +1,10 @@
 ---
-external: false
-title: 'Open Source Software From My Eyes'
-date: 2021-02-28
-description: 'Notes from a guest lecture I gave on open source projects'
+title: "Open Source Software From My Eyes"
+description: "Notes from a guest lecture I gave on open source projects"
+type: note
+stage: evergreen
+planted: 2021-02-28
+topics: [open-source, career]
 ---
 
 > This is mostly a regurgitation of a talk I gave for a guest lecture at Clemson in February 2021. Since this was originally delivered as a lecture, the format very much is separated like it would be in a presentation (without the fun graphics), and some points won't be fleshed out fully. You can check out the full presentation [here](/files/oss-presentation.pdf)

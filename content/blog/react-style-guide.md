@@ -1,9 +1,10 @@
 ---
-external: false
-draft: false
-title: React Style Guide
-description: Build modern conventional React components
-date: 2022-06-08
+title: "React Style Guide"
+description: "Build modern conventional React components"
+type: article
+stage: evergreen
+planted: 2022-06-08
+topics: [react]
 ---
 
 Building React components in a consistent way is critical for readability and maintainability. When components have similar controls and interaction patterns, it’s easier to know what to expect, but more importantly know when something isn’t working correctly.

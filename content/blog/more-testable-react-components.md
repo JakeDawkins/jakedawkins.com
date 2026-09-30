@@ -1,8 +1,10 @@
 ---
-external: false
-title: 'More Testable React Components'
-date: 2016-10-01
-description: 'Some simple lessons I learned while refactoring components for unit testing'
+title: "More Testable React Components"
+description: "Some simple lessons I learned while refactoring components for unit testing"
+type: note
+stage: outdated
+planted: 2016-10-01
+topics: [react, testing]
 ---
 
 Testing code is not easy. At least not at first. Learning to test logic for any faults can be a painful process. Especially if you weren't the one to write it.
