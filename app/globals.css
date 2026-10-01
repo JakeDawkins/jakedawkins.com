@@ -145,6 +145,17 @@ html {
   font-size: 0.85em;
   line-height: 1.6;
 }
+/* Colors for <SequenceDiagram>. The SVG redefines --line, --accent, and --surface for
+   itself, so it reads these aliases instead of the site variables directly. */
+.diagram {
+  --diagram-bg: var(--surface);
+  --diagram-fg: var(--ink);
+  --diagram-line: var(--ink-3);
+  --diagram-accent: var(--accent);
+  --diagram-muted: var(--ink-2);
+  --diagram-surface: var(--sunken);
+  --diagram-border: var(--line);
+}
 /* Shiki renders both themes; light is inline, dark comes from CSS variables. */
 .dark .shiki,
 .dark .shiki span {
