@@ -12,7 +12,7 @@ export const metadata = pageMetadata({
 export default function ProjectsPage() {
   return (
     <>
-      <PageHeader eyebrow="Projects" title="Things I make">
+      <PageHeader title="Things I make">
         <p>Apps, open source, and experiments.</p>
       </PageHeader>
 

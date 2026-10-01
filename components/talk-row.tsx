@@ -1,15 +1,17 @@
 import type { Talk } from '@/data/talks';
-import { formatMonthYear } from '@/lib/format';
+import { formatMonth, formatMonthYear } from '@/lib/format';
 
 const KIND: Record<Talk['kind'], string> = { talk: 'Talk', workshop: 'Workshop', podcast: 'Podcast', panel: 'Panel', lecture: 'Guest lecture' };
 
-export function TalkRow({ talk, compact = false }: { talk: Talk; compact?: boolean }) {
+// `grouped` rows sit under a year heading, so the date column collapses to a month in the meta line.
+export function TalkRow({ talk, compact = false, grouped = false }: { talk: Talk; compact?: boolean; grouped?: boolean }) {
   return (
-    <article className="grid gap-x-6 gap-y-1 py-5 sm:grid-cols-[110px_1fr_auto]">
-      <p className="font-mono text-xs text-ink-3 sm:pt-1">{formatMonthYear(talk.date)}</p>
+    <article className={`grid gap-x-6 gap-y-1 py-5 ${grouped ? 'sm:grid-cols-[1fr_auto]' : 'sm:grid-cols-[110px_1fr_auto]'}`}>
+      {!grouped && <p className="font-mono text-xs text-ink-3 sm:pt-1">{formatMonthYear(talk.date)}</p>}
       <div>
         <h3 className="font-serif text-lg leading-snug tracking-tight text-ink">{talk.title}</h3>
         <p className="text-sm text-ink-3">
+          {grouped && <>{formatMonth(talk.date)} · </>}
           {KIND[talk.kind]} · {talk.event}
           {!compact && talk.location && <> · {talk.location}</>}
         </p>

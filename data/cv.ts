@@ -87,8 +87,8 @@ export const cv = {
     "I'm a learner and a teacher, and I love what I do. I value empathetic, diverse, and cross-functional teams.",
   ],
   impact: [
+    { value: '17-20%', label: 'lift in purchase conversion from a rebuilt marketing landing page and checkout', href: '#homeaglow-deal-reskin' },
     { value: '90%', label: 'decrease in user load times after rebuilding an enterprise product', href: '#carbon-load-times' },
-    { value: '90%+', label: 'minimum test coverage from a unit and e2e testing strategy', href: '#carbon-testing' },
     { value: '500+', label: 'commits to Apollo open source developer tools', href: '#apollo-oss-tools' },
     cpaccStatus.expired
       ? { value: 'CPACC', label: `IAAP accessibility certification, held through ${cpaccStatus.until}`, href: '#certifications' }
@@ -99,10 +99,60 @@ export const cv = {
       id: 'homeaglow',
       company: 'Homeaglow',
       companyUrl: 'https://www.homeaglow.com',
-      stack: [],
+      stack: ['React', 'React Native', 'Expo', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Apollo Client', 'GraphQL', 'Django', 'Statsig', 'Stripe'],
       positions: [
-        { title: 'Staff Software Engineer', start: '2024-07', end: null, location: 'New York, NY', highlights: [] },
-        { title: 'Senior Software Engineer', start: '2023-02', end: '2024-07', location: 'New York, NY', highlights: [] },
+        {
+          title: 'Staff Software Engineer',
+          start: '2024-07',
+          end: null,
+          location: 'New York, NY',
+          highlights: [
+            {
+              id: 'homeaglow-deal-reskin',
+              text: 'Rebuilt the main marketing landing page and checkout, then ran five experiments testing different designs on the new build; the winner raised purchase conversion by 17-20% and drove record daily sales.',
+            },
+            {
+              id: 'homeaglow-membership',
+              text: 'Built a new membership model end to end across web, mobile, and backend, iterating through four versions until it became the national default offer.',
+            },
+            { id: 'homeaglow-checkout-experiments', text: 'Shipped a steady stream of checkout experiments, with wins of +15%, +13%, and +10% purchase conversion.' },
+            {
+              id: 'homeaglow-experimentation',
+              text: 'Led adoption of Statsig as the experimentation platform across all major products, and fixed setup and cohorting bugs that had been invalidating results.',
+            },
+            {
+              id: 'homeaglow-sales-tool',
+              text: 'Independently scoped and built an inside sales tool with no product or design support, letting agents book a cleaning and sell a membership in one flow; it raised leads handled per hour by 28% and cut handle time by 14%.',
+            },
+            {
+              id: 'homeaglow-native-app',
+              text: 'Co-built the new React Native customer app, rebuilding it screen by screen with an experiment on each flow, through App Store and Google Play release.',
+            },
+            { id: 'homeaglow-payments', text: 'Moved web and native card entry to Stripe Payment Elements to close PCI compliance gaps.' },
+            { id: 'homeaglow-compliance', text: 'Shipped state consent-decree, disclosure, and accessibility changes to the acquisition funnel on tight legal deadlines.' },
+          ],
+        },
+        {
+          title: 'Senior Software Engineer',
+          start: '2023-02',
+          end: '2024-07',
+          location: 'New York, NY',
+          highlights: [
+            {
+              id: 'homeaglow-ncw',
+              text: 'Led the new customer web app and booking flow, for a time as the only engineer, and launched them to all new customers, raising voucher redemption by 3 percentage points.',
+            },
+            {
+              id: 'homeaglow-deal-rebuild',
+              text: 'Rebuilt the main marketing landing page in Next.js to be faster and more accessible, then shipped a bundle of winning tests on it for a 10% conversion lift.',
+            },
+            {
+              id: 'homeaglow-experiment-infra',
+              text: 'Built frontend experimentation infrastructure, first for the booking flow (cutting launch time from weeks to under two days), then for the main marketing landing page.',
+            },
+            { id: 'homeaglow-graphql', text: 'Migrated the customer web app from legacy Django view handlers to GraphQL.' },
+          ],
+        },
       ],
     },
     {

@@ -44,7 +44,7 @@ export default function WritingPage() {
           ]),
         ]}
       />
-      <PageHeader eyebrow="Blog" title="Writing">
+      <PageHeader title="Writing">
         <p>
           Blog posts, notes, and short tips. Some are polished, some are works in progress, and each one is labeled with
           how finished it is. I think of it as a{' '}

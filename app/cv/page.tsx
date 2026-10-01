@@ -68,7 +68,6 @@ export default function CVPage() {
       {cv.placeholder && <MockBanner />}
       <header className="mb-14 grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
         <div className="max-w-2xl">
-          <p className="mb-3 font-mono text-xs uppercase tracking-wider text-ink-3">Curriculum vitae</p>
           <h1 className="font-serif text-5xl leading-[1.05] tracking-tight sm:text-6xl">{site.name}</h1>
           <p className="mt-5 text-xl leading-relaxed text-ink">
             {cv.headline} <span className="text-ink-3">· {cv.location}</span>

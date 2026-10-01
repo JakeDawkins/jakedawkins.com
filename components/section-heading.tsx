@@ -13,10 +13,9 @@ export function SectionHeading({ title, href, linkLabel = 'View all' }: { title:
   );
 }
 
-export function PageHeader({ eyebrow, title, children }: { eyebrow?: string; title: string; children?: React.ReactNode }) {
+export function PageHeader({ title, children }: { title: string; children?: React.ReactNode }) {
   return (
     <header className="mb-12 max-w-2xl">
-      {eyebrow && <p className="mb-3 font-mono text-xs uppercase tracking-wider text-ink-3">{eyebrow}</p>}
       <h1 className="font-serif text-5xl leading-[1.05] tracking-tight sm:text-6xl">{title}</h1>
       {children && <div className="mt-5 text-lg leading-relaxed text-ink-2">{children}</div>}
     </header>

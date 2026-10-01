@@ -13,16 +13,16 @@ export default function TalksPage() {
   const byYear = Map.groupBy(talks, (t) => t.date.slice(0, 4));
   return (
     <>
-      <PageHeader eyebrow="Speaking" title="Talks & appearances">
+      <PageHeader title="Talks & appearances">
         <p>Conference talks, a guest lecture, and a podcast, mostly about GraphQL, testing, and open source.</p>
       </PageHeader>
-      <div className="space-y-12">
+      <div className="border-b border-line">
         {[...byYear.entries()].map(([year, list]) => (
-          <section key={year} className="grid gap-4 sm:grid-cols-[80px_1fr]">
-            <h2 className="font-serif text-2xl text-ink-3">{year}</h2>
-            <div className="divide-y divide-line border-t border-line sm:border-t-0">
+          <section key={year} className="grid border-t border-line sm:grid-cols-[80px_1fr] sm:gap-x-6">
+            <h2 className="pt-5 font-serif text-lg leading-snug text-ink-3">{year}</h2>
+            <div className="divide-y divide-line">
               {list.map((t) => (
-                <TalkRow key={t.slug} talk={t} />
+                <TalkRow key={t.slug} talk={t} grouped />
               ))}
             </div>
           </section>
