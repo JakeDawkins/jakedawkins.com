@@ -14,7 +14,24 @@ The nature of this job has changed quite a bit. What used to be a career fueled 
 
 Each project we work on has a lot more in its lifecycle than writing code. We have reviewing product specs and designs, experiment planning, code reviews, QA handoff and fixing, release planning, post-release monitoring, and later bug fixes. And that's not to mention all of the interpersonal communication dependencies on each of those!
 
-<!-- Insert Graphic -->
+<SequenceDiagram
+  title="A project's lifecycle, beyond writing code"
+  participants={['Product & Design', 'Engineer', 'Reviewers', 'QA', 'Production']}
+  messages={[
+    { from: 'Product & Design', to: 'Engineer', label: 'Specs and designs to review' },
+    { from: 'Engineer', to: 'Product & Design', label: 'Questions and feedback', reply: true },
+    { from: 'Engineer', to: 'Product & Design', label: 'Experiment plan' },
+    { from: 'Engineer', to: 'Engineer', label: 'Write code' },
+    { from: 'Engineer', to: 'Reviewers', label: 'Code review' },
+    { from: 'Reviewers', to: 'Engineer', label: 'Review feedback', reply: true },
+    { from: 'Engineer', to: 'QA', label: 'QA handoff' },
+    { from: 'QA', to: 'Engineer', label: 'Bugs to fix', reply: true },
+    { from: 'Engineer', to: 'Product & Design', label: 'Release plan' },
+    { from: 'Engineer', to: 'Production', label: 'Release' },
+    { from: 'Production', to: 'Engineer', label: 'Post-release monitoring', reply: true },
+    { from: 'Production', to: 'Engineer', label: 'Later bug fixes', reply: true },
+  ]}
+/>
 
 So while we may be able to write code (and do some level of those other things) quicker with AI tooling, we may end up having many more projects at any of these other phases at a time than we used to, and that's a problem of context.
 

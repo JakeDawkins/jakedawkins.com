@@ -7,6 +7,7 @@ import { rehypeHeadingIds } from '@/lib/rehype-heading-ids';
 import { BeforeAfter } from './before-after';
 import { Gif } from './gif';
 import { MetricChart } from './metric-chart';
+import { SequenceDiagram } from './sequence-diagram';
 
 function A({ href = '', ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   if (href.startsWith('/') || href.startsWith('#')) return <Link href={href} {...props} />;
@@ -45,6 +46,11 @@ const components = {
   BeforeAfter: (props: React.ComponentProps<typeof BeforeAfter>) => (
     <Figure>
       <BeforeAfter {...props} />
+    </Figure>
+  ),
+  SequenceDiagram: (props: React.ComponentProps<typeof SequenceDiagram>) => (
+    <Figure>
+      <SequenceDiagram {...props} />
     </Figure>
   ),
 };

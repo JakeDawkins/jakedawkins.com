@@ -1,11 +1,11 @@
 import { ProjectCard } from '@/components/project-card';
 import { pageMetadata } from '@/lib/seo';
 import { PageHeader } from '@/components/section-heading';
-import { PROJECT_STATUSES, PROJECT_STATUS_META, projects, studio } from '@/data/projects';
+import { PROJECT_STATUSES, PROJECT_STATUS_META, projects } from '@/data/projects';
 
 export const metadata = pageMetadata({
   title: 'Projects',
-  description: 'Apps and open source from Jake Dawkins, including Trample, Stitch, and Trek from Sky Rat Digital.',
+  description: 'Apps and open source from Jake Dawkins, including Trample, Stitch, and Trek.',
   path: '/projects/',
 });
 
@@ -13,13 +13,7 @@ export default function ProjectsPage() {
   return (
     <>
       <PageHeader eyebrow="Projects" title="Things I make">
-        <p>
-          Apps, open source, and experiments. My apps ship under{' '}
-          <a href={studio.href} className="text-link">
-            {studio.name}
-          </a>
-          .
-        </p>
+        <p>Apps, open source, and experiments.</p>
       </PageHeader>
 
       <div className="space-y-16">

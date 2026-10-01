@@ -17,11 +17,11 @@ export type Project = {
   /** Launch or start date, when known. */
   date?: string;
   stack: string[];
+  /** Square app icon in /public. */
+  logo?: string;
   links: { label: string; href: string }[];
   featured?: boolean;
 };
-
-export const studio = { name: 'Sky Rat Digital', href: 'https://skyratdigital.com/' };
 
 export const projects: Project[] = [
   {
@@ -30,6 +30,7 @@ export const projects: Project[] = [
     description:
       'How many words can you make before you get trampled? A daily word game. No logins, no sign-ups, no ads. A new word and a new chance every day!',
     status: 'shipped',
+    logo: '/images/projects/logo-trample.webp',
     stack: ['Next.js'],
     links: [{ label: 'Play', href: 'https://playtrample.com' }],
     featured: true,
@@ -40,6 +41,7 @@ export const projects: Project[] = [
     description:
       'An interstitial journal: a running log of your day, kept moment by moment. Capture transitions on the Timeline, park stray thoughts in Notes, and export everything as Markdown. Private by default; nothing leaves your browser.',
     status: 'shipped',
+    logo: '/images/projects/logo-stitch.webp',
     stack: [],
     links: [{ label: 'Website', href: 'https://stitchjournal.app' }],
     featured: true,
@@ -51,6 +53,7 @@ export const projects: Project[] = [
       'Your place for your places. Make lists. Save places. Get help from friends. Whether planning a vacation, or curating a list of your favorite hometown spots, Trek is your place.',
     status: 'backburner',
     date: '2025-01-29',
+    logo: '/images/projects/logo-trek.webp',
     stack: ['Python', 'Django', 'Strawberry GraphQL', 'Apollo Client', 'React Native', 'Expo'],
     links: [{ label: 'Website', href: 'https://letstrek.app' }],
     featured: true,

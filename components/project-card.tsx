@@ -26,7 +26,10 @@ export function ProjectCard({ project }: { project: Project }) {
         <ProjectStatusBadge status={project.status} />
         {project.date && <span className="font-mono text-xs text-ink-3">{project.date.slice(0, 4)}</span>}
       </div>
-      <h3 className="font-serif text-xl tracking-tight">
+      <h3 className="flex items-center gap-3 font-serif text-xl tracking-tight">
+        {project.logo && (
+          <img src={project.logo} alt="" width={40} height={40} loading="lazy" decoding="async" className="size-10 shrink-0" />
+        )}
         {primary ? (
           <a href={primary.href} className="after:absolute after:inset-0 group-hover:text-accent">
             {project.title}
