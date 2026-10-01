@@ -1,0 +1,41 @@
+---
+title: 'AI & Personalized Productivity'
+description: 'Rethinking how to manage context as a software engineer in the age of AI'
+type: article
+stage: evergreen
+planted: 2026-10-01
+featured: true
+topics: []
+---
+
+## A changing landscape
+
+The nature of this job has changed quite a bit. What used to be a career fueled by deep work and long periods of intense focus has quickly changed into a job where managing interdependencies and communications matters more than it ever has. There are still times of intense focus. There is still a lot of scrutiny and rigor applied to a lot of the work that we do. The expected quality of our work hasn't changed after all, but there's a new skill set that's become increasingly important. That's a problem that AI agents deal with every day as well: managing context.
+
+Each project we work on has a lot more in its lifecycle than writing code. We have reviewing product specs and designs, experiment planning, code reviews, QA handoff and fixing, release planning, post-release monitoring, and later bug fixes. And that's not to mention all of the interpersonal communication dependencies on each of those!
+
+<!-- Insert Graphic -->
+
+So while we may be able to write code (and do some level of those other things) quicker with AI tooling, we may end up having many more projects at any of these other phases at a time than we used to, and that's a problem of context.
+
+## Increasing our context
+
+In theory, any project management tool that an organization uses can support holding all this context, but with some shortfalls.
+
+1. They're shared, so any private context for how a task is going is seen by everyone, and depending on notification settings, could also be noisy for others.
+2. They're generalized. These aren't built to show everything a _specific_ team member needs all at once to maintain context. They're built to contain everything that _everyone_ needs, but not necessarily at a glance.
+3. They're rigid. This is maybe the most important one. Adding features or new abilities isn't really doable on most tools. And even if it is, it usually requires organization approval.
+
+Luckily, if you're dealing with the struggles of AI-accelerated pace, you also have a tool at your disposal to fix these problems: using that same AI to create an individualized tool of your own. Of course, this is dependent on your organization's rules around AI usage, but I think there's a good case to be made for it being an organization win as much as a personal one.
+
+## So what then?
+
+So here's the main thought: use an AI tool (or don't, have some fun if you'd like!) to build the tool that _you_ want, to show the information that _you_ need, when _you_ need it. The priority here is getting to something useful as soon as practical to reduce the cognitive overhead of your work.
+
+Don't: over-engineer, build for others, or spend time setting up deployments. Those things will only slow you down and cause you to end up with a product that looks like the other countless products on the market. Building something scrappy and local-only means you can leverage local CLIs that are already authed (for example: GitHub for fetching PR statuses) and worry less about building something secure and resilient.
+
+Have a problem? Just patch it and move on. Think of a way to improve your workflow? Just slap it on and try it out.
+
+I built a tool myself that I called Corvid to handle all of my task context, and even automate certain things like opening a new Conductor workspace for a task. It acts like a native app, but it has a node server running on my machine. All I have to do is spin it up when I start up my computer, and leave it alone. It even syncs data with my daily Claude routines to suggest new tasks, estimate complexity, and craft daily updates for my team.
+
+I'll more fully write up how I did this in a follow-up post. Keep an eye out! 👀
