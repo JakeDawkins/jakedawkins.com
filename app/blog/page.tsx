@@ -53,6 +53,10 @@ export default function WritingPage() {
           </a>
           .
         </p>
+        <p className="mt-4">
+          The writing here is my own. I may use AI to help make graphics or UI that illustrate a point, but the ideas and
+          words are mine.
+        </p>
       </PageHeader>
 
       <dl className="mb-12 grid gap-4 rounded-2xl border border-line bg-surface p-5 sm:grid-cols-2 lg:grid-cols-4">

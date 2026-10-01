@@ -12,6 +12,8 @@ type Props = {
   title: string;
   participants: string[];
   messages: Message[];
+  /** Small print shown under the diagram, e.g. how it was made. */
+  note?: string;
 };
 
 function toMermaid(participants: string[], messages: Message[]) {
@@ -49,7 +51,7 @@ function renderSvg(code: string) {
  * A Mermaid sequence diagram. The SVG is hidden from assistive tech; screen readers
  * get the same messages as an ordered list instead.
  */
-export function SequenceDiagram({ title, participants, messages }: Props) {
+export function SequenceDiagram({ title, participants, messages, note }: Props) {
   const svg = renderSvg(toMermaid(participants, messages));
   return (
     <figure className="diagram rounded-2xl border border-line bg-surface p-4">
@@ -63,6 +65,7 @@ export function SequenceDiagram({ title, participants, messages }: Props) {
           <li key={i}>{m.from === m.to ? `${m.from}: ${m.label}` : `${m.from} to ${m.to}: ${m.label}`}</li>
         ))}
       </ol>
+      {note && <p className="mt-3 text-xs text-ink-3">{note}</p>}
     </figure>
   );
 }
