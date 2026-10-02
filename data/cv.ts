@@ -105,7 +105,7 @@ export const cv = {
           title: 'Staff Software Engineer',
           start: '2024-07',
           end: null,
-          location: 'New York, NY',
+          location: 'Valencia, Spain (Remote)',
           highlights: [
             {
               id: 'homeaglow-deal-reskin',
