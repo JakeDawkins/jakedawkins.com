@@ -122,7 +122,7 @@ export const cv = {
             },
             {
               id: 'homeaglow-sales-tool',
-              text: 'Independently scoped and built an inside sales tool with no product or design support, letting agents book a cleaning and sell a membership in one flow; it raised leads handled per hour by 28% and cut handle time by 14%.',
+              text: 'Independently scoped and built an inside sales tool with no product or design support, letting agents book a cleaning and sell a membership in one flow; in a pilot it raised leads handled per hour by 28%, cut handle time by 14%, and halved agent training time.',
             },
             {
               id: 'homeaglow-native-app',
