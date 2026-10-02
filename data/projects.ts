@@ -61,8 +61,8 @@ export const projects: Project[] = [
   {
     slug: 'react-style-guide',
     title: 'My Next.js/React/GraphQL App Template',
-    description: 'My personal template for bootstrapping new React projects.',
-    status: 'shipped',
+    description: 'My personal template for bootstrapping new React projects. Outdated now, kept for reference.',
+    status: 'archived',
     date: '2022-06-08',
     stack: ['Next.js', 'React', 'GraphQL'],
     links: [{ label: 'GitHub', href: 'https://github.com/JakeDawkins/next-ts-apollo-template' }],
