@@ -277,7 +277,7 @@ export const cv = {
           title: 'Apollo Architect',
           start: '2018-04',
           end: '2019',
-          location: 'New York, NY',
+          location: 'Remote',
           highlights: [
             { id: 'apollo-reviews', text: 'Led frontend & backend architecture reviews for customers.' },
             {
