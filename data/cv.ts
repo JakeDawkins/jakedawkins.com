@@ -105,7 +105,7 @@ export const cv = {
           title: 'Staff Software Engineer',
           start: '2024-07',
           end: null,
-          location: 'Valencia, Spain (Remote)',
+          location: 'Remote',
           highlights: [
             {
               id: 'homeaglow-deal-reskin',
@@ -136,7 +136,7 @@ export const cv = {
           title: 'Senior Software Engineer',
           start: '2023-02',
           end: '2024-07',
-          location: 'New York, NY',
+          location: 'Remote',
           highlights: [
             {
               id: 'homeaglow-ncw',
@@ -165,6 +165,7 @@ export const cv = {
           title: 'Senior Product Engineer',
           start: '2021-05',
           end: '2023-01',
+          location: 'Remote',
           highlights: [
             {
               id: 'carbon-rebuild',
