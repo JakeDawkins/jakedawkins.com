@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { EmailLink } from '@/components/email-link';
 import { site } from '@/lib/site';
 
 export function SiteFooter() {
@@ -14,6 +15,9 @@ export function SiteFooter() {
               </a>
             </li>
           ))}
+          <li>
+            <EmailLink className="hover:text-ink">Email</EmailLink>
+          </li>
           <li>
             <Link href="/rss.xml" className="hover:text-ink">
               RSS

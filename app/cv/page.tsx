@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Experience } from '@/components/cv/experience';
 import { cv } from '@/data/cv';
 import { JsonLd } from '@/components/json-ld';
+import { EmailLink } from '@/components/email-link';
 import { MockBanner } from '@/components/mock-banner';
 import { cvDuration, roleSpan } from '@/lib/cv-dates';
 import { breadcrumbJsonLd, pageMetadata, person } from '@/lib/seo';
@@ -89,6 +90,7 @@ export default function CVPage() {
           <a href={linkedIn} className="rounded-full border border-line px-4 py-2 text-ink hover:border-ink-3/50">
             LinkedIn ↗
           </a>
+          <EmailLink className="rounded-full border border-line px-4 py-2 text-ink hover:border-ink-3/50" />
         </div>
       </header>
 
