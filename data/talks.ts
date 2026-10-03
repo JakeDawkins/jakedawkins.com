@@ -21,6 +21,16 @@ export const talks: Talk[] = [
     links: [{ label: 'Notes', href: '/files/intro-to-web-accessibility.pdf' }],
   },
   {
+    slug: 'nextjs-tech-talk',
+    title: 'Next.js',
+    event: 'Homeaglow internal tech talk',
+    date: '2023-07-12',
+    kind: 'talk',
+    description:
+      'What Next.js is, how it works, how it compares to Create React App, and why the team should adopt it.',
+    links: [{ label: 'Notes', href: '/files/nextjs-tech-talk.pdf' }],
+  },
+  {
     slug: 'open-source-from-my-eyes',
     title: 'Open Source Software From My Eyes',
     event: 'Clemson University',
