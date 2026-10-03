@@ -3,7 +3,7 @@ title: 'The maintainability issue with AI coding'
 description: 'How to fight back against increasing complexity in the age of AI'
 type: article
 stage: seedling
-planted: 2023-09-27
+planted: 2026-10-03
 topics: [AI]
 featured: false
 ---
