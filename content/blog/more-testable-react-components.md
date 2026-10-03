@@ -1,7 +1,7 @@
 ---
-title: "More Testable React Components"
-description: "Some simple lessons I learned while refactoring components for unit testing"
-type: note
+title: 'More Testable React Components'
+description: 'Some simple lessons I learned while refactoring components for unit testing'
+type: article
 stage: outdated
 planted: 2016-10-01
 topics: [react, testing]

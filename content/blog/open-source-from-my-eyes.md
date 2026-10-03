@@ -1,7 +1,7 @@
 ---
-title: "Open Source Software From My Eyes"
-description: "Notes from a guest lecture I gave on open source projects"
-type: note
+title: 'Open Source Software From My Eyes'
+description: 'Notes from a guest lecture I gave on open source projects'
+type: article
 stage: evergreen
 planted: 2021-02-28
 topics: [open-source, career]

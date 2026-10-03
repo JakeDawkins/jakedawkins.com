@@ -1,7 +1,7 @@
 ---
-title: "Unwrap and Expect in Rust"
-description: "Explaining how to use unwrap and expect in Rust project to handle Option and Result!"
-type: note
+title: 'Unwrap and Expect in Rust'
+description: 'Explaining how to use unwrap and expect in Rust project to handle Option and Result!'
+type: article
 stage: evergreen
 planted: 2020-04-16
 topics: [rust]

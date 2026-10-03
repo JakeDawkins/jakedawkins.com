@@ -1,7 +1,7 @@
 ---
-title: "Intro to Functional Programming Concepts"
-description: "Some early notes of mine taken while I was learning functional programming"
-type: note
+title: 'Intro to Functional Programming Concepts'
+description: 'Some early notes of mine taken while I was learning functional programming'
+type: article
 stage: evergreen
 planted: 2016-08-01
 topics: [javascript, functional-programming]

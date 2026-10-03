@@ -1,7 +1,7 @@
 ---
 title: "Getting Acquainted with Rust\u200a\u2014\u200aFirst Look"
-description: "Exploring where Rust shines, and my first impressions"
-type: note
+description: 'Exploring where Rust shines, and my first impressions'
+type: article
 stage: budding
 planted: 2020-03-12
 topics: [rust]
