@@ -18,7 +18,7 @@ export const talks: Talk[] = [
     kind: 'talk',
     description:
       'The basics of accessibility, what it means, and how to do a basic evaluation for the most commonly-missed accessibility issues.',
-    links: [{ label: 'Notes', href: '/files/intro-to-web-accessibility.pdf' }],
+    links: [{ label: 'Rough notes', href: '/files/intro-to-web-accessibility.pdf' }],
   },
   {
     slug: 'nextjs-tech-talk',
@@ -28,7 +28,7 @@ export const talks: Talk[] = [
     kind: 'talk',
     description:
       'What Next.js is, how it works, how it compares to Create React App, and why the team should adopt it.',
-    links: [{ label: 'Notes', href: '/files/nextjs-tech-talk.pdf' }],
+    links: [{ label: 'Rough notes', href: '/files/nextjs-tech-talk.pdf' }],
   },
   {
     slug: 'open-source-from-my-eyes',
