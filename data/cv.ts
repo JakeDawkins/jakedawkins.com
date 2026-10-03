@@ -115,21 +115,19 @@ export const cv = {
               id: 'homeaglow-membership',
               text: 'Built a new membership model end to end across web, mobile, and backend, iterating through four versions until it became the national default offer.',
             },
+            {
+              id: 'homeaglow-sales-tool',
+              text: 'Independently scoped and built an inside sales tool with no product or design support, letting agents book a cleaning and sell a membership in one flow; in a pilot it raised leads handled per hour by 28%, cut handle time by 14%, and halved agent training time.',
+            },
             { id: 'homeaglow-checkout-experiments', text: 'Shipped a steady stream of checkout experiments, with wins of +15%, +13%, and +10% purchase conversion.' },
             {
               id: 'homeaglow-experimentation',
               text: 'Led adoption of Statsig as the experimentation platform across all major products, and fixed setup and cohorting bugs that had been invalidating results.',
             },
             {
-              id: 'homeaglow-sales-tool',
-              text: 'Independently scoped and built an inside sales tool with no product or design support, letting agents book a cleaning and sell a membership in one flow; in a pilot it raised leads handled per hour by 28%, cut handle time by 14%, and halved agent training time.',
-            },
-            {
               id: 'homeaglow-native-app',
               text: 'Co-built the new React Native customer app, rebuilding it screen by screen with an experiment on each flow, through App Store and Google Play release.',
             },
-            { id: 'homeaglow-payments', text: 'Moved web and native card entry to Stripe Payment Elements to close PCI compliance gaps.' },
-            { id: 'homeaglow-compliance', text: 'Shipped state consent-decree, disclosure, and accessibility changes to the acquisition funnel on tight legal deadlines.' },
           ],
         },
         {
