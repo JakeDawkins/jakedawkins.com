@@ -5,7 +5,7 @@ import { talks } from '@/data/talks';
 
 export const metadata = pageMetadata({
   title: 'Talks',
-  description: 'Conference and meetup talks, guest lectures, and a podcast from Jake Dawkins on GraphQL, testing, Apollo, and open source.',
+  description: 'Conference and meetup talks, guest lectures, and a podcast from Jake Dawkins on GraphQL, testing, Apollo, accessibility, and open source.',
   path: '/talks/',
 });
 
@@ -14,7 +14,7 @@ export default function TalksPage() {
   return (
     <>
       <PageHeader title="Talks & appearances">
-        <p>Conference and meetup talks, guest lectures, and a podcast, mostly about GraphQL, testing, and open source.</p>
+        <p>Conference and meetup talks, guest lectures, and a podcast, mostly about GraphQL, testing, accessibility, and open source.</p>
       </PageHeader>
       <div className="border-b border-line">
         {[...byYear.entries()].map(([year, list]) => (

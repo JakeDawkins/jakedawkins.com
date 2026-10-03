@@ -11,6 +11,16 @@ export type Talk = {
 
 export const talks: Talk[] = [
   {
+    slug: 'intro-to-web-accessibility',
+    title: 'Intro to Web Accessibility',
+    event: 'Homeaglow internal tech talk',
+    date: '2023-11-10',
+    kind: 'talk',
+    description:
+      'The basics of accessibility, what it means, and how to do a basic evaluation for the most commonly-missed accessibility issues.',
+    links: [{ label: 'Notes', href: '/files/intro-to-web-accessibility.pdf' }],
+  },
+  {
     slug: 'open-source-from-my-eyes',
     title: 'Open Source Software From My Eyes',
     event: 'Clemson University',
