@@ -23,6 +23,36 @@ export const talks: Talk[] = [
     ],
   },
   {
+    slug: 'clemson-2020',
+    title: 'Remote Networking and Technical Leadership',
+    event: 'Clemson University',
+    date: '2020-10-08',
+    kind: 'lecture',
+    description:
+      'How remote jobs and networking work, and how to advocate for yourself and your ideas in a professional environment.',
+    links: [{ label: 'Slides', href: '/files/clemson-2020.pdf' }],
+  },
+  {
+    slug: 'graphql-nyc-2019',
+    title: 'GraphQL Tooling',
+    event: 'GraphQL NYC Meetup',
+    date: '2019-10-08',
+    kind: 'talk',
+    description:
+      "GraphQL's queryable schema makes powerful tooling possible, like code generation, editor support, and schema registries, but today's tools are capable yet disconnected and configured separately. This talk lays out a modern, integrated setup and where that tooling is headed next.",
+    links: [{ label: 'Slides', href: '/files/graphql-nyc-2019.pdf' }],
+  },
+  {
+    slug: 'federated-validation',
+    title: 'Federated Validation',
+    event: 'Private event',
+    date: '2019-07-10',
+    kind: 'talk',
+    description:
+      'How Apollo Federation validates a set of GraphQL service schemas when composing them into one gateway schema. Covers each validation stage (before normalization, before composition, during composition via validateSDL, and on the composed schema) and what the resulting errors look like.',
+    links: [{ label: 'Slides', href: '/files/federated-validation-2019.pdf' }],
+  },
+  {
     slug: 'graphql-summit-2018',
     title: 'Testing GraphQL',
     event: 'GraphQL Summit 2018',
@@ -31,6 +61,16 @@ export const talks: Talk[] = [
     description:
       'Teams that adopt GraphQL see it become a powerful, yet critical part of how their applications work. The schemas that power these apps act as an important agreement between servers and clients. So how do you support such an important piece of infrastructure? With tests of course! This talk is a deep dive into how to test the Apollo Platform, giving you the security you need to go into production.',
     links: [{ label: 'Video', href: 'https://www.youtube.com/watch?v=loA3FwbVt90&t=39s' }],
+  },
+  {
+    slug: 'graphql-nyc-2018',
+    title: 'GraphQL at the Edge',
+    event: 'GraphQL NYC Meetup',
+    date: '2018-06-01',
+    kind: 'talk',
+    description:
+      'The future of running GraphQL at the edge with Fly.io and Cloudflare Workers, moving data processing closer to users to reduce network latency.',
+    links: [{ label: 'Slides', href: '/files/graphql-nyc-2018.pdf' }],
   },
   {
     slug: 'apollo-day-may',
@@ -56,5 +96,15 @@ export const talks: Talk[] = [
     description:
       "My work at MLS, and how to use Apollo's new apollo-link-state library for state management in React applications.",
     links: [{ label: 'Listen', href: 'https://graphqlradio.com/episodes/ep-12-state-management-with-apollo-w-jake-dawkins' }],
+  },
+  {
+    slug: 'asbury-agile-2017',
+    title: 'When Front-End Met Back-End: A GraphQL Love Story',
+    event: 'Asbury Agile 2017',
+    date: '2017-10-06',
+    kind: 'talk',
+    description:
+      'An overview of how GraphQL works as an API layer that makes development easier for frontend and backend teams, and allows for lower-data, typesafe networking.',
+    links: [{ label: 'Slides', href: '/files/asbury-agile-2017.pdf' }],
   },
 ];
