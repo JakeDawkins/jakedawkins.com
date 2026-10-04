@@ -82,9 +82,8 @@ export const cv = {
   availability: 'Not looking for new roles right now.',
   headline: 'Staff Software Engineer',
   summary: [
-    "I'm a curious software engineer, with experience across the stack. I've worked with React and GraphQL-based products for much of my career, but I've also built editor extensions and CLI tools for a broad audience.",
-    'I have a passion for maintainable and accessible software. I have a strong foundation with testing methodologies, and I have experience writing and speaking publicly on software best practices.',
-    "I'm a learner and a teacher, and I love what I do. I value empathetic, diverse, and cross-functional teams.",
+    "I'm a full-stack engineer who likes taking a fresh look at old problems, especially the ones a team has stopped noticing.",
+    'I work across the stack in Python/Django, React, React Native, TypeScript, and GraphQL, and I care a lot about accessibility.',
   ],
   impact: [
     { value: '17-20%', label: 'lift in purchase conversion from a rebuilt marketing landing page and checkout', href: '#homeaglow-deal-reskin' },
@@ -371,7 +370,7 @@ export const cv = {
   ] satisfies Role[] as Role[],
   skills: [
     { group: 'Frontend', items: ['React', 'React Native', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Flow'] },
-    { group: 'APIs & data', items: ['GraphQL', 'Apollo Client & Server', 'Apollo Federation', 'Node.js', 'MSSQL, MongoDB, MySQL'] },
+    { group: 'Backend & APIs', items: ['Python', 'Django', 'GraphQL', 'Apollo Client & Server', 'Apollo Federation', 'Node.js', 'MSSQL, MongoDB, MySQL'] },
     { group: 'Practice', items: ['Web accessibility (W3C)', 'Testing strategy', 'Rust & CLI tooling', 'Mentoring', 'Writing & speaking'] },
   ],
   certifications: [cpacc].map((c) => ({ ...c, status: credentialStatus(c) })),

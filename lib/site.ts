@@ -2,7 +2,7 @@ export const site = {
   name: 'Jake Dawkins',
   url: 'https://jakedawkins.com',
   title: 'Jake Dawkins | Staff Software Engineer (React, GraphQL, Accessibility)',
-  tagline: 'Software Engineer. Communicator. Home Barista and Amateur Photographer.',
+  tagline: 'Software Engineer. Communicator. Home Barista. Usually on my bike.',
   description:
     'Jake Dawkins is a Staff Software Engineer specializing in React, GraphQL, React Native, and web accessibility. CV, blog, projects, and talks.',
   ogImage: {

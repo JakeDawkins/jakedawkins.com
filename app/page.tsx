@@ -38,7 +38,7 @@ export default function Home() {
       <section className="mb-24 max-w-3xl">
         <p className="mb-5 font-mono text-xs uppercase tracking-wider text-ink-3">Hi, I&apos;m Jake</p>
         <h1 className="font-serif text-4xl leading-[1.15] tracking-tight text-ink sm:text-5xl">
-          I build calm, accessible interfaces, and write about{' '}
+          I build products from the database to the browser, and write about{' '}
           <Link href="/blog/?topic=react" className="italic text-accent hover:underline">
             React
           </Link>
@@ -53,9 +53,8 @@ export default function Home() {
           .
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-2">
-          I&apos;m a Staff Software Engineer at Homeaglow, and a curious engineer with experience across the stack. I&apos;ve worked on React and
-          GraphQL-based products for much of my career, and I&apos;ve also built editor extensions and CLI tools for a
-          broad audience. Off the keyboard: home barista and amateur photographer.
+          I&apos;m a full-stack Staff Engineer at Homeaglow, working in Python/Django, React, and React Native. Off the
+          keyboard: home barista, usually out on my bike.
         </p>
         <div className="mt-8 flex flex-wrap gap-3 text-sm">
           <Link href="/cv/" className="rounded-full bg-ink px-4 py-2 text-bg transition-opacity hover:opacity-85">
