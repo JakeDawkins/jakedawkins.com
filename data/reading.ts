@@ -43,6 +43,14 @@ const items: ReadingItem[] = [
   //   kind: 'post',
   //   added: '2026-09-18',
   // },
+  {
+    title: 'Understanding is the new bottleneck',
+    url: 'https://www.geoffreylitt.com/2026/07/02/understanding-is-the-new-bottleneck.html',
+    source: 'Geoffrey Litt',
+    kind: 'post',
+    added: '2026-10-08',
+    note: "Agents can write code faster than we can absorb it. Here's why it still matters for humans to understand what they build — and some techniques for doing that efficiently: explainer docs, quizzes, micro-worlds, and shared spaces.",
+  },
 ];
 
 /** Newest first. */
