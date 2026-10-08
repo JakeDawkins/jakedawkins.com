@@ -29,12 +29,14 @@ export function FreshnessBadge({ freshness }: { freshness: Freshness }) {
   );
 }
 
-/** Small card for the reading list. The whole card links out. */
+/** Small card for the reading list. The whole card links out, in a new tab. */
 export function ReadingCard({ item }: { item: ReadingItem }) {
   const freshness = getFreshness(item.added);
   return (
     <a
       href={item.url}
+      target="_blank"
+      rel="noopener noreferrer"
       className="group flex h-full flex-col rounded-xl border border-line bg-surface p-4 transition hover:-translate-y-0.5 hover:border-ink-3/40"
     >
       <div className="mb-2 flex items-center justify-between gap-3">
@@ -52,6 +54,7 @@ export function ReadingCard({ item }: { item: ReadingItem }) {
       {item.note && <p className="mt-1.5 line-clamp-2 text-sm leading-snug text-ink-2">{item.note}</p>}
       <p className="mt-auto truncate pt-3 text-xs text-ink-3">
         <time dateTime={item.added}>{formatDate(item.added)}</time> · {item.source} <span aria-hidden>↗</span>
+        <span className="sr-only">(opens in a new tab)</span>
       </p>
     </a>
   );
