@@ -1,4 +1,4 @@
-export const READING_KINDS = ['article', 'post', 'paper', 'video', 'podcast', 'book'] as const;
+export const READING_KINDS = ['article', 'post', 'paper', 'video', 'podcast', 'book', 'tool'] as const;
 export type ReadingKind = (typeof READING_KINDS)[number];
 
 export const READING_KIND_LABEL: Record<ReadingKind, string> = {
@@ -8,6 +8,7 @@ export const READING_KIND_LABEL: Record<ReadingKind, string> = {
   video: 'Video',
   podcast: 'Podcast',
   book: 'Book',
+  tool: 'Tool',
 };
 
 export type ReadingItem = {
@@ -30,7 +31,7 @@ const items: ReadingItem[] = [
   //   title: 'A Brief History & Ethos of the Digital Garden',
   //   url: 'https://maggieappleton.com/garden-history',
   //   source: 'Maggie Appleton', // author or publication
-  //   kind: 'article', // article | post | paper | video | podcast | book
+  //   kind: 'article', // article | post | paper | video | podcast | book | tool
   //   added: '2026-10-01', // YYYY-MM-DD. Drives freshness: Fresh <= 30 days, Recent <= 90, Stale after.
   //   note: 'Optional. Why it is interesting, in a sentence or two. Clamped to 2 lines on cards.',
   // },
@@ -50,6 +51,14 @@ const items: ReadingItem[] = [
     kind: 'post',
     added: '2026-10-08',
     note: "Agents can write code faster than we can absorb it. Here's why it still matters for humans to understand what they build — and some techniques for doing that efficiently: explainer docs, quizzes, micro-worlds, and shared spaces.",
+  },
+  {
+    title: 'Pull reviews made clear and organized',
+    url: 'https://pulls.review/',
+    source: 'pulls.review',
+    kind: 'tool',
+    added: '2026-10-01',
+    note: 'A better way to review a GitHub pull request’s diff: grouped, summarized, and fast.',
   },
 ];
 
