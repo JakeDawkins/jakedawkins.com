@@ -16,7 +16,7 @@ const add = (from, to) => {
 };
 
 // External posts never had a page on the old site; send any stray links to where they live.
-for (const file of fs.readdirSync(contentDir).filter((f) => /\.mdx?$/.test(f)).sort()) {
+for (const file of fs.readdirSync(contentDir).filter((f) => /\.mdx?$/.test(f) && f !== 'TEMPLATE.md').sort()) {
   const { data } = matter(fs.readFileSync(path.join(contentDir, file), 'utf8'));
   if (data.url) add(`/blog/${file.replace(/\.mdx?$/, '')}`, data.url);
 }

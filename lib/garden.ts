@@ -8,6 +8,8 @@ import type { GardenEntry } from './garden-meta';
 export type GardenPost = GardenEntry & { body: string; format: 'md' | 'mdx' };
 
 const DIR = path.join(process.cwd(), 'content/blog');
+/** Documents the frontmatter options. Never published. */
+const TEMPLATE = 'TEMPLATE.md';
 
 // YAML parses bare dates into Date objects; keep them as YYYY-MM-DD strings.
 function toDate(value: unknown): string {
@@ -17,7 +19,7 @@ function toDate(value: unknown): string {
 function load(): GardenPost[] {
   return fs
     .readdirSync(DIR)
-    .filter((f) => /\.mdx?$/.test(f))
+    .filter((f) => /\.mdx?$/.test(f) && f !== TEMPLATE)
     .map((file) => {
       const { data, content } = matter(fs.readFileSync(path.join(DIR, file), 'utf8'));
       const words = content.split(/\s+/).filter(Boolean).length;

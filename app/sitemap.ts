@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { cv } from '@/data/cv';
+import { reading } from '@/data/reading';
 import { getGardenEntries } from '@/lib/garden';
 import { absoluteUrl } from '@/lib/site';
 
@@ -18,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: p.stage === 'evergreen' ? 0.8 : 0.6,
     })),
     ...(cv.placeholder ? [] : [{ url: absoluteUrl('/cv/'), changeFrequency: 'monthly' as const, priority: 0.8 }]),
+    ...(reading.length ? [{ url: absoluteUrl('/reading/'), lastModified: reading[0].added, changeFrequency: 'weekly' as const, priority: 0.5 }] : []),
     { url: absoluteUrl('/projects/'), changeFrequency: 'monthly', priority: 0.6 },
     { url: absoluteUrl('/talks/'), changeFrequency: 'yearly', priority: 0.5 },
   ];

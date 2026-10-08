@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import { NoteCard, NoteRow } from '@/components/note-card';
 import { ProjectCard } from '@/components/project-card';
+import { ReadingCard } from '@/components/reading-card';
 import { SectionHeading } from '@/components/section-heading';
 import { JsonLd } from '@/components/json-ld';
 import { TalkRow } from '@/components/talk-row';
 import { cv } from '@/data/cv';
 import { projects } from '@/data/projects';
+import { reading } from '@/data/reading';
 import { talks } from '@/data/talks';
 import { getGardenEntries } from '@/lib/garden';
 import { pageMetadata, person } from '@/lib/seo';
@@ -105,6 +107,19 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {reading.length > 0 && (
+        <section className="mb-24">
+          <SectionHeading title="Reading" href="/reading/" linkLabel="Full list" />
+          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {reading.slice(0, 3).map((item) => (
+              <li key={item.url}>
+                <ReadingCard item={item} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {!cv.placeholder && (
         <section className="mb-24">

@@ -19,8 +19,9 @@ npm run cv:pdf           # after build: regenerate public/jake-dawkins-cv.pdf (c
 | CV | `data/cv.ts` | Typed data. Each highlight can carry `evidence` (chart, before/after, quote, link) |
 | Projects | `data/projects.ts` | Typed data with a status |
 | Talks | `data/talks.ts` | Typed data |
+| Reading list | `data/reading.ts` | Typed data. Freshness comes from `added`; sections hide when the list is empty |
 
-Blog frontmatter:
+Blog frontmatter (full options and MDX component examples in `content/blog/TEMPLATE.md`, which is never published):
 
 ```yaml
 title: Errors as data in GraphQL

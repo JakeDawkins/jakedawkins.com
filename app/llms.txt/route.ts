@@ -1,8 +1,10 @@
 import { cv } from '@/data/cv';
 import { projects } from '@/data/projects';
+import { READING_KIND_LABEL, reading } from '@/data/reading';
 import { talks } from '@/data/talks';
 import { BLOG_DESCRIPTION, STAGE_META, TYPE_META } from '@/lib/garden-meta';
 import { getGardenEntries } from '@/lib/garden';
+import { FRESHNESS_META, getFreshness } from '@/lib/reading';
 import { absoluteUrl, site } from '@/lib/site';
 
 export const dynamic = 'force-static';
@@ -10,11 +12,20 @@ export const dynamic = 'force-static';
 // https://llmstxt.org: a plain-text map of the site for AI agents.
 export function GET() {
   const posts = getGardenEntries();
+  const readingSection = reading.length
+    ? `## Reading
+
+Things ${site.name} is reading and interested in right now, written by other people. "Added" is when it went on the list; older items are less likely to reflect what he is currently focused on.
+
+${reading.map((r) => `- [${r.title}](${r.url}): ${READING_KIND_LABEL[r.kind]} by ${r.source}, added ${r.added} (${FRESHNESS_META[getFreshness(r.added)].label.toLowerCase()}).${r.note ? ` ${r.note}` : ''}`).join('\n')}
+
+`
+    : '';
   const body = `# ${site.name}
 
 > ${site.description}
 
-${site.name} is a ${cv.title} based in ${cv.location}. This site has his CV, blog, projects, and talks.
+${site.name} is a ${cv.title} based in ${cv.location}. This site has his CV, blog, ${reading.length ? 'reading list, ' : ''}projects, and talks.
 
 Job-search status: ${cv.availability}
 
@@ -45,7 +56,7 @@ ${posts
   )
   .join('\n')}
 
-## Projects
+${readingSection}## Projects
 
 ${projects.map((p) => `- [${p.title}](${p.links[0]?.href ?? absoluteUrl('/projects/')}): ${p.description}${p.stack.length ? ` Built with ${p.stack.join(', ')}.` : ''}`).join('\n')}
 

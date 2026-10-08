@@ -1,5 +1,5 @@
 # Rebuilds the Netlify site weekly so date-based content stays current without a code change:
-# "Present" role durations, and certification status (CPACC switches to "held through" after it expires).
+# "Present" role durations, reading list freshness, and certification status (CPACC switches to "held through" after it expires).
 #
 # Setup: Netlify > Site configuration > Build & deploy > Build hooks > Add build hook,
 # then save its URL as the NETLIFY_BUILD_HOOK repository secret in GitHub.
