@@ -14,3 +14,6 @@
   Content-Type: application/json; charset=utf-8
 /rss.xml
   Content-Type: application/rss+xml; charset=utf-8
+# Keep the URL stable for existing links, but save downloads with a recruiter-friendly name.
+/jake-dawkins-cv.pdf
+  Content-Disposition: inline; filename="Jake-Dawkins-CV.pdf"

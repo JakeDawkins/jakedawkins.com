@@ -5,10 +5,10 @@ export type Credential = {
   name: string;
   shortName: string;
   issuer: string;
+  /** `YYYY`. */
+  earned: string;
   /** `YYYY-MM`. Treated as expired from the first of that month. */
   expires: string;
-  /** Whether it will be renewed. Only affects wording once expired. */
-  renewing: boolean;
 };
 
 const monthYear = new Intl.DateTimeFormat('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' });
@@ -23,7 +23,7 @@ export function credentialStatus(c: Credential, now = buildDate()) {
   return {
     expired,
     until,
-    /** Stays true after expiry even if a copy (like the committed PDF) isn't regenerated. */
-    note: expired ? `Held through ${until}${c.renewing ? '' : ', not renewed'}` : `Valid through ${until}`,
+    /** The years held, e.g. "2023 – 2026". Stays true after expiry even if a copy (like the committed PDF) isn't regenerated. */
+    note: `${c.earned} – ${c.expires.slice(0, 4)}`,
   };
 }

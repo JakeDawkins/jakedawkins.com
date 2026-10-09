@@ -1,4 +1,4 @@
-import { cv } from '@/data/cv';
+import { allSkills, cv, plainText } from '@/data/cv';
 import { projects } from '@/data/projects';
 import { talks } from '@/data/talks';
 import { absoluteUrl, site } from '@/lib/site';
@@ -16,7 +16,7 @@ export function GET() {
       name: site.name,
       label: cv.title,
       url: site.url,
-      summary: [...cv.summary, cv.availability].join('\n\n'),
+      summary: [cv.intro, ...cv.summary, cv.availability].join('\n\n'),
       location: { city: 'Valencia', countryCode: 'ES' },
       profiles: site.socials.map((s) => ({
         network: s.label,
@@ -29,12 +29,13 @@ export function GET() {
         name: role.company,
         position: p.title,
         ...(role.companyUrl ? { url: role.companyUrl } : {}),
+        ...(role.description ? { description: role.description } : {}),
         ...(p.location ? { location: p.location } : {}),
         startDate: p.start,
         ...(p.end ? { endDate: p.end } : {}),
         highlights: p.highlights.map((h) => {
           const refs = links(h);
-          return refs.length ? `${h.text} (${refs.join(', ')})` : h.text;
+          return refs.length ? `${plainText(h.text)} (${refs.join(', ')})` : plainText(h.text);
         }),
       })),
     ),
@@ -47,8 +48,8 @@ export function GET() {
     })),
     awards: cv.education.map((e) => ({ title: e.honors, awarder: e.school })),
     // JSON Resume has no expiry field, so the status goes in the name.
-    certificates: cv.certifications.map((c) => ({ name: `${c.name} (${c.status.note[0].toLowerCase()}${c.status.note.slice(1)})`, issuer: c.issuer })),
-    skills: cv.skills.map((g) => ({ name: g.group, keywords: g.items })),
+    certificates: cv.certifications.map((c) => ({ name: `${c.name} (${c.status.note})`, issuer: c.issuer })),
+    skills: cv.skills.map((g) => ({ name: g.group, keywords: allSkills(g) })),
     languages: [{ language: 'English' }],
     projects: [
       ...projects.map((p) => ({

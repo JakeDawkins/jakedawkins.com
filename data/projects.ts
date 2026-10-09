@@ -21,9 +21,21 @@ export type Project = {
   logo?: string;
   links: { label: string; href: string }[];
   featured?: boolean;
+  /** Listed on the PDF CV under projects. */
+  cv?: boolean;
 };
 
 export const projects: Project[] = [
+  {
+    slug: 'corvid',
+    title: 'Corvid',
+    description:
+      "My own command center for running parallel Claude Code workstreams. Each task's PR status, Linear project, Slack threads, and agent workspace live on one board, so nothing gets lost between them.",
+    status: 'building',
+    stack: [],
+    links: [{ label: 'How I use it', href: '/blog/20261005-corvid/' }],
+    cv: true,
+  },
   {
     slug: 'trample',
     title: 'Trample',

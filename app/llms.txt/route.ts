@@ -1,4 +1,4 @@
-import { cv } from '@/data/cv';
+import { allSkills, cv } from '@/data/cv';
 import { projects } from '@/data/projects';
 import { READING_KIND_LABEL, reading } from '@/data/reading';
 import { talks } from '@/data/talks';
@@ -41,7 +41,7 @@ Experience: ${cv.roles.map((r) => `${r.company} (${r.positions.map((p) => p.titl
 Highlights:
 ${cv.impact.map((i) => `- ${i.value} ${i.label}`).join('\n')}
 
-Skills: ${cv.skills.flatMap((g) => g.items).join(', ')}.
+Skills: ${cv.skills.flatMap(allSkills).join(', ')}.
 
 ## Blog
 

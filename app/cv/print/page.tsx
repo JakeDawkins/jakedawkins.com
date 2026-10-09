@@ -1,90 +1,148 @@
+import { EmailLink } from '@/components/email-link';
+import { RichText } from '@/components/rich-text';
 import { cv } from '@/data/cv';
-import { talks } from '@/data/talks';
-import { cvDuration, formatCvRange } from '@/lib/cv-dates';
+import { projects } from '@/data/projects';
+import { talks, type Talk } from '@/data/talks';
+import { formatCvRange } from '@/lib/cv-dates';
+import { getGardenEntries } from '@/lib/garden';
 import { pageMetadata } from '@/lib/seo';
 import { site } from '@/lib/site';
 
-// A compact, single-column CV used only to render /jake-dawkins-cv.pdf (see scripts/cv-pdf.mjs).
-// Linear markup keeps the PDF's text in reading order for applicant tracking systems.
-export const metadata = pageMetadata({ title: 'CV (print)', path: '/cv/', noindex: true });
+// The CV used only to render /jake-dawkins-cv.pdf (see scripts/cv-pdf.mjs). It shows the subset of
+// data/cv.ts marked for the PDF. Single column with plain text order so applicant tracking systems parse it cleanly.
+export const metadata = { ...pageMetadata({ path: '/cv/', noindex: true }), title: { absolute: `${site.name} CV` } };
+
+const host = (href: string) => href.replace(/^https?:\/\/(www\.)?/, '').replace(/\/.*$/, '');
+const talkLine = (t: Talk) => `${t.title} (${t.event.replace(/ \d{4}$/, '')}, ${t.date.slice(0, 4)})`;
 
 export default function CVPrint() {
-  const host = (href: string) => href.replace(/^https?:\/\/(www\.)?/, '');
+  const roles = cv.roles
+    .map((role) => ({
+      ...role,
+      positions: role.positions
+        .map((p) => ({ ...p, highlights: p.highlights.filter((h) => h.pdf) }))
+        .filter((p) => p.highlights.length),
+    }))
+    .filter((role) => role.positions.length);
+
+  const posts = getGardenEntries();
+  const writing = cv.pdf.writing.map((slug) => {
+    const post = posts.find((p) => p.slug === slug);
+    if (!post) throw new Error(`cv.pdf.writing: no blog post "${slug}"`);
+    return post.url ? `${post.title} (${host(post.url)})` : post.title;
+  });
+  const openSource = [
+    ...new Set(roles.flatMap((r) => r.positions.flatMap((p) => p.highlights.flatMap((h) => h.evidence ?? []))).flatMap((e) => (e.kind === 'link' && e.openSource ? [e.openSource] : []))),
+  ];
+  const lines = [
+    { label: 'Conference talks', text: talks.filter((t) => t.cv === 'talk').map(talkLine).join('; ') },
+    { label: 'Teaching', text: talks.filter((t) => t.cv === 'teaching').map(talkLine).join('; ') },
+    { label: 'Writing', text: writing.join('; ') },
+    { label: 'Open source', text: openSource.join(', ') },
+    ...projects.filter((p) => p.cv).map((p) => ({ label: p.title, text: p.description })),
+  ];
+
   return (
-    <article className="cv-print mx-auto max-w-[7.5in] font-sans text-[10pt] leading-snug text-ink">
-      <header className="mb-3">
-        <h1 className="font-serif text-[22pt] leading-none">{site.name}</h1>
-        <p className="mt-1 text-[11pt]">
-          {cv.title} · {cv.location}
+    <article className="cv-print font-sans text-[9.5pt] leading-[1.45] text-ink">
+      <header className="border-b-2 border-accent pb-3">
+        <h1 className="font-serif text-[26pt] leading-none tracking-tight">{site.name}</h1>
+        <p className="mt-1.5 text-[11.5pt] font-medium text-ink-2">{cv.title}</p>
+        <p className="mt-2 text-[9pt] text-ink-2">
+          <EmailLink />
+          {[...site.socials.map((s) => s.href), site.url].map((href) => (
+            <span key={href}>
+              <Dot />
+              <a href={href}>{href.replace(/^https?:\/\/(www\.)?/, '')}</a>
+            </span>
+          ))}
         </p>
-        <p className="mt-1 text-ink-2">{cv.availability}</p>
-        <p className="mt-1 text-ink-2">
-          {[site.url, ...site.socials.map((s) => s.href)].map(host).join(' · ')}
+        <p className="text-[9pt] text-ink-2">
+          {cv.location}
+          {cv.jobSearch.public && (
+            <>
+              <Dot />
+              {cv.jobSearch.workPreference}
+              <Dot />
+              <span className="font-semibold text-ink">{cv.jobSearch.rightToWork}</span>
+            </>
+          )}
         </p>
       </header>
 
-      <Section title="Summary">
-        <p>{cv.summary.join(' ')}</p>
+      <Section title="Profile">
+        <p className="text-ink-2">{cv.summary.join(' ')}</p>
       </Section>
 
       <Section title="Experience">
-        {cv.roles.map((role) => (
-          <div key={role.id} className="mb-2.5">
-            {role.positions.map((p, i) => {
-              const duration = cvDuration(p.start, p.end);
-              return (
-                <div key={p.title} className={i ? 'mt-1.5' : ''}>
-                  <h3 className="font-semibold">
-                    {p.title}, {role.company}
-                  </h3>
-                  <p className="text-ink-2">
-                    {formatCvRange(p.start, p.end)}
-                    {duration && ` (${duration})`}
-                    {p.location && ` · ${p.location}`}
-                  </p>
-                  {p.highlights.length > 0 && (
-                    <ul className="mt-0.5 list-disc pl-4">
-                      {p.highlights.map((h) => (
-                        <li key={h.id}>{h.text}</li>
-                      ))}
-                    </ul>
-                  )}
+        <div className="space-y-4">
+          {roles.map((role) => (
+            <div key={role.id}>
+              <h3 className="font-serif text-[13pt] leading-tight">
+                {role.company}
+                {role.description && <span className="font-sans text-[8.5pt] text-ink-3"> · {role.description}</span>}
+              </h3>
+              {role.positions.map((p) => (
+                <div key={p.title} className="mt-1.5">
+                  <h4 className="flex items-baseline justify-between gap-4 font-semibold">
+                    <span>{p.title}</span>
+                    <span className="shrink-0 text-[8.5pt] font-normal tabular-nums text-ink-3">
+                      {formatCvRange(p.start, p.end)}
+                      {p.location && ` · ${p.location}`}
+                    </span>
+                  </h4>
+                  {/* Native markers, not positioned dots: positioned elements are painted, and so
+                      written into the PDF's text, after everything else, which scrambles ATS parsing. */}
+                  <ul className="mt-1 list-disc space-y-1 pl-4 text-ink-2 marker:text-accent">
+                    {p.highlights.map((h) => (
+                      <li key={h.id} className="pl-0.5">
+                        <RichText text={h.text} boldClassName="font-semibold text-ink" />
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              );
-            })}
-            {role.stack.length > 0 && <p className="mt-0.5 text-ink-2">Tools: {role.stack.join(', ')}</p>}
-          </div>
-        ))}
+              ))}
+            </div>
+          ))}
+        </div>
       </Section>
 
       <Section title="Skills">
-        {cv.skills.map((g) => (
-          <p key={g.group}>
-            <span className="font-semibold">{g.group}:</span> {g.items.join(', ')}
-          </p>
-        ))}
+        <dl className="space-y-0.5">
+          {cv.skills.map((g) => (
+            <div key={g.group}>
+              <dt className="inline font-semibold">{g.group}: </dt>
+              <dd className="inline text-ink-2">{g.items.join(', ')}</dd>
+            </div>
+          ))}
+        </dl>
       </Section>
 
-      <Section title="Certifications">
-        {cv.certifications.map((c) => (
-          <p key={c.name}>
-            {c.name}, {c.issuer}. {c.status.note}.
-          </p>
-        ))}
+      <Section title="Talks, writing, and projects">
+        <dl className="space-y-0.5">
+          {lines.map((line) => (
+            <div key={line.label}>
+              <dt className="inline font-semibold">{line.label}: </dt>
+              <dd className="inline text-ink-2">{line.text}</dd>
+            </div>
+          ))}
+        </dl>
       </Section>
 
-      <Section title="Education">
+      <Section title="Education and certification">
         {cv.education.map((e) => (
           <p key={e.school}>
-            {e.degree}, {e.school}, {e.years}. {e.honors}.
+            <span className="font-semibold">{e.degree}</span>
+            <span className="text-ink-2">
+              , {e.school}, {e.years.split(/\s*–\s*/).at(-1)}
+            </span>
           </p>
         ))}
-      </Section>
-
-      <Section title="Talks">
-        {talks.map((t) => (
-          <p key={t.slug}>
-            {t.title}, {t.event} ({t.date.slice(0, 4)})
+        {cv.certifications.map((c) => (
+          <p key={c.name}>
+            <span className="font-semibold">{c.name}</span>
+            <span className="text-ink-2">
+              , {c.issuer}, {c.status.note}
+            </span>
           </p>
         ))}
       </Section>
@@ -92,10 +150,16 @@ export default function CVPrint() {
   );
 }
 
+function Dot() {
+  return <span className="text-ink-3"> · </span>;
+}
+
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section className="mb-3">
-      <h2 className="mb-1 border-b border-line pb-0.5 text-[9pt] font-semibold uppercase tracking-wider text-ink-2">{title}</h2>
+    <section className="mt-4">
+      <h2 className="mb-2 flex items-center gap-3 text-[8pt] font-semibold uppercase tracking-[0.12em] text-accent after:h-px after:flex-1 after:bg-line">
+        {title}
+      </h2>
       {children}
     </section>
   );

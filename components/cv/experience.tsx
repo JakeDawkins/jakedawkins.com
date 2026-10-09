@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import type { Role } from '@/data/cv';
+import { RichText } from '@/components/rich-text';
 import { formatCvRange } from '@/lib/cv-dates';
 import { Evidence, evidenceSummary } from './evidence';
 
@@ -100,6 +101,7 @@ export function Experience({ roles, durations }: { roles: Role[]; durations: Rec
                 ) : (
                   role.company
                 )}
+                {role.description && <span className="font-sans text-sm tracking-normal text-ink-3"> · {role.description}</span>}
               </h3>
               {role.positions.length > 1 && durations[role.id] && <p className="font-mono text-xs text-ink-3">{durations[role.id]}</p>}
             </header>
@@ -131,7 +133,9 @@ export function Experience({ roles, durations }: { roles: Role[]; durations: Rec
                               <div className="flex gap-3">
                                 <span aria-hidden className="mt-[0.6em] size-1.5 shrink-0 rounded-full bg-ink-3" />
                                 <div className="min-w-0 flex-1">
-                                  <p id={`${h.id}-text`} className="leading-relaxed text-ink-2">{h.text}</p>
+                                  <p id={`${h.id}-text`} className="leading-relaxed text-ink-2">
+                                    <RichText text={h.text} boldClassName="font-medium text-ink" />
+                                  </p>
                                   {hasEvidence && (
                                     <button
                                       type="button"

@@ -1,4 +1,4 @@
-import { cv } from '@/data/cv';
+import { allSkills, cv } from '@/data/cv';
 import { projects, PROJECT_STATUS_META } from '@/data/projects';
 import { talks } from '@/data/talks';
 import { cvDuration, formatCvRange, roleSpan } from './cv-dates';
@@ -12,7 +12,7 @@ export function cvMarkdown() {
   push(`# ${site.name}`, '', `${cv.title} · ${cv.location}`, '', `Status: ${cv.availability}`, '');
   push(`- Website: ${site.url}`, ...site.socials.map((s) => `- ${s.label}: ${s.href}`), `- CV (HTML): ${absoluteUrl('/cv/')}`, '');
 
-  push('## Summary', '', ...cv.summary.flatMap((p) => [p, '']));
+  push('## Summary', '', ...[cv.intro, ...cv.summary].flatMap((p) => [p, '']));
 
   push('## Highlights', '', ...cv.impact.map((i) => `- **${i.value}** ${i.label}`), '');
 
@@ -21,6 +21,7 @@ export function cvMarkdown() {
     const span = roleSpan(role);
     const total = cvDuration(span.start, span.end);
     push(`### ${role.company}${total && role.positions.length > 1 ? ` (${total})` : ''}`, '');
+    if (role.description) push(`${role.description}.`, '');
     for (const p of role.positions) {
       const duration = cvDuration(p.start, p.end);
       push(`**${p.title}** · ${formatCvRange(p.start, p.end)}${duration ? ` (${duration})` : ''}${p.location ? ` · ${p.location}` : ''}`, '');
@@ -38,8 +39,8 @@ export function cvMarkdown() {
     if (role.stack.length) push(`Tools: ${role.stack.join(', ')}`, '');
   }
 
-  push('## Skills', '', ...cv.skills.map((g) => `- **${g.group}:** ${g.items.join(', ')}`), '');
-  push('## Certifications', '', ...cv.certifications.map((c) => `- ${c.name}, ${c.issuer}. ${c.status.note}.`), '');
+  push('## Skills', '', ...cv.skills.map((g) => `- **${g.group}:** ${allSkills(g).join(', ')}`), '');
+  push('## Certifications', '', ...cv.certifications.map((c) => `- ${c.name}, ${c.issuer}, ${c.status.note}.`), '');
   push('## Education', '', ...cv.education.map((e) => `- ${e.school}, ${e.degree}, ${e.years}. ${e.honors}.`), '');
 
   push('## Talks and appearances', '');

@@ -7,11 +7,14 @@ export type Talk = {
   location?: string;
   description: string;
   links: { label: string; href: string }[];
+  /** Listed on the PDF CV, under conference talks or teaching. */
+  cv?: 'talk' | 'teaching';
 };
 
 export const talks: Talk[] = [
   {
     slug: 'intro-to-web-accessibility',
+    cv: 'teaching',
     title: 'Intro to Web Accessibility',
     event: 'Homeaglow internal tech talk',
     date: '2023-11-10',
@@ -22,6 +25,7 @@ export const talks: Talk[] = [
   },
   {
     slug: 'nextjs-tech-talk',
+    cv: 'teaching',
     title: 'Next.js',
     event: 'Homeaglow internal tech talk',
     date: '2023-07-12',
@@ -32,6 +36,7 @@ export const talks: Talk[] = [
   },
   {
     slug: 'open-source-from-my-eyes',
+    cv: 'teaching',
     title: 'Open Source Software From My Eyes',
     event: 'Clemson University',
     date: '2021-02-28',
@@ -44,6 +49,7 @@ export const talks: Talk[] = [
   },
   {
     slug: 'clemson-2020',
+    cv: 'teaching',
     title: 'Remote Networking and Technical Leadership',
     event: 'Clemson University',
     date: '2020-10-08',
@@ -54,6 +60,7 @@ export const talks: Talk[] = [
   },
   {
     slug: 'graphql-nyc-2019',
+    cv: 'talk',
     title: 'GraphQL Tooling',
     event: 'GraphQL NYC Meetup',
     date: '2019-10-08',
@@ -74,6 +81,7 @@ export const talks: Talk[] = [
   },
   {
     slug: 'graphql-summit-2018',
+    cv: 'talk',
     title: 'Testing GraphQL',
     event: 'GraphQL Summit 2018',
     date: '2018-10-08',
@@ -84,6 +92,7 @@ export const talks: Talk[] = [
   },
   {
     slug: 'graphql-nyc-2018',
+    cv: 'talk',
     title: 'GraphQL at the Edge',
     event: 'GraphQL NYC Meetup',
     date: '2018-06-01',
@@ -94,6 +103,7 @@ export const talks: Talk[] = [
   },
   {
     slug: 'apollo-day-may',
+    cv: 'talk',
     title: 'A Hands-On Look at Apollo GraphQL',
     event: 'Apollo Day',
     date: '2018-05-31',
@@ -109,6 +119,7 @@ export const talks: Talk[] = [
   },
   {
     slug: 'graphql-radio-state-management',
+    cv: 'talk',
     title: 'State Management with Apollo',
     event: 'GraphQL Radio, Episode 12',
     date: '2018-01-24',
@@ -119,6 +130,7 @@ export const talks: Talk[] = [
   },
   {
     slug: 'asbury-agile-2017',
+    cv: 'talk',
     title: 'When Front-End Met Back-End: A GraphQL Love Story',
     event: 'Asbury Agile 2017',
     date: '2017-10-06',

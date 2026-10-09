@@ -210,6 +210,10 @@ html {
   main {
     padding-top: 0 !important;
   }
+  /* The PDF CV uses the full printable width; scripts/cv-pdf.mjs sets the page margins. */
+  main:has(.cv-print) {
+    padding-inline: 0 !important;
+  }
   ul > li {
     break-inside: avoid;
   }

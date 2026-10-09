@@ -16,7 +16,7 @@ npm run cv:pdf           # after build: regenerate public/jake-dawkins-cv.pdf (c
 | What | Where | Format |
 | --- | --- | --- |
 | Blog (articles, notes, TILs) | `content/blog/*.md` / `*.mdx` | Markdown + frontmatter. `.mdx` can embed `<MetricChart>`, `<BeforeAfter>`, `<Callout>` |
-| CV | `data/cv.ts` | Typed data. Each highlight can carry `evidence` (chart, before/after, quote, link) |
+| CV | `data/cv.ts` | Typed data. Each highlight can carry `evidence` (chart, before/after, quote, link) and `pdf: true` to appear on the PDF CV |
 | Projects | `data/projects.ts` | Typed data with a status |
 | Talks | `data/talks.ts` | Typed data |
 | Reading list | `data/reading.ts` | Typed data. Freshness comes from `added`; sections hide when the list is empty |
@@ -37,7 +37,7 @@ url: https://...     # optional, for posts published elsewhere (links out, no lo
 
 Linking to `/blog/<slug>/` from any post creates a backlink on the target post.
 
-After changing `data/cv.ts`, run `npm run build && npm run cv:pdf` and commit the new PDF.
+`data/cv.ts` is the single source for the web CV and the PDF CV. The PDF (A4, single column, at most two pages) shows a subset: highlights marked `pdf: true`, the summary, skill `items` (not `webOnly`), talks and projects flagged with `cv`, and the blog posts in `cv.pdf.writing`. After changing any of them, run `npm run build && npm run cv:pdf` and commit the new PDF. `cv:pdf` fails if the CV runs past two pages.
 
 ## SEO and indexing
 

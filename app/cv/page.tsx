@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Experience } from '@/components/cv/experience';
-import { cv } from '@/data/cv';
+import { allSkills, cv } from '@/data/cv';
 import { JsonLd } from '@/components/json-ld';
 import { EmailLink } from '@/components/email-link';
 import { MockBanner } from '@/components/mock-banner';
@@ -78,13 +78,13 @@ export default function CVPage() {
             {cv.availability}
           </p>
           <div className="mt-4 space-y-3 leading-relaxed text-ink-2">
-            {cv.summary.map((p) => (
+            {[cv.intro, ...cv.summary].map((p) => (
               <p key={p}>{p}</p>
             ))}
           </div>
         </div>
         <div className="no-print flex flex-wrap gap-2 text-sm md:flex-col md:items-end">
-          <a href={CV_PDF} download className="rounded-full bg-ink px-4 py-2 text-bg hover:opacity-85">
+          <a href={CV_PDF} download="Jake-Dawkins-CV.pdf" className="rounded-full bg-ink px-4 py-2 text-bg hover:opacity-85">
             Download PDF
           </a>
           <a href={linkedIn} className="rounded-full border border-line px-4 py-2 text-ink hover:border-ink-3/50">
@@ -127,7 +127,7 @@ export default function CVPage() {
             <div key={g.group}>
               <h3 className="mb-3 font-serif text-lg">{g.group}</h3>
               <ul className="space-y-1.5 text-sm text-ink-2">
-                {g.items.map((i) => (
+                {allSkills(g).map((i) => (
                   <li key={i}>{i}</li>
                 ))}
               </ul>
