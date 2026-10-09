@@ -114,7 +114,7 @@ export const cv = {
     "I'm a full-stack engineer who likes taking a fresh look at old problems, especially the ones a team has stopped noticing, and I care a lot about accessibility.",
   /** Shown on the web CV and as the PDF CV's profile. */
   summary: [
-    'Staff Software Engineer with 10 years building product across web, native, and backend in React, React Native, TypeScript, GraphQL, and Python/Django. I lead cross-team product bets from problem definition to A/B-tested launch: a membership model that became the national default offer, checkout work behind record sales, an enterprise frontend rebuild, and a Rust CLI for Apollo GraphQL.',
+    'Staff Software Engineer with 10 years building product across web, native, and backend in React, React Native, TypeScript, GraphQL, and Python/Django. I lead cross-team product bets from problem definition to A/B-tested launch: checkout work behind record sales, a membership model that became the national default offer, an enterprise frontend rebuild, and a Rust CLI for Apollo GraphQL.',
     "I've moved my day-to-day engineering to an AI-assisted workflow with Claude Code, on tooling I built to run it.",
   ],
   impact: [
@@ -140,14 +140,14 @@ export const cv = {
           location: 'Remote',
           highlights: [
             {
-              id: 'homeaglow-membership',
-              pdf: true,
-              text: 'Owned a new membership model end to end across web, native, and backend, iterating through four versions until it became the **national default offer**.',
-            },
-            {
               id: 'homeaglow-deal-reskin',
               pdf: true,
               text: 'Led UI overhauls and major UX experiments on the main marketing landing page and checkout (**30,000+ visitors a day**); the winning design raised purchase conversion by **17-20%** and drove **record daily sales**.',
+            },
+            {
+              id: 'homeaglow-membership',
+              pdf: true,
+              text: 'Owned a new membership model end to end across web, native, and backend, iterating through four versions until it became the **national default offer**.',
             },
             {
               id: 'homeaglow-sales-tool',
@@ -183,6 +183,11 @@ export const cv = {
               text: 'Built a new **React web app** for customers, including the booking flow, taking inspiration from the old Django app while improving functionality, transparency, and accessibility. For a time the only engineer on it, I launched it to all new customers; it averaged **105,000+ monthly active users** in 2024, peaking above **150,000**.',
             },
             {
+              id: 'homeaglow-deal-rebuild',
+              pdf: true,
+              text: 'Migrated the main marketing landing page from Django views to React on Next.js, making it faster and more accessible; winning tests on the new page added a **10% conversion lift**.',
+            },
+            {
               id: 'homeaglow-experiment-infra',
               pdf: true,
               text: 'Built frontend experimentation infrastructure for the booking flow and landing page, cutting experiment launch time **from weeks to under two days**.',
@@ -191,11 +196,6 @@ export const cv = {
               id: 'homeaglow-graphql',
               pdf: true,
               text: 'Built the first version of the customer-facing **GraphQL API**, migrating and expanding what the legacy Django view handlers could do, and moved the customer web app onto it.',
-            },
-            {
-              id: 'homeaglow-deal-rebuild',
-              pdf: true,
-              text: 'Migrated the main marketing landing page from Django views to React on Next.js, making it faster and more accessible; winning tests on the new page added a **10% conversion lift**.',
             },
           ],
         },
@@ -405,8 +405,8 @@ export const cv = {
           end: '2017-07',
           location: 'Anderson, SC',
           highlights: [
-            { id: 'newspring-apps', text: 'Developed web and native mobile applications using React, Redux and React-Apollo.' },
             { id: 'newspring-graphql', text: 'Built and maintained GraphQL server to aggregate data from MSSQL, MongoDB, and MySQL in Node.js.' },
+            { id: 'newspring-apps', text: 'Developed web and native mobile applications using React, Redux and React-Apollo.' },
             { id: 'newspring-mssql', text: 'Managed a MSSQL database which tracked financial data and personal information across the organization.' },
             {
               id: 'newspring-testing',
@@ -421,12 +421,12 @@ export const cv = {
           start: '2012-06',
           end: '2016-05',
           highlights: [
-            { id: 'newspring-archive', text: 'Managed an archive of digital content ranging 15 years.' },
-            { id: 'newspring-pipelines', text: 'Developed automation and delivery pipeline workflows to handle audio and video encoding and delivery.' },
-            { id: 'newspring-video', text: 'Edited and produced video content for this archive from many weekly live events.' },
-            { id: 'newspring-broadcast', text: 'Operated professional level broadcast equipment and cameras.' },
-            { id: 'newspring-training', text: 'Wrote training documentation to teach volunteers on the equipment.' },
             { id: 'newspring-volunteers', text: 'Led a volunteer team of approximately 100 people in live video positions.' },
+            { id: 'newspring-pipelines', text: 'Developed automation and delivery pipeline workflows to handle audio and video encoding and delivery.' },
+            { id: 'newspring-archive', text: 'Managed an archive of digital content ranging 15 years.' },
+            { id: 'newspring-video', text: 'Edited and produced video content for this archive from many weekly live events.' },
+            { id: 'newspring-training', text: 'Wrote training documentation to teach volunteers on the equipment.' },
+            { id: 'newspring-broadcast', text: 'Operated professional level broadcast equipment and cameras.' },
             { id: 'newspring-requests', text: 'Received and handled requests for content across the organization.' },
           ],
         },
