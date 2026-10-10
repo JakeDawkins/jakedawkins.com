@@ -45,6 +45,13 @@ const items: ReadingItem[] = [
   //   added: '2026-09-18',
   // },
   {
+    title: 'AI coding agents generate more code, but not more software',
+    url: 'https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/',
+    source: 'Ars Technica',
+    kind: 'article',
+    added: '2026-10-10',
+  },
+  {
     title: 'HTML can do that?',
     url: 'https://chrisburnell.com/html-can-do-that/',
     source: 'Chris Burnell',
