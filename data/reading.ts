@@ -45,6 +45,13 @@ const items: ReadingItem[] = [
   //   added: '2026-09-18',
   // },
   {
+    title: 'HTML can do that?',
+    url: 'https://chrisburnell.com/html-can-do-that/',
+    source: 'Chris Burnell',
+    kind: 'post',
+    added: '2026-10-10',
+  },
+  {
     title: 'Understanding is the new bottleneck',
     url: 'https://www.geoffreylitt.com/2026/07/02/understanding-is-the-new-bottleneck.html',
     source: 'Geoffrey Litt',
