@@ -25,13 +25,13 @@ export const metadata = {
       ...base.alternates?.types,
       'text/markdown': [{ url: '/cv.md', title: 'CV (markdown)' }],
       'application/json': [{ url: '/resume.json', title: 'CV (JSON Resume)' }],
-      'application/pdf': [{ url: '/jake-dawkins-cv.pdf', title: 'CV (PDF)' }],
+      'application/pdf': [{ url: '/jackson-dawkins-cv.pdf', title: 'CV (PDF)' }],
     },
   },
 };
 
 const linkedIn = site.socials.find((s) => s.label === 'LinkedIn')!.href;
-const CV_PDF = '/jake-dawkins-cv.pdf';
+const CV_PDF = '/jackson-dawkins-cv.pdf';
 
 export default function CVPage() {
   const durations: Record<string, string | null> = {};

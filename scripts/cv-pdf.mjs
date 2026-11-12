@@ -1,4 +1,4 @@
-// Renders the CV (/cv/print/) to public/jake-dawkins-cv.pdf using your installed Google Chrome.
+// Renders the CV (/cv/print/) to public/jackson-dawkins-cv.pdf using your installed Google Chrome.
 // Run after `npm run build` whenever the CV changes: `npm run cv:pdf`. Commit the PDF.
 import fs from 'node:fs';
 import http from 'node:http';
@@ -7,7 +7,7 @@ import { chromium } from 'playwright-core';
 
 const root = path.join(path.dirname(new URL(import.meta.url).pathname), '..');
 const out = path.join(root, 'out');
-const target = path.join(root, 'public/jake-dawkins-cv.pdf');
+const target = path.join(root, 'public/jackson-dawkins-cv.pdf');
 
 const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.woff2': 'font/woff2', '.png': 'image/png', '.jpg': 'image/jpeg', '.svg': 'image/svg+xml' };
 const server = http.createServer((req, res) => {
@@ -26,6 +26,8 @@ await page.emulateMedia({ media: 'print', colorScheme: 'light' });
 await page.goto(`http://localhost:${port}/cv/print/`, { waitUntil: 'networkidle' });
 // The email address is only assembled after hydration (components/email-link.tsx).
 await page.waitForSelector('a[href^="mailto:"]');
+// The footer repeats the name from the page heading (cv.pdf.name in data/cv.ts).
+const name = (await page.textContent('h1')).trim();
 // A4 for UK readers, with a small page-number footer.
 const pdf = await page.pdf({
   path: target,
@@ -35,7 +37,7 @@ const pdf = await page.pdf({
   displayHeaderFooter: true,
   headerTemplate: '<span></span>',
   footerTemplate:
-    '<div style="width:100%;font:7pt system-ui,sans-serif;color:#78716c;text-align:center">Jake Dawkins CV · <span class="pageNumber"></span> of <span class="totalPages"></span></div>',
+    `<div style="width:100%;font:7pt system-ui,sans-serif;color:#78716c;text-align:center">${name} CV · <span class="pageNumber"></span> of <span class="totalPages"></span></div>`,
   tagged: true,
   outline: true,
 });

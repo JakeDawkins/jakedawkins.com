@@ -454,6 +454,8 @@ export const cv = {
    * data/projects.ts; open source comes from GitHub evidence links on PDF highlights.
    */
   pdf: {
+    /** Full legal name shown on the PDF CV. The site uses site.name (Jake). */
+    name: 'Jackson Dawkins',
     /** Blog post slugs, listed under "Writing". */
     writing: [
       'carbon-healths-resilient-enterprise-frontend-application',

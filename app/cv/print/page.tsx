@@ -8,9 +8,9 @@ import { getGardenEntries } from '@/lib/garden';
 import { pageMetadata } from '@/lib/seo';
 import { site } from '@/lib/site';
 
-// The CV used only to render /jake-dawkins-cv.pdf (see scripts/cv-pdf.mjs). It shows the subset of
+// The CV used only to render /jackson-dawkins-cv.pdf (see scripts/cv-pdf.mjs). It shows the subset of
 // data/cv.ts marked for the PDF. Single column with plain text order so applicant tracking systems parse it cleanly.
-export const metadata = { ...pageMetadata({ path: '/cv/', noindex: true }), title: { absolute: `${site.name} CV` } };
+export const metadata = { ...pageMetadata({ path: '/cv/', noindex: true }), title: { absolute: `${cv.pdf.name} CV` } };
 
 const host = (href: string) => href.replace(/^https?:\/\/(www\.)?/, '').replace(/\/.*$/, '');
 const talkLine = (t: Talk) => `${t.title} (${t.event.replace(/ \d{4}$/, '')}, ${t.date.slice(0, 4)})`;
@@ -45,7 +45,7 @@ export default function CVPrint() {
   return (
     <article className="cv-print font-sans text-[9.5pt] leading-[1.45] text-ink">
       <header className="border-b-2 border-accent pb-3">
-        <h1 className="font-serif text-[26pt] leading-none tracking-tight">{site.name}</h1>
+        <h1 className="font-serif text-[26pt] leading-none tracking-tight">{cv.pdf.name}</h1>
         <p className="mt-1.5 text-[11.5pt] font-medium text-ink-2">{cv.title}</p>
         <p className="mt-2 text-[9pt] text-ink-2">
           <EmailLink />

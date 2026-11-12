@@ -8,7 +8,7 @@ npm run dev              # http://localhost:3000
 npm run build            # static site in out/, plus out/_redirects
 npm run check:redirects  # every old-site URL still resolves
 npm run check:a11y       # axe WCAG 2.2 AA audit of every page, light and dark
-npm run cv:pdf           # after build: regenerate public/jake-dawkins-cv.pdf (commit it)
+npm run cv:pdf           # after build: regenerate public/jackson-dawkins-cv.pdf (commit it)
 ```
 
 ## Content
